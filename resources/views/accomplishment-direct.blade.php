@@ -21,16 +21,17 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="=../css/twitter-bootstrap.css"/>
-        <link rel="stylesheet" type="text/css" href="../dataTables.bootstrap4.min.css"/>
-        <link rel="stylesheet" href="../dist/markdown-toolbar.css" type="text/css" />
-        <link href="../dist/filepond-plugin-image-preview.min.css" rel="stylesheet" />
-        <link href="../dist/filepond-plugin-file-poster.css" rel="stylesheet" />
-        <link href="../dist/filepond.min.css" rel="stylesheet" />
-        <link href="../dist/lightbox.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap-icons.css"> <!--added-->
-        <link rel="stylesheet" href="../dist/selectize.bootstrap4.css">
-        <link rel="stylesheet" href="../css/app.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/twitter-bootstrap.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dataTables.bootstrap4.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('dist/markdown-toolbar.css') }}" type="text/css" />
+        <link href="{{ asset('dist/filepond-plugin-image-preview.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('dist/filepond-plugin-file-poster.css') }}" rel="stylesheet" />
+        <link href="{{ asset('dist/filepond.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('dist/lightbox.css') }}" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('dist/selectize.bootstrap4.css') }}">
+        <link rel="stylesheet" href="https://beta.pup.edu.ph/qar/css/app.css">
+
 
         <!-- Scripts -->
         <script src="https://beta.pup.edu.ph/qar/js/fontawesome.js" crossorigin="anonymous"></script>
