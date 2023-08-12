@@ -21,43 +21,43 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 
         <!-- Styles -->
-        <link rel="stylesheet" type="text/css" href="https://beta.pup.edu.ph/qar/css/twitter-bootstrap.css"/>
-        <link rel="stylesheet" type="text/css" href="https://beta.pup.edu.ph/qar/css/dataTables.bootstrap4.min.css"/>
-        <link rel="stylesheet" href="https://beta.pup.edu.ph/qar/dist/markdown-toolbar.css" type="text/css" />
-        <link href="https://beta.pup.edu.ph/qar/dist/filepond-plugin-image-preview.min.css" rel="stylesheet" />
-        <link href="https://beta.pup.edu.ph/qar/dist/filepond-plugin-file-poster.css" rel="stylesheet" />
-        <link href="https://beta.pup.edu.ph/qar/dist/filepond.min.css" rel="stylesheet" />
-        <link href="https://beta.pup.edu.ph/qar/lightbox2/dist/css/lightbox.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="https://beta.pup.edu.ph/qar/css/bootstrap-icons.css"> <!--added-->
-        <link rel="stylesheet" href="https://beta.pup.edu.ph/qar/dist/selectize.bootstrap4.css">
-        <link rel="stylesheet" href="https://beta.pup.edu.ph/qar/css/app.css">
+        <link rel="stylesheet" type="text/css" href="=../css/twitter-bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="../dataTables.bootstrap4.min.css"/>
+        <link rel="stylesheet" href="../dist/markdown-toolbar.css" type="text/css" />
+        <link href="../dist/filepond-plugin-image-preview.min.css" rel="stylesheet" />
+        <link href="../dist/filepond-plugin-file-poster.css" rel="stylesheet" />
+        <link href="../dist/filepond.min.css" rel="stylesheet" />
+        <link href="../dist/lightbox.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap-icons.css"> <!--added-->
+        <link rel="stylesheet" href="../dist/selectize.bootstrap4.css">
+        <link rel="stylesheet" href="../css/app.css">
 
         <!-- Scripts -->
         <script src="https://beta.pup.edu.ph/qar/js/fontawesome.js" crossorigin="anonymous"></script>
-        <script src="https://beta.pup.edu.ph/qar/js/jquery.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/dist/filepond-plugin-image-preview.min.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/dist/filepond-plugin-file-validate-size.min.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/dist/filepond-plugin-file-poster.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/dist/filepond-plugin-file-validate-type.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/dist/filepond-plugin-image-exif-orientation.min.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/dist/filepond-plugin-file-encode.min.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/lightbox2/dist/js/lightbox.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/dist/filepond.min.js"></script>
+        <script src="../js/jquery.js"></script>
+        <script src="../dist/filepond-plugin-image-preview.min.js"></script>
+        <script src="../dist/filepond-plugin-file-validate-size.min.js"></script>
+        <script src="../dist/filepond-plugin-file-poster.js"></script>
+        <script src="../dist/filepond-plugin-file-validate-type.js"></script>
+        <script src="../dist/filepond-plugin-image-exif-orientation.min.js"></script>
+        <script src="../dist/filepond-plugin-file-encode.min.js"></script>
+        <script src="../lightbox2/dist/js/lightbox.js"></script>
+        <script src="../dist/filepond.min.js"></script>
         <!-- JavaScript Bundle with Popper -->
-        <script src="https://beta.pup.edu.ph/qar/js/app.js"></script>
-        <script src="https://beta.pup.edu.ph/qar/dist/chart.min.js"></script>
+        <script src="../js/app.js"></script>
+        <script src="../dist/chart.min.js"></script>
 
         <!-- Bootstrap Datepicker Resources -->
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
         <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
-        <script src="https://beta.pup.edu.ph/qar/js/bootstrap-datepicker.js"></script>
-        <link rel="stylesheet" href="https://beta.pup.edu.ph/qar/css/datepicker.css"/>
+        <script src="../js/bootstrap-datepicker.js"></script>
+        <link rel="stylesheet" href="../css/datepicker.css"/>
 
         
-        <link rel="stylesheet" href="https://beta.pup.edu.ph/qar/css/sweetalert2.min.css">
+        <link rel="stylesheet" href="../css/sweetalert2.min.css">
 
         
-        <script src="https://beta.pup.edu.ph/qar/js/sweetalert2.all.min.js"></script>
+        <script src="../js/sweetalert2.all.min.js"></script>
 
     </head>
     <body class="font-sans antialiased bg-light" style="background-image: https://beta.pup.edu.ph/qar/storage/cover2.png">
