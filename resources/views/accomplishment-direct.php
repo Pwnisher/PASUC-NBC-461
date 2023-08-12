@@ -13,12 +13,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="MrlI89DTNUWUoGs09S1hfAAX0pFHTWICF3om4T3w">
-
-<<<<<<< Updated upstream
-        <title>Laravel 101</title>
-=======
+        
         <title>Instructional Material, Reference/ Text Book, Module, Monographs | PUP eQAR</title>
->>>>>>> Stashed changes
 
         <link rel="icon" href="https://beta.pup.edu.ph/qar/favicon.ico">
         <!-- Fonts -->
