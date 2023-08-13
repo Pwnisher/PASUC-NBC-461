@@ -47,17 +47,45 @@
       </div>
       <!--Add Accomplishment Button-->
       <div class="flex items-center space-x-2">
-        <div class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
+        <div class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded cursor-pointer">
           <div class="flex items-center space-x-2">
             <i class="fas fa-plus text-xs"></i>
             <p class="text-xs">Add an accomplishment</p>
           </div>
         </div>
       </div>
-      <div>
-      </div>
       <hr>
-      <div class="flex flex-row items-stretch space-x-2">
+      <div class="flex flex-row items-stretch justify-between">
+        <!--Show entries-->
+        <div class="text-sm text-gray-700 flex items-center space-x-2">
+          <span>Show</span>
+          <div class="relative">
+            <select class="appearance-none w-20 bg-white border border-gray-300 text-gray-700 py-1 px-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+              <option>10</option>
+              <option>25</option>
+              <option>50</option>
+              <option>100</option>
+            </select>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+              <i class="fas fa-chevron-down text-gray-600"></i>
+            </div>
+          </div>
+          <span>entries</span>
+        </div>
+        <!--Search-->
+        <div class="text-sm text-gray-700 flex items-center space-x-2">
+          <span>Search</span>
+          <div class="relative">
+            <input
+              type="text"
+              class="block w-48 bg-white border border-gray-300 text-gray-700 py-1 px-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              placeholder="Type here..."
+            />
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+              <i class="fas fa-search text-gray-600"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
