@@ -9,8 +9,11 @@ module.exports = {
     extend: {
       colors:{
         'ghostwhite': '#f8f8ff',
-        'reminder-color': '#e2f0fb'
-      }
+        'card-color': '#e2f0fb'
+      },
+      textColor: {
+        'card-font-color': '#385d7a',
+      },
     },
   },
   plugins: [],
