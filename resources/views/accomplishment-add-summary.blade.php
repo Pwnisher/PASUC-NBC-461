@@ -26,7 +26,7 @@
                 </a>
                 <div class="hidden md:flex items-center p-5">
                   <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
-                  <a href="" id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</a>                  
+                  <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</button>                  
                 </div>
               </div>
               <div class="hidden md:flex items-center">
@@ -74,12 +74,11 @@
               <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
               <li><a href="" class="block text-base px-2 py-4 text-white ">Accomplishments</a></li>
 				    </ul>
-          </div>
-          <script src="{{ asset('js/operations.js') }}"></script>
+          </div>          
         </nav>
       </div>
       <!--Accomplishment Modal-->
-      <div id="accomplishment-container" class="relative rounded-md p-4 shadow-lg w-full h-auto border border-gray-300 hidden">
+      <div id="accomplishment-container" class="hidden absolute rounded-md p-4 shadow-lg w-full h-auto border border-gray-300 z-[9999]">
         <div class="absolute inset-0 bg-center" style="background-image: url('{{ URL('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
         <div class="mx-auto w-[95%] relative z-10">
           <div class="flex flex-row items-stretch justify-between">
@@ -87,6 +86,18 @@
               <ul>
                 <h6 class="font-semibold">KRA I - Instruction</h6>
                 <hr>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
@@ -99,6 +110,7 @@
                     <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
                     <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
                     <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    
                 </ul>
             </div>
             <div class="flex-auto p-4">
@@ -122,6 +134,7 @@
           </div>
         </div>
       </div>
+      <script src="{{ asset('js/operations.js') }}"></script>
       <!--Main Container-->
       <div class="flex-1 overflow-y-auto relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
@@ -289,6 +302,7 @@
             </div>
           </div>
         </div>
+      
       </div>
     </div>
   </body>

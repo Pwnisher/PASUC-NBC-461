@@ -17,14 +17,32 @@ document.addEventListener("click", () => {
     dropdownMenu.classList.add("hidden");
 });
 
-const submenuToggle = document.getElementById("accomplishmentBtn");
-const submenu = document.getElementById("accomplishment-container");
+const mobileMenuButton = document.querySelector("button.mobile-menu-button");
+const mobileMenuOverlay = mobileMenuButton.querySelector(".mobile-menu-overlay");
 
-submenuToggle.addEventListener("click", (event) => {
+let isMenuOpen = false;
+
+mobileMenuButton.addEventListener("click", () => {
+  isMenuOpen = !isMenuOpen;
+
+  if (isMenuOpen) {
+    mobileMenuOverlay.style.opacity = "1";
+  } else {
+    mobileMenuOverlay.style.opacity = "0";
+  }
+});
+
+const submenuBtn = document.getElementById("accomplishmentBtn");
+  const submenu = document.getElementById("accomplishment-container");
+
+  submenuBtn.addEventListener("click", (event) => {
     event.stopPropagation();
     submenu.classList.toggle("hidden");
-});
+  });
 
-document.addEventListener("click", () => {
-    submenu.classList.add("hidden");
-});
+  document.addEventListener("click", () => {
+    if (!submenu.classList.contains("hidden")) {
+      submenu.classList.add("hidden");
+    }
+  });
+  
