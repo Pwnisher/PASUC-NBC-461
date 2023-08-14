@@ -12,21 +12,22 @@
 
     <title>[Add] Document</title>
   </head>
-  <body class = "bg-ghostwhite">
+  <body class = "bg-ghostwhite">    
     <div class="flex h-screen flex-col ">
       <!--Navigation Bar-->
-      <div class="flex-none h-[10%]">
-        <nav class="bg-navbar shadow-lg sticky top-0 h-full text-xs pl-10 pr-10 z-[9999]">
+      <div class="flex-none">
+        <nav class="bg-navbar shadow-lg sticky top-0 h-16 text-xs pl-10 pr-10 z-[9999]">
           <div class="max-w-7xl mx-auto px-4 h-full">
             <div class="flex justify-between items-center h-full">
               <div class="flex items-center space-x-7">
                 <a href="#" class="flex items-center py-2">
                   <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
-                  <span class="font-semibold text-white text-s">PASUC NBC 461 EMIS</span>
+                  <span class="font-medium text-white text-xl">PASUC NBC 461 EMIS</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-4">
-                  <a href="" class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">Home</a>
-                  <a href="" class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
+                  <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
+                  <a href="" id="accomplishment" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
+                  @include('submenu')
                 </div>
               </div>
               <div class="hidden md:flex items-center space-x-3">
@@ -34,7 +35,7 @@
                   <button class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">
                     <i class="fas fa-bell text-xs"></i>
                   </button>
-                  <span class="text-white font-medium ml-2">Dela Cruz, Juan</span>
+                  <span class="text-white text-sm ml-2">Dela Cruz, Juan</span>
                 </div>
                 <div class="relative group">
                   <button class="ml-2 py-2 px-2 text-white hover:border-b-2 border-yellow-400" id="dropdown-toggle">
@@ -87,11 +88,12 @@
         </nav>
       </div>
       <!--Accomplishment Modal-->
+      
       <!--Main Container-->
       <div class="flex-1 overflow-y-auto relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
           <div id="title_bar-container" class="bg-transparent text-left w-5/6">
-            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Course Syllabus/ Guide Developed/ Revised/ Enhanced</h3>
+            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Course Syllabus / Guide Developed / Revised / Enhanced</h3>
           </div>
           <div id="add_summary_container" class="bg-white rounded-md p-4 shadow-lg w-5/6 border border-gray-300 relative">
             <div class="flex flex-col items-stretch space-y-2">
