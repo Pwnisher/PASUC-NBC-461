@@ -1,9 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-<<<<<<< HEAD
 module.exports = {
-=======
-export default {
->>>>>>> navbar-experiment
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
@@ -12,9 +8,9 @@ export default {
   theme: {
     extend: {
       colors:{
-<<<<<<< HEAD
         'ghostwhite': '#f8f8ff',
-        'card-color': '#e2f0fb'
+        'card-color': '#e2f0fb',
+        'navbar': '#212529', 
       },
       textColor: {
         'card-font-color': '#385d7a',
@@ -23,12 +19,3 @@ export default {
   },
   plugins: [],
 }
-=======
-        'navbar': '#212529',        
-      },      
-    },
-  },
-  plugins: [],
-}
-
->>>>>>> navbar-experiment
