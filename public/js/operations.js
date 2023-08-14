@@ -16,3 +16,15 @@ dropdownToggle.addEventListener("click", (event) => {
 document.addEventListener("click", () => {
     dropdownMenu.classList.add("hidden");
 });
+
+const submenuToggle = document.getElementById("accomplishmentBtn");
+const submenu = document.getElementById("accomplishment-container");
+
+submenuToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    submenu.classList.toggle("hidden");
+});
+
+document.addEventListener("click", () => {
+    submenu.classList.add("hidden");
+});

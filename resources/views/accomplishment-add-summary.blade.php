@@ -26,8 +26,7 @@
                 </a>
                 <div class="hidden md:flex items-center p-5">
                   <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
-                  <a href="" id="accomplishment" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
-                  
+                  <a href="" id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</a>                  
                 </div>
               </div>
               <div class="hidden md:flex items-center">
@@ -80,7 +79,49 @@
         </nav>
       </div>
       <!--Accomplishment Modal-->
-      
+      <div id="accomplishment-container" class="relative rounded-md p-4 shadow-lg w-full h-auto border border-gray-300 hidden">
+        <div class="absolute inset-0 bg-center" style="background-image: url('{{ URL('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
+        <div class="mx-auto w-[95%] relative z-10">
+          <div class="flex flex-row items-stretch justify-between">
+            <div class="flex-auto p-4">
+              <ul>
+                <h6 class="font-semibold">KRA I - Instruction</h6>
+                <hr>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+              </ul>
+            </div>
+            <div class="flex-auto p-4">
+                <ul>
+                    <h6 class="font-semibold">KRA II - RESEARCH, INNOVATION AND/OR CREATIVE WORK</h6>
+                    <hr>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                </ul>
+            </div>
+            <div class="flex-auto p-4">
+                <ul>
+                    <h6 class="font-semibold">KRA III - EXTENSION SERVICES</h6>
+                    <hr>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                </ul>
+            </div>
+            <div class="flex-auto p-4">
+                <ul>
+                    <h6 class="font-semibold">KRA IV - PROFESSIONAL DEVELOPMENT </h6>
+                    <hr>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
       <!--Main Container-->
       <div class="flex-1 overflow-y-auto relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
