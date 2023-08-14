@@ -16,10 +16,10 @@
     <div class="flex h-screen flex-col ">
       <!--Navigation Bar-->
       <div class="flex-none h-[10%]">
-        <nav class="bg-navbar shadow-lg sticky top-0 h-full text-xs pl-10 pr-10 z-[9999]">
-          <div class="max-w-7xl mx-auto px-4 h-full">
+        <nav class="bg-navbar shadow-lg sticky top-0 h-full text-xs z-[9999]">
+          <div class="max-w-[80%] mx-auto h-full">
             <div class="flex justify-between items-center h-full">
-              <div class="flex items-center space-x-7">
+              <div class="flex items-center">
                 <a href="#" class="flex items-center py-2">
                   <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
                   <span class="font-semibold text-white text-s">PASUC NBC 461 EMIS</span>
@@ -29,7 +29,7 @@
                   <a href="" class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
                 </div>
               </div>
-              <div class="hidden md:flex items-center space-x-3">
+              <div class="hidden md:flex items-center">
                 <div class="relative">
                   <button class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">
                     <i class="fas fa-bell text-xs"></i>
