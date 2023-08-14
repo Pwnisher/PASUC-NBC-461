@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('accomplishment-add-summary');
+=======
+    return view('navbar');
+>>>>>>> navbar-experiment
 });
