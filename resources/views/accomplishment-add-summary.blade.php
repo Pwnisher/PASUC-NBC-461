@@ -15,22 +15,16 @@
   <body class = "bg-ghostwhite">    
     <div class="flex h-screen flex-col ">
       <!--Navigation Bar-->
-<<<<<<< HEAD
       <div class="flex-none">
         <nav class="bg-navbar shadow-lg sticky top-0 h-16 text-xs pl-10 pr-10 z-[9999]">
-          <div class="max-w-7xl mx-auto px-4 h-full">
-=======
-      <div class="flex-none h-[10%]">
-        <nav class="bg-navbar shadow-lg sticky top-0 h-full text-xs z-[9999]">
           <div class="max-w-[80%] mx-auto h-full">
->>>>>>> janren
             <div class="flex justify-between items-center h-full">
               <div class="flex items-center">
-                <a href="#" class="flex items-center py-2">
+                <a href="#" class="flex items-center py-2 p-5">
                   <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
                   <span class="font-medium text-white text-xl">PASUC NBC 461 EMIS</span>
                 </a>
-                <div class="hidden md:flex items-center space-x-4">
+                <div class="hidden md:flex items-center p-5">
                   <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
                   <a href="" id="accomplishment" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
                   
