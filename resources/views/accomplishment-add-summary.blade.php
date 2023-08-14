@@ -27,7 +27,7 @@
                 <div class="hidden md:flex items-center space-x-4">
                   <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
                   <a href="" id="accomplishment" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
-                  @include('submenu')
+                  
                 </div>
               </div>
               <div class="hidden md:flex items-center space-x-3">

@@ -141,7 +141,7 @@
               <ul>
                 <h6 class="font-semibold">KRA I - Instruction</h6>
                 <hr>
-                <li><a class="text-red-900 transition-transform transform active:text-yellow-500 scale-110" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
               </ul>
