@@ -70,9 +70,10 @@
             </div>
           </div>
           <div class="hidden mobile-menu">
-            <ul>
-              <!-- Your mobile menu items here -->
-            </ul>
+            <ul class="">
+              <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
+              <li><a href="" class="block text-base px-2 py-4 text-white ">Accomplishments</a></li>
+				    </ul>
           </div>
           <script src="{{ asset('js/operations.js') }}"></script>
         </nav>
