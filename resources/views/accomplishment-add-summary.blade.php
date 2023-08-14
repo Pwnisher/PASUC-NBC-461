@@ -64,16 +64,7 @@
               </div>
               <div class="md:hidden flex items-center">
                 <button class="outline-none mobile-menu-button">
-                  <svg class="w-6 h-6 text-white hover:text-yellow-400"
-                    x-show="!showMenu"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path d="M4 6h16M4 12h16M4 18h16"></path>
-                  </svg>
+                  <i class="fas fa-bars text-white hover:text-yellow-400 text-lg"></i>
                 </button>
               </div>
             </div>
