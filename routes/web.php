@@ -16,7 +16,7 @@ use App\Http\Controllers\AddSummaryController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('trial');
 });
 
 Route::get('/addsummary', [AddSummaryController::class, 'addsummary']);
