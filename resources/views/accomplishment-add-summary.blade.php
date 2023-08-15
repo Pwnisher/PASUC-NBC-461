@@ -12,21 +12,27 @@
 
     <title>[Add] Document</title>
   </head>
-  <body class = "bg-ghostwhite">
+  <body class = "bg-ghostwhite">    
     <div class="flex h-screen flex-col ">
       <!--Navigation Bar-->
-      <div class="flex-none h-[10%]">
-        <nav class="bg-navbar shadow-lg sticky top-0 h-full text-xs z-[9999]">
+      <div class="flex-none">
+        <nav class="bg-navbar shadow-lg sticky top-0 h-16 text-xs pl-10 pr-10 z-[9999]">
           <div class="max-w-[80%] mx-auto h-full">
+<<<<<<< HEAD
             <div class="flex justify-between items-center h-full ">
               <div class="flex items-center space-x-7">
                 <a href="#" class="flex items-center py-2">
+=======
+            <div class="flex justify-between items-center h-full">
+              <div class="flex items-center">
+                <a href="#" class="flex items-center py-2 p-5">
+>>>>>>> jelo-test-branch
                   <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
-                  <span class="font-semibold text-white text-s">PASUC NBC 461 EMIS</span>
+                  <span class="font-medium text-white text-xl">PASUC NBC 461 EMIS</span>
                 </a>
-                <div class="hidden md:flex items-center space-x-4">
-                  <a href="" class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">Home</a>
-                  <a href="" class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
+                <div class="hidden md:flex items-center p-5">
+                  <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
+                  <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</button>                  
                 </div>
               </div>
               <div class="hidden md:flex items-center space-x-3">
@@ -34,7 +40,7 @@
                   <button class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">
                     <i class="fas fa-bell text-xs"></i>
                   </button>
-                  <span class="text-white font-medium ml-2">Dela Cruz, Juan</span>
+                  <span class="text-white text-sm ml-2">Dela Cruz, Juan</span>
                 </div>
                 <div class="relative group">
                   <button class="ml-2 py-2 px-2 text-white hover:border-b-2 border-yellow-400" id="dropdown-toggle">
@@ -74,16 +80,72 @@
               <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
               <li><a href="" class="block text-base px-2 py-4 text-white ">Accomplishments</a></li>
 				    </ul>
-          </div>
-          <script src="{{ asset('js/operations.js') }}"></script>
+          </div>          
         </nav>
       </div>
       <!--Accomplishment Modal-->
+      <div id="accomplishment-container" class="hidden absolute rounded-md p-4 shadow-lg w-full h-auto border border-gray-300 z-[9999]">
+        <div class="absolute inset-0 bg-center" style="background-image: url('{{ URL('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
+        <div class="mx-auto w-[95%] relative z-10">
+          <div class="flex flex-row items-stretch justify-between">
+            <div class="flex-auto p-4">
+              <ul>
+                <h6 class="font-semibold">KRA I - Instruction</h6>
+                <hr>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+              </ul>
+            </div>
+            <div class="flex-auto p-4">
+                <ul>
+                    <h6 class="font-semibold">KRA II - RESEARCH, INNOVATION AND/OR CREATIVE WORK</h6>
+                    <hr>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    
+                </ul>
+            </div>
+            <div class="flex-auto p-4">
+                <ul>
+                    <h6 class="font-semibold">KRA III - EXTENSION SERVICES</h6>
+                    <hr>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                </ul>
+            </div>
+            <div class="flex-auto p-4">
+                <ul>
+                    <h6 class="font-semibold">KRA IV - PROFESSIONAL DEVELOPMENT </h6>
+                    <hr>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="{{ asset('js/operations.js') }}"></script>
       <!--Main Container-->
       <div class="flex-1 overflow-y-auto relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
           <div id="title_bar-container" class="bg-transparent text-left w-5/6">
-            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Course Syllabus/ Guide Developed/ Revised/ Enhanced</h3>
+            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Course Syllabus / Guide Developed / Revised / Enhanced</h3>
           </div>
           <div id="add_summary_container" class="bg-white rounded-md p-4 shadow-lg w-5/6 border border-gray-300 relative">
             <div class="flex flex-col items-stretch space-y-2">
@@ -246,6 +308,7 @@
             </div>
           </div>
         </div>
+      
       </div>
     </div>
   </body>
