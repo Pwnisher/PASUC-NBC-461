@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <title>PASUC EMIS</title>
     @vite('resources/css/app.css')
 </head>
 
@@ -36,7 +36,36 @@
                     Deadline: <strong>June 30, 2023</strong>
                 </small>
             </h5>
-            <div class="bg-white max-w-6xl w-full p-2 my-10"></div>
+
+            <div class="container text-xs mx-auto py-2">
+                <div class="w-max bg-white shadow-md overflow-x-auto mx-auto my-10">
+                    <table class="table-auto w-full">
+                        <thead class="bg-red-800 text-white">
+                            <tr>
+                                <th class="py-4 px-6 cursor-pointer text-left">Name</th>
+                                <th class="py-4 px-6 cursor-pointer text-left">Campus</th>
+                                <th class="py-4 px-6 cursor-pointer text-left">Previous Position</th>
+                                <th class="py-4 px-6 cursor-pointer text-left">NBC 461 Position</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-300">
+                          <tr class="hover:bg-gray-100">
+                              <td class="py-4 px-6">Cedrick Monge</td>
+                              <td class="py-4 px-6">Taguig</td>
+                              <td class="py-4 px-6">Instructor</td>
+                              <td class="py-4 px-6">Associate Professor</td>
+                          </tr>
+                          <tr class="hover:bg-gray-100">
+                              <td class="py-4 px-6">John Ramos</td>
+                              <td class="py-4 px-6">Manila</td>
+                              <td class="py-4 px-6">Associate Professor</td>
+                              <td class="py-4 px-6">Professor</td>
+                          </tr>
+                          <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+              </div>
         </div>
     </main>
 </body>
