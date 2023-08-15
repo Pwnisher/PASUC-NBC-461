@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AddController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('accomplishment-add-summary');
 });
+
+Route::get('/accomplishment-add-summary', [AddSummaryController::class, 'accomplishment-add-summary']);
+
+Route::get('/add', [AddController::class, 'add']);
+
+
+

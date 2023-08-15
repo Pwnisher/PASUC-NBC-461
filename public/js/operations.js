@@ -18,20 +18,29 @@ document.addEventListener("click", () => {
 });
 
 const mobileMenuButton = document.querySelector("button.mobile-menu-button");
+const mobileMenuIcon = document.querySelector(".mobile-menu-icon");
 const mobileMenuOverlay = mobileMenuButton.querySelector(".mobile-menu-overlay");
 
 let isMenuOpen = false;
 
 mobileMenuButton.addEventListener("click", () => {
   isMenuOpen = !isMenuOpen;
+  
+  if (isMenuOpen) {
+    mobileMenuIcon.classList.add("text-yellow-400");
+    mobileMenuOverlay.style.opacity = "1";
+  } else {
+    mobileMenuIcon.classList.remove("text-yellow-400");
+    mobileMenuOverlay.style.opacity = "0";
+  }
+});
 
   if (isMenuOpen) {
     mobileMenuOverlay.style.opacity = "1";
   } else {
     mobileMenuOverlay.style.opacity = "0";
-  }
-});
-
+  };
+s
 const submenuBtn = document.getElementById("accomplishmentBtn");
   const submenu = document.getElementById("accomplishment-container");
 
