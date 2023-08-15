@@ -6,7 +6,16 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'ghostwhite': '#f8f8ff',
+        'card-color': '#e2f0fb',
+        'navbar': '#212529', 
+      },
+      textColor: {
+        'card-font-color': '#385d7a',
+      },
+    },
   },
   plugins: [],
 }

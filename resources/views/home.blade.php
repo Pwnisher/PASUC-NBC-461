@@ -2,78 +2,80 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PASUC EMIS</title>
     @vite('resources/css/app.css')
+    
 </head>
 
 <body class="bg-gray-200">
 
-         <!--Navigation Bar-->
-         <div class="flex-none">
-            <nav class="bg-navbar shadow-lg sticky top-0 h-16 text-xs pl-10 pr-10 z-[9999]">
-              <div class="max-w-[80%] mx-auto h-full">
-                <div class="flex justify-between items-center h-full">
-                  <div class="flex items-center">
-                    <a href="#" class="flex items-center py-2 p-5">
-                      <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
-                      <span class="font-medium text-white text-xl">PASUC NBC 461 EMIS</span>
-                    </a>
-                    <div class="hidden md:flex items-center p-5">
-                      <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
-                      <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</button>                  
-                    </div>
-                  </div>
-                  <div class="hidden md:flex items-center">
-                    <div class="relative">
-                      <button class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">
-                        <i class="fas fa-bell text-xs"></i>
-                      </button>
-                      <span class="text-white text-sm ml-2">Dela Cruz, Juan</span>
-                    </div>
-                    <div class="relative group">
-                      <button class="ml-2 py-2 px-2 text-white hover:border-b-2 border-yellow-400" id="dropdown-toggle">
-                        <i class="fas fa-caret-down text-xs"></i>
-                      </button>
-                      <div class="hidden absolute right-0 mt-2 bg-white text-gray-700" id="dropdown-menu">
-                        <ul class="py-2 px-4 space-y-2 min-w-max">
-                          <li><a href="#" class="block hover:bg-gray-100 px-2 py-1 hover:text-red-600">
-                            <i class="fas fa-user-circle mr-2 text-gray-500"></i>
-                            Profile
-                          </a></li>
-                          <li><a href="#" class="block hover:bg-gray-100 px-2 py-1 hover:text-red-600">
-                            <i class="fas fa-cog mr-2 text-gray-500"></i>
-                            Account Settings
-                          </a></li>
-                          <li><a href="#" class="block hover:bg-gray-100 px-2 py-1 hover:text-red-600">
-                            <i class="fas fa-history mr-2 text-gray-500"></i>
-                            Activity Log
-                          </a></li>
-                          <li><a href="#" class="block hover:bg-gray-100 px-2 py-1 hover:text-red-600">
-                            <i class="fas fa-sign-out-alt mr-2 text-gray-500"></i>
-                            Log Out
-                          </a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="md:hidden flex items-center">
-                    <button class="outline-none mobile-menu-button">
-                      <i class="fas fa-bars text-white hover:text-yellow-400 text-lg"></i>
-                    </button>
-                  </div>
+    <!-- Navigation Bar -->
+    <div class="flex-none">
+        <nav class="bg-navbar shadow-lg sticky top-0 h-16 text-xs pl-10 pr-10 z-[9999]">
+        <div class="max-w-[80%] mx-auto h-full">
+            <div class="flex justify-between items-center h-full">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center py-2 p-5">
+                <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
+                <span class="font-medium text-white text-xl">PASUC NBC 461 EMIS</span>
+                </a>
+                <div class="hidden md:flex items-center p-5">
+                <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
+                <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</button>
                 </div>
-              </div>
-              <div class="hidden mobile-menu">
-                <ul class="">
-                  <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
-                  <li><a href="" class="block text-base px-2 py-4 text-white ">Accomplishments</a></li>
-                        </ul>
-              </div>          
-            </nav>
-          </div>
-          
+            </div>
+            <div class="hidden md:flex items-center">
+                <div class="relative">
+                <button class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">
+                    <i class="fas fa-bell text-xs"></i>
+                </button>
+                <span class="text-white text-sm ml-2">Dela Cruz, Juan</span>
+                </div>
+                <div class="relative group">
+                <button class="ml-2 py-2 px-2 text-white hover:border-b-2 border-yellow-400" id="dropdown-toggle">
+                    <i class="fas fa-caret-down text-xs"></i>
+                </button>
+                <div class="hidden absolute right-0 mt-2 bg-white text-gray-700" id="dropdown-menu">
+                    <ul class="py-2 px-4 space-y-2 min-w-max">
+                    <li><a href="#" class="block hover:bg-gray-100 px-2 py-1 hover:text-red-600">
+                        <i class="fas fa-user-circle mr-2 text-gray-500"></i>
+                        Profile
+                    </a></li>
+                    <li><a href="#" class="block hover:bg-gray-100 px-2 py-1 hover:text-red-600">
+                        <i class="fas fa-cog mr-2 text-gray-500"></i>
+                        Account Settings
+                    </a></li>
+                    <li><a href="#" class="block hover:bg-gray-100 px-2 py-1 hover:text-red-600">
+                        <i class="fas fa-history mr-2 text-gray-500"></i>
+                        Activity Log
+                    </a></li>
+                    <li><a href="#" class="block hover:bg-gray-100 px-2 py-1 hover:text-red-600">
+                        <i class="fas fa-sign-out-alt mr-2 text-gray-500"></i>
+                        Log Out
+                    </a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="outline-none mobile-menu-button">
+                <i class="fas fa-bars text-white hover:text-yellow-400 text-lg"></i>
+                </button>
+            </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul class="">
+            <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
+            <li><a href="" class="block text-base px-2 py-4 text-white ">Accomplishments</a></li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+
     <main id="main_container" class="flex flex-col items-center min-h-screen mt-16">
 
         <div id="title_bar_container" class=" text-left max-w-6xl w-full px-4 sm:px-4 lg:px-4 sm:mb-3 lg:mb-3">
