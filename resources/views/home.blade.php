@@ -84,7 +84,7 @@
 
         <div id="title_bar_container" class=" text-left max-w-6xl w-full px-4 sm:px-4 lg:px-4 sm:mb-3 lg:mb-3">
             <h5 id="name_bar" class="text-base sm:text-base md:text-base lg:text-lg xl:text-xl">
-                JUAN 3 DELA CRUZ
+                JUAN DELA CRUZ
                 <p class="inline ms-2 sm:ms-10 text-sm sm:text-base md:text-sm lg:text-base">
                     Faculty Applicant · Evaluator · Pre-Evaluator
                 </p>
