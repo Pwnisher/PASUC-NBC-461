@@ -29,7 +29,7 @@
                   <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</button>                  
                 </div>
               </div>
-              <div class="hidden md:flex items-center space-x-3">
+              <div class="hidden md:flex items-center">
                 <div class="relative">
                   <button class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">
                     <i class="fas fa-bell text-xs"></i>
@@ -64,12 +64,12 @@
               </div>
               <div class="md:hidden flex items-center">
                 <button class="outline-none mobile-menu-button">
-                  <i class="fas fa-bars w-6 h-6 text-white mobile-menu-icon"></i>
+                  <i class="fas fa-bars text-white hover:text-yellow-400 text-lg"></i>
                 </button>
               </div>
             </div>
           </div>
-          <div class="hidden mobile-menu bg-navbar">
+          <div class="hidden mobile-menu">
             <ul class="">
               <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
               <li><a href="" class="block text-base px-2 py-4 text-white ">Accomplishments</a></li>
@@ -78,8 +78,8 @@
         </nav>
       </div>
       <!--Accomplishment Modal-->
-      <div id="accomplishment-container" class="hidden absolute rounded-md p-4 shadow-lg w-full h-auto border border-gray-300 z-[9999]">
-        <div class="absolute inset-0 bg-center" style="background-image: url('{{ URL('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
+      <div id="accomplishment-container" class="hidden absolute rounded-md p-4 shadow-lg w-full h-auto border bg-ghostwhite border-gray-300 z-[9999]">
+        <div class="absolute inset-0 bg-center" style="background-image: url('{{ asset('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
         <div class="mx-auto w-[95%] relative z-10">
           <div class="flex flex-row items-stretch justify-between">
             <div class="flex-auto p-4">
