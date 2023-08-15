@@ -18,8 +18,8 @@
       <div class="flex-none h-[10%]">
         <nav class="bg-navbar shadow-lg sticky top-0 h-full text-xs z-[9999]">
           <div class="max-w-[80%] mx-auto h-full">
-            <div class="flex justify-between items-center h-full">
-              <div class="flex items-center">
+            <div class="flex justify-between items-center h-full ">
+              <div class="flex items-center space-x-7">
                 <a href="#" class="flex items-center py-2">
                   <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
                   <span class="font-semibold text-white text-s">PASUC NBC 461 EMIS</span>
@@ -29,7 +29,7 @@
                   <a href="" class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
                 </div>
               </div>
-              <div class="hidden md:flex items-center">
+              <div class="hidden md:flex items-center space-x-3">
                 <div class="relative">
                   <button class="py-2 px-2 text-white hover:border-b-2 border-yellow-400">
                     <i class="fas fa-bell text-xs"></i>
@@ -64,12 +64,12 @@
               </div>
               <div class="md:hidden flex items-center">
                 <button class="outline-none mobile-menu-button">
-                  <i class="fas fa-bars text-white hover:text-yellow-400 text-lg"></i>
+                  <i class="fas fa-bars w-6 h-6 text-white mobile-menu-icon"></i>
                 </button>
               </div>
             </div>
           </div>
-          <div class="hidden mobile-menu">
+          <div class="hidden mobile-menu bg-navbar">
             <ul class="">
               <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold">Home</a></li>
               <li><a href="" class="block text-base px-2 py-4 text-white ">Accomplishments</a></li>
