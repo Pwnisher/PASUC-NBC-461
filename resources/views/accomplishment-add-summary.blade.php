@@ -78,8 +78,8 @@
         </nav>
       </div>
       <!--Accomplishment Modal-->
-      <div id="accomplishment-container" class="hidden absolute rounded-md p-4 shadow-lg w-full h-auto border border-gray-300 z-[9999]">
-        <div class="absolute inset-0 bg-center" style="background-image: url('{{ URL('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
+      <div id="accomplishment-container" class="hidden absolute rounded-md p-4 shadow-lg w-full h-auto border bg-ghostwhite border-gray-300 z-[9999]">
+        <div class="absolute inset-0 bg-center" style="background-image: url('{{ asset('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
         <div class="mx-auto w-[95%] relative z-10">
           <div class="flex flex-row items-stretch justify-between">
             <div class="flex-auto p-4">
