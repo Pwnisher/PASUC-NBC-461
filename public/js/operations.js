@@ -35,14 +35,6 @@ mobileMenuButton.addEventListener("click", () => {
   }
 });
 
-  if (isMenuOpen) {
-    mobileMenuIcon.classList.add("text-yellow-400");
-    mobileMenuOverlay.style.opacity = "1";
-  } else {
-    mobileMenuIcon.classList.remove("text-yellow-400");
-    mobileMenuOverlay.style.opacity = "0";
-  };
-s
 const submenuBtn = document.getElementById("accomplishmentBtn");
   const submenu = document.getElementById("accomplishment-container");
 

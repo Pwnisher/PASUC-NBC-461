@@ -18,13 +18,13 @@
       <div class="flex-none">
         <nav class="bg-navbar shadow-lg sticky top-0 h-16 text-xs pl-10 pr-10 z-[9999]">
           <div class="max-w-[80%] mx-auto h-full">
-            <div class="flex justify-between items-center h-full ">
+            <div class="flex justify-between items-center h-full">
               <div class="flex items-center space-x-7">
-                <a href="#" class="flex items-center py-2">
+                <a href="#" class="flex items-center py-2 mr-5">
                   <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
                   <span class="font-medium text-white text-xl">PASUC NBC 461 EMIS</span>
                 </a>
-                <div class="hidden md:flex items-center p-5">
+                <div class="hidden md:flex items-center space-x-3">
                   <a href="" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
                   <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</button>                  
                 </div>
