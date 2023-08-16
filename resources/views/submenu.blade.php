@@ -17,8 +17,7 @@
                 <hr>
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Research Output Published</a></li>
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Inventions</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Creative Works</a></li>
-                
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Creative Works</a></li>                
             </ul>
         </div>
         <div class="flex-auto p-4">
@@ -44,4 +43,4 @@
         </div>
     </div>
 </div>
-  <script src="{{ asset('js/operations.js') }}"></script>
+<script src="{{ asset('js/operations.js') }}"></script>
