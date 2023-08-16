@@ -78,7 +78,7 @@
         </nav>
       </div>
       <!--Accomplishment Modal-->
-      <div id="accomplishment-container" class="hidden absolute rounded-md p-4 shadow-lg w-full h-auto border bg-ghostwhite border-gray-300 z-[9999]">
+      <div id="accomplishment-container" class="hidden relative rounded-md p-4 shadow-lg w-full h-auto border bg-ghostwhite border-gray-300 z-[9999]">
         <div class="absolute inset-0 bg-center" style="background-image: url('{{ asset('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
         <div class="mx-auto w-[95%] relative z-10">
           <div class="flex flex-row items-stretch justify-between">
@@ -86,30 +86,18 @@
               <ul>
                 <h6 class="font-semibold">KRA I - Instruction</h6>
                 <hr>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Teaching Effectiveness</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Curriculum and Instructional Materials Developed</a></li>
+                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Special Projects, Capstone Projects,<br>Thesis, Dissertation and Mentorship Services</a></li>                
               </ul>
             </div>
             <div class="flex-auto p-4">
                 <ul>
                     <h6 class="font-semibold">KRA II - RESEARCH, INNOVATION AND/OR CREATIVE WORK</h6>
                     <hr>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Research Output Published</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Inventions</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Creative Works</a></li>
                     
                 </ul>
             </div>
@@ -117,18 +105,20 @@
                 <ul>
                     <h6 class="font-semibold">KRA III - EXTENSION SERVICES</h6>
                     <hr>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Service to the Institution</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Service to the Community</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Quality of Extension Services</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion D - Bonus Criterion</a></li>
                 </ul>
             </div>
             <div class="flex-auto p-4">
                 <ul>
                     <h6 class="font-semibold">KRA IV - PROFESSIONAL DEVELOPMENT </h6>
                     <hr>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
-                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Lorem Ipsum Dolor Sit Amet</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Involvement in Professional Organizations</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Continuing Development</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Awards and Recognition</a></li>
+                    <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion D - Bonus Indicators for Newly Hired Faculty</a></li>
                 </ul>
             </div>
           </div>
