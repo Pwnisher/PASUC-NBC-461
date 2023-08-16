@@ -73,8 +73,8 @@ function showAddForm(option) {
         ]);
         createDynamicInput('im-reviewer-sole', 'Reviewer of Its Equivalent', 'text');
         createDynamicInput('im-pubrepo-sole', 'Publisher/Repository', 'text');
-        createDynamicInput('im-datePublished-sole', 'Date Published', 'date');
-        createDynamicInput('im-dateApproved-sole', 'Date Approved For Use', 'date');
+        createDynamicInput('im-datePubl-sole', 'Date Published', 'date');
+        createDynamicInput('im-dateApprv-sole', 'Date Approved For Use', 'date');
 
         // Co Authorship ----------------------------------------------
         //Note: not sure if ^ should be repeated
@@ -107,28 +107,28 @@ function showAddForm(option) {
         // Adviser/Panel ---------------------------------------------
         createDynamicLabel('SPECIAL/CAPSTONE PROJECT');
         // Note: find a way to make it 4 column
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+          createDynamicInput('adviser-CstdNum-q1', 'AY 2019-2020', 'number');
+          createDynamicInput('adviser-CstdNum-q2', 'AY 2020-2021', 'number');
+          createDynamicInput('adviser-CstdNum-q3', 'AY 2021-2022', 'number');
+          createDynamicInput('adviser-CstdNum-q4', 'AY 2022-2023', 'number');
 
         createDynamicLabel('UNDERGRADUATE THESIS');
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+          createDynamicInput('adviser-UstdNum-q1', 'AY 2019-2020', 'number');
+          createDynamicInput('adviser-UstdNum-q2', 'AY 2020-2021', 'number');
+          createDynamicInput('adviser-UstdNum-q3', 'AY 2021-2022', 'number');
+          createDynamicInput('adviser-UstdNum-q4', 'AY 2022-2023', 'number');
 
         createDynamicLabel('MASTERS THESIS');
-        createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-        createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-        createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-        createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+        createDynamicInput('adviser-MstdNum-q1', 'AY 2019-2020', 'number');
+        createDynamicInput('adviser-MstdNum-q2', 'AY 2020-2021', 'number');
+        createDynamicInput('adviser-MstdNum-q3', 'AY 2021-2022', 'number');
+        createDynamicInput('adviser-MstdNum-q4', 'AY 2022-2023', 'number');
 
         createDynamicLabel('DISSERTATION');
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+          createDynamicInput('adviser-DstdNum-q1', 'AY 2019-2020', 'number');
+          createDynamicInput('adviser-DstdNum-q2', 'AY 2020-2021', 'number');
+          createDynamicInput('adviser-DstdNum-q3', 'AY 2021-2022', 'number');
+          createDynamicInput('adviser-DstdNum-q4', 'AY 2022-2023', 'number');
         
         // Repeat ^ to Panel -----------------------------------------
 

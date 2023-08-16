@@ -34,7 +34,7 @@ function showAddForm(option) {
         createDynamicInput('rePub-journal-sole', 'Name of Journal/Publisher', 'text');
         createDynamicInput('rePub-reviewer-sole', 'Reviewer or its Equivalent', 'text');
         createDynamicInput('rePub-intIndex-sole', 'International Indexing Body', 'text');
-        createDynamicInput('rePub-datePublished-sole', 'Date Published', 'date');
+        createDynamicInput('rePub-datePubl-sole', 'Date Published', 'date');
         
         // Co Authorship ----------------------------------------------
         //Note: not sure if ^ should be repeated
@@ -43,7 +43,7 @@ function showAddForm(option) {
       // Research Output Translated --------------------------------------------------------------------
         // Lead Researcher --------------------------------------------
         createDynamicInput('reTrans-title-sole', 'Title of Research', 'text');
-        createDynamicInput('reTrans-dateCompleted-sole', 'Date Completed', 'date');
+        createDynamicInput('reTrans-dateComp-sole', 'Date Completed', 'date');
         createDynamicInput('reTrans-namePPP-sole', 'Name of Project, Policy, or Product', 'text');
         createDynamicInput('reTrans-fundSource-sole', 'Funding Source', 'text');
         createDynamicInput('reTrans-dateIAD-sole', 'Date Implemented, Adopted, or Developed', 'date');
@@ -55,7 +55,7 @@ function showAddForm(option) {
       // Research Output Cited -------------------------------------------------------------------------
         // Local Authors ----------------------------------------------
         createDynamicInput('reCited-titleJA-local', 'Title of Journal Article', 'text');
-        createDynamicInput('reCited-datePublished-local', 'Date Published', 'date');
+        createDynamicInput('reCited-datePubl-local', 'Date Published', 'date');
         createDynamicInput('reCited-nameJ-local', 'Name of Journal', 'text');
         createDynamicInput('reCited-citeNo-local', 'No. of Citation', 'text');
         createDynamicInput('reCited-citeIndex-local', 'Citation Index', 'text');
@@ -67,83 +67,153 @@ function showAddForm(option) {
     else if (option === "criterionB") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion B: Inventions";
         addPageKRA.innerHTML = "KRA II - RESEARCH, INVENTION, AND CREATIVE WORK";
-
-      // Instructional Material -------------------------------------
-        // Sole Authorship --------------------------------------------
-        createDynamicInput('im-title-sole', 'Title of Instructional Material', 'text');
-        createDynamicSelect('im-type-sole', 'Type of Instructional Material', [
-            { value: 'Textbook', label: 'Textbook' },
-            { value: 'Textbook Chapter', label: 'Textbook Chapter' },
-            { value: 'Manual/Module', label: 'Manual/Module' },
-            { value: 'Multimedia Teaching Materials', label: 'Multimedia Teaching Materials' },
-            { value: 'Testing Materials', label: 'Testing Materials' }
+      
+      // PATENTED -----------------------------------------------------------------------
+      // Invention Patents ------------------------------------------
+        // Sole Inventor ----------------------------------------------
+        createDynamicInput('invP-name-sole', 'Name of the Invention', 'text');
+        createDynamicInput('invP-appDate-sole', 'Application Date', 'date');
+        createDynamicSelect('invP-appStage-sole', 'Patent Application Stage', [
+            { value: 'Accepted', label: 'Accepted' },
+            { value: 'Published', label: 'Published' },
+            { value: 'Granted', label: 'Granted' }
         ]);
-        createDynamicInput('im-reviewer-sole', 'Reviewer of Its Equivalent', 'text');
-        createDynamicInput('im-pubrepo-sole', 'Publisher/Repository', 'text');
-        createDynamicInput('im-datePublished-sole', 'Date Published', 'date');
-        createDynamicInput('im-dateApproved-sole', 'Date Approved For Use', 'date');
+        createDynamicInput('invP-dateAPG-sole', 'Date Accepted, Published, or Granted', 'date');
 
-        // Co Authorship ----------------------------------------------
+        // Multiple Inventors -----------------------------------------
         //Note: not sure if ^ should be repeated
-        createDynamicInput('im-contribution-co', 'Percentage (%) Contribution', 'number');
+        createDynamicInput('invP-contribution-mult', 'Percentage (%) Contribution', 'number');
 
 
-      // Acadmic Programs -------------------------------------------
-      createDynamicInput('ap-name', 'Complete Name of Academic Degree Program', 'text');
-      createDynamicSelect('ap-type', 'Type of Program', [
-            { value: 'New Program', label: 'New Program' },
-            { value: 'Revised Program', label: 'Revised Program' }
+      // Utility Models and Industrial Designs ----------------------
+        // Sole Inventor ----------------------------------------------
+        createDynamicInput('umidP-name-sole', 'Name of the Invention', 'text');
+        createDynamicSelect('umidP-type-sole', 'Type of Patent', [
+            { value: 'Utility Model', label: 'Utility Model' },
+            { value: 'Industrial Design', label: 'Industrial Design' }
         ]);
-      createDynamicInput('ap-boardReso', 'Board Approval (Board Resolution No.)', 'text');
-      createDynamicSelect('ap-acadYear', 'Academic Year Implemented', [
-            { value: '2019-2020', label: '2019-2020' },
-            { value: '2020-2021', label: '2020-2021' },
-            { value: '2021-2022', label: '2021-2022' },
-            { value: '2022-2023', label: '2022-2023' }
+        createDynamicInput('umidP-dateApp-sole', 'Date of Application', 'date');
+        createDynamicInput('umidP-dateGrant-sole', 'Date Granted', 'date');
+        
+        // Multiple Inventors -----------------------------------------
+        //Note: not sure if ^ should be repeated
+        createDynamicInput('umidP-contribution-mult', 'Percentage (%) Contribution', 'number');
+
+
+      // Commercialized Patented ------------------------------------
+        // Local ----------------------------------------------
+        createDynamicInput('comP-name-local', 'Name of the Patented Product', 'text');
+        createDynamicInput('comP-type-local', 'Type of Product', 'text');
+        createDynamicInput('comP-datePat-local', 'Date Patented', 'date');
+        createDynamicInput('comP-dateCom-local', 'Date Product was First Commercialized', 'date');
+        createDynamicInput('comP-areaCom-local', 'Area/Place Commercialized', 'text');
+
+        // International --------------------------------------
+        //Note: not sure if ^ should be repeated (completely same sa local)
+
+
+      // NON-PATENTABLE -----------------------------------------------------------------
+      // New Software Products --------------------------------------
+        // Sole Developer ---------------------------------------------
+        createDynamicInput('newspNP-name-sole', 'Name of the Software', 'text');
+        createDynamicInput('newspNP-dateCop-sole', 'Date Copyrighted', 'date');
+        createDynamicInput('newspNP-dateUtil-sole', 'Date Utilized', 'date');
+        createDynamicInput('newspNP-endUser-sole', 'Name of End User/s', 'text');
+        // Multiple Developer -----------------------------------------
+        //Note: not sure if ^ should be repeated
+        createDynamicInput('newspNP-contribution-mult', 'Percentage (%) Contribution', 'number');
+
+      // Updated Software Products ----------------------------------
+        // Sole/Co Developer ------------------------------------------
+        createDynamicInput('upspNP-name', 'Name of the Software', 'text');
+        createDynamicInput('upspNP-dateCop', 'Date Copyrighted', 'date');
+        createDynamicInput('upspNP-dateUtil', 'Date Utilized', 'date');
+        createDynamicSelect('upspNP-contribution', 'Contribution', [
+            { value: 'Sole Developer', label: 'Sole Developer' },
+            { value: 'Co-Developer', label: 'Co-Developer' }
         ]);
-        createDynamicSelect('ap-role', 'Role', [
-            { value: 'Lead', label: 'Lead' },
-            { value: 'Contributor', label: 'Contributor' }
-        ]);
+        createDynamicInput('upspNP-newFeat', 'specify New Features', 'text');
+        createDynamicInput('upspNP-endUser', 'Name of End User/s', 'text');
+
+      // New Variety, Breed, Strain ---------------------------------
+        // Sole Developer ---------------------------------------------
+        createDynamicInput('vbsNP-name-sole', 'Name of the Plant Variety, Animal Breed, or Microbial Strain', 'text');
+        createDynamicInput('vbsNP-type-sole', 'Type (Plant, Animal, or Microbe)', 'text');
+        createDynamicInput('vbsNP-dateComp-sole', 'Date Completed', 'date');
+        createDynamicInput('vbsNP-dateReg-sole', 'Date Registered', 'date');
+        createDynamicInput('vbsNP-dateProp-sole', 'Date of Propagation based on Certification', 'date');
+        // Multiple Developer -----------------------------------------
+        //Note: not sure if ^ should be repeated
+        createDynamicInput('vbsNP-contribution-mult', 'Percentage (%) Contribution', 'number');
 
     } 
     else if (option === "criterionC") { //------------------------------------------------------------------
-        addPageTitle.innerHTML = "Criterion C";
+        addPageTitle.innerHTML = "Criterion C: Creative Works";
         addPageKRA.innerHTML = "KRA II - RESEARCH, INVENTION, AND CREATIVE WORK";
 
-        // Adviser/Panel ---------------------------------------------
-        createDynamicLabelOnly('SPECIAL/CAPSTONE PROJECT');
-        // Note: find a way to make it 4 column
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+      // Creative Performing Artwork --------------------------------
+        createDynamicInput('cpa-title', 'Title of Creative Performing Art', 'text');
+        createDynamicSelect('cpa-type', 'Type of Performing Art', [
+            { value: 'Song/Music', label: 'Song/Music' },
+            { value: 'Choreography/Dance', label: 'Choreography/Dance' },
+            { value: 'Drama/Theater', label: 'Drama/Theater' },
+            { value: 'Others', label: 'Others' }
+        ]);
+        createDynamicSelect('cpa-class', 'Classification', [
+            { value: 'New Creation', label: New Creation },
+            { value: 'Own Work', label: 'Own Work' },
+            { value: 'Work of Others', label: 'Work of Others' }
+        ]);
+        createDynamicInput('cpa-dateCop', 'Date Copyrighted/Date Performed', 'date');
+        createDynamicInput('cpa-venue', 'Venue of Performance', 'text');
+        createDynamicInput('cpa-org', 'Organizer of the Event (or Publisher if Possible)', 'text');
 
-        createDynamicLabelOnly('UNDERGRADUATE THESIS');
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+      // Exhibition -------------------------------------------------
+      createDynamicInput('exh-title', 'Title of Creative Work', 'text');
+      createDynamicSelect('exh-type', 'Type of Creative Work', [
+            { value: 'Painting/Drawing', label: 'Painting/Drawing' },
+            { value: 'Film/Short Film', label: 'Film/Short Film' },
+            { value: 'Architectural Design', label: 'Architectural Design' },
+            { value: 'Multimedia', label: 'Multimedia' },
+            { value: 'Photography', label: 'Photography' },
+            { value: 'Sculpture', label: 'Sculpture' },
+            { value: 'Others', label: 'Others' }
+      ]);
+      createDynamicSelect('exh-class', 'Classification', [
+            { value: 'Visual Arts', label: 'Visual Arts' },
+            { value: 'Architecture', label: 'Architecture' },
+            { value: 'Film', label: 'Film' },
+            { value: 'Multimedia', label: 'Multimedia' }
+      ]);
+      createDynamicInput('exh-dateExh', 'Exhibition Date', 'date');
+      createDynamicInput('exh-venue', 'Venue of Exhibit', 'text');
+      createDynamicInput('exh-org', 'Organizer of the Event', 'text');
 
-        createDynamicLabelOnly('MASTERS THESIS');
-        createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-        createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-        createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-        createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+      // Juried or Peer-reviewed Designs ----------------------------
+      createDynamicInput('des-title', 'Title of Design', 'text');
+      createDynamicSelect('des-class', 'Classification', [
+            { value: 'Architecture', label: 'Architecture' },
+            { value: 'Engineering', label: 'Engineering' },
+            { value: 'Industrial Design', label: 'Industrial Design' }
+      ]);
+      createDynamicInput('des-reviewer', 'Reviewer, Evaluator or Its Equivalent', 'text');
+      createDynamicInput('des-dateAct', 'Activity/Exhibition Date', 'date');
+      createDynamicInput('des-venue', 'Venue of Activity/Exhibit', 'text');
+      createDynamicInput('des-org', 'Organizer', 'text');
 
-        createDynamicLabelOnly('DISSERTATION');
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
-        
-        // Repeat ^ to Panel -----------------------------------------
-
-        // Mentor ----------------------------------------------------
-        createDynamicInput('mentor-compeName', 'Name of Academic Competition', 'text');
-        createDynamicInput('mentor-sponsorOrg', 'Name of Sponsor Organization', 'text');
-        createDynamicInput('mentor-awardName', 'Award Received', 'text');
-        createDynamicInput('mentor-awardDate', 'Date Awarded', 'date');
+      // Literary Publications --------------------------------------
+      createDynamicInput('lit-title', 'Title of Literary Publications', 'text');
+      createDynamicSelect('lit-type', 'Type of Literary Publications', [
+            { value: 'Novel', label: 'Novel' },
+            { value: 'Short Story', label: 'Short Story' },
+            { value: 'Essay', label: 'Essay' },
+            { value: 'Poetry', label: 'Poetry' },
+            { value: 'Others', label: 'Others' }
+      ]);
+      createDynamicInput('lit-reviewer', 'Reviewer, Evaluator or Its Equivalent', 'text');
+      createDynamicInput('lit-namePubli', 'Name of Publication', 'text');
+      createDynamicInput('lit-namePress', 'Name of Publisher/Press', 'text');
+      createDynamicInput('lit-datePubl', 'Organizer', 'date');
     }
 }
 </script>
