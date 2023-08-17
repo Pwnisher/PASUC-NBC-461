@@ -54,9 +54,39 @@
                 </span>
               </div>
               <hr>
-              <div>
-              <!-- date picker -->
+              <!-- Date Picker -->
+              <div class="flex flex-row justify-center space-x-4">
+                <!-- From -->
+                <div class="bg-gray-200 p-4 rounded-lg">
+                  <label class="block mb-2 font-semibold text-xs">From:</label>
+                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-xs" max="9999-12-31">
+                </div>
+
+                <!-- To -->
+                <div class="bg-gray-200 p-4 rounded-lg">
+                  <label class="block mb-2 font-semibold text-xs">To:</label>
+                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-xs" max="9999-12-31">
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col">
+                  <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center justify-center mb-2">
+                    <i class="fas fa-sort mr-2" style="line-height: 0;"></i> Sort
+                  </button>
+                  <div class="relative inline-block">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center" onclick="toggleCycleDropdown()">
+                      <i class="fas fa-cog mr-2"></i> Cycle
+                    </button>
+                    <ul id="cycleDropdown" class="absolute left-0 mt-2 py-1 text-sm bg-white border rounded-lg w-32 hidden">
+                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('8th')">8th cycle</li>
+                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('9th')">9th cycle</li>
+                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('10th')">10th cycle</li>
+                    </ul>
+                  </div>
+                </div>
+
               </div>
+              <script src="{{ asset('js/contentOperations.js') }}"></script>
               <!--Limit and Search-->
               <div class="flex flex-row items-stretch justify-between">
                 <!--Show entries-->
@@ -96,12 +126,13 @@
                     <table class="table-auto w-full">
                         <thead class="bg-red-800 text-white">
                             <tr>
-                                <th class="py-4 px-6 text-left">  </th>
-                                <th class="py-4 px-6 cursor-pointer text-left">File Title</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Date <span class="text-xs">(mm/dd/yy)</span></th>
+                                <th id="num_id" class="py-4 px-6 text-left">  </th>
+                                <th id="title" class="py-4 px-6 cursor-pointer text-left">Title</th>
+                                <th id="inclusive_date" class="py-4 px-6 cursor-pointer text-left">Inclusive Date</th>
+                                <th class="py-4 px-6 cursor-pointer text-left">Accomplishment</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Cycle</th>
+                                <th class="py-4 px-6 cursor-pointer text-left">Date Submitted</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Status</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Notes</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Actions</th>
                             </tr>
                         </thead>
@@ -110,31 +141,27 @@
                               <td class="py-4 px-6">1</td>
                               <td class="py-4 px-6">Document 1</td>
                               <td class="py-4 px-6">08/14/23</td>
-                              <td class="py-4 px-6">9th cycle</td>
+                              <td class="py-4 px-6">Extension</td>
+                              <td class="py-4 px-6">9th Cycle</td>
+                              <td class="py-4 px-6">8/17/2023</td>
                               <td class="py-4 px-6">Pending</td>
-                              <td class="py-4 px-6">-</td>
                               <td class="py-4 px-6">
                                   <div class="flex justify-between w-full space-x-4">
-                                      <button class="flex-1 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded-md">View</button>
-                                      <button class="flex-1 px-4 py-2 bg-yellow-500 text-white hover:bg-yellow-700 rounded-md">Edit</button>
-                                      <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md">Submit</button>
-                                      <button class="flex-1 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md">Delete</button>
+                                      <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md">Apply</button>
                                   </div>
                               </td>
                           </tr>
                           <tr class="hover:bg-gray-100">
-                              <td class="py-4 px-6">2</td>
-                              <td class="py-4 px-6">Certificate</td>
+                              <td class="py-4 px-6">1</td>
+                              <td class="py-4 px-6">Document 1</td>
                               <td class="py-4 px-6">08/14/23</td>
-                              <td class="py-4 px-6">9th cycle</td>
-                              <td class="py-4 px-6">Evaluated</td>
-                              <td class="py-4 px-6">-</td>
+                              <td class="py-4 px-6">Extension</td>
+                              <td class="py-4 px-6">9th Cycle</td>
+                              <td class="py-4 px-6">8/17/2023</td>
+                              <td class="py-4 px-6">Pending</td>
                               <td class="py-4 px-6">
                                   <div class="flex justify-between w-full space-x-4">
-                                      <button class="flex-1 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded-md">View</button>
-                                      <button class="flex-1 px-4 py-2 bg-yellow-500 text-white hover:bg-yellow-700 rounded-md">Edit</button>
-                                      <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md">Submit</button>
-                                      <button class="flex-1 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md">Delete</button>
+                                      <button class="flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md" disabled>Applied</button>
                                   </div>
                               </td>
                           </tr>

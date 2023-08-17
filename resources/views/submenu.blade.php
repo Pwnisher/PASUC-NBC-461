@@ -48,4 +48,4 @@
         </a>
     </div>
 </div>
-<script src="{{ asset('js/operations.js') }}"></script>
+<script src="{{ asset('js/navbarOperations.js') }}"></script>

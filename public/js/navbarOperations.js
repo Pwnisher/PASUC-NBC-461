@@ -38,14 +38,14 @@ mobileMenuButton.addEventListener("click", () => {
 const submenuBtn = document.getElementById("application_btn");
   const submenu = document.getElementById("accomplishment-container");
 
-  submenuBtn.addEventListener("click", (event) => {
-    event.stopPropagation();
-    submenu.classList.toggle("hidden");
-  });
+submenuBtn.addEventListener("click", (event) => {
+  event.stopPropagation();
+  submenu.classList.toggle("hidden");
+});
 
-  document.addEventListener("click", () => {
-    if (!submenu.classList.contains("hidden")) {
-      submenu.classList.add("hidden");
-    }
-  });
+document.addEventListener("click", () => {
+  if (!submenu.classList.contains("hidden")) {
+    submenu.classList.add("hidden");
+  }
+});
   
