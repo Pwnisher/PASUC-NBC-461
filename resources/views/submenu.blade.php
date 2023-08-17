@@ -1,4 +1,4 @@
-<div id="accomplishment-container" class="hidden relative rounded-md p-4 shadow-lg w-full h-auto border bg-ghostwhite border-gray-300 z-[9999]">
+<div id="accomplishment-container" class="hidden fixed inset-x-0 top-[10%] z-[9000] p-4 bg-ghostwhite shadow-lg border border-gray-300 rounded-md overflow-y-auto">
     <div class="absolute inset-0 bg-center" style="background-image: url('{{ asset('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
     <div class="mx-auto w-[95%] relative z-10"> <!-- mey kulang na /div, pero it breaks pag nilagyan lmao //jelo -->
       <div class="flex flex-row items-stretch justify-between">
