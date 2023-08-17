@@ -5,12 +5,12 @@
       <div class="flex items-center space-x-7">
         <a href="#" class="flex items-center py-2">
           <img src="{{ URL('storage/PUP.png') }}" alt="Logo" class="h-8 w-8 mr-2">
-          <span class="font-medium text-white text-xl">PASUC NBC 461 EMIS</span>
+          <span class="font-medium text-white text-base">PASUC NBC 461 EMIS</span>
         </a>
         <div class="hidden md:flex items-center space-x-3">
-          <a href="{{ url('/home') }}"  class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
-          <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">eQAR Documents</button>
-          <a href="{{ url('/addsummary') }}" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
+          <a id="home_btn" href="{{ url('/home') }}"  class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
+          <a id="eqar_btn" href="{{ url('/eqar') }}" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">eQAR Documents</a>
+          <button id="application_btn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Application</button>
         </div>
       </div>
 

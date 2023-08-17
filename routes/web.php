@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddController;
-use App\Http\Controllers\AddSummaryController;
+use App\Http\Controllers\TabController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +15,14 @@ use App\Http\Controllers\AddSummaryController;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/eqar', [AddSummaryController::class, 'eqar']);
-Route::get('/accomplishment', [AddSummaryController::class, 'addsummary']);
+Route::get('/home', [TabController::class, 'home']);
+Route::get('/eqar', [TabController::class, 'eqar']);
+Route::get('/application', [TabController::class, 'application']);
+
 Route::get('/add', [AddController::class, 'add']);
 Route::get('/add-documents-KRA1', [AddController::class, 'showPAGEaddKRA1']);
 Route::get('/add-documents-KRA2', [AddController::class, 'showPAGEaddKRA2']);

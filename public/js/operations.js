@@ -35,7 +35,7 @@ mobileMenuButton.addEventListener("click", () => {
   }
 });
 
-const submenuBtn = document.getElementById("accomplishmentBtn");
+const submenuBtn = document.getElementById("application_btn");
   const submenu = document.getElementById("accomplishment-container");
 
   submenuBtn.addEventListener("click", (event) => {

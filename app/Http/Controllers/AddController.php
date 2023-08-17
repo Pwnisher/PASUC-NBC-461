@@ -6,18 +6,6 @@ use Illuminate\Http\Request;
 
 class AddController extends Controller
 {
-    public function home() {
-        return view('home');
-    }
-
-    public function eqar() {
-        return view('eqar');
-    }
-
-    public function accomplishment() {
-        return view('addsummary');
-    }
-
     public function add() {
         return view('add');
     }

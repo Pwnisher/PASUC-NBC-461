@@ -24,7 +24,7 @@
       <div class="flex-1 relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
           <div id="title_bar-container" class="bg-transparent text-left w-5/6">
-            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Course Syllabus / Guide Developed / Revised / Enhanced</h3>
+            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Qualified Consolidated eQAR Documents</h3>
           </div>
           <div id="add_summary_container" class="bg-white rounded-md p-4 shadow-lg w-5/6 border border-gray-300 relative">
             <div class="flex flex-col items-stretch space-y-2">
@@ -33,11 +33,12 @@
                   <i class="fas fa-lightbulb text-xs"></i>
                   <strong class="text-xs">Reminders:</strong>
                   <p class="ml-8 text-xs">
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
+                    • The system is connected to the PUP eQAR system, so no need to re-upload the same accomplishment. <br>
+                    • Upload your supporting documents on the Application tab. <br>
+                    • Once you apply an accomplishment, you are not allowed to undo it. If you want to remove the accomplishment, go to <a href="{{ url('/application') }}"><b>Application</b></a> tab and click "Remove". <br>
+                    • The application is based on the current cycle of the PASUC NBC No. 461.<br>
+                    • Once the accomplishment is applied for promotion, please go to <a href="{{ url('/application') }}"><b>Application</b></a> tab to add supporting documents.<br>
+                    • The system will automatically categorize the applied accomplishment. Click on the sub-menu of the <a href="{{ url('/application') }}"><b>Application</b></a> tab, or check the overall list on the <a href="{{ url('/application') }}"><b>Application</b></a> tab.<br>
                   </p>
                 </span>
               </div>
@@ -46,24 +47,16 @@
                   <i class="fas fa-lightbulb text-xs"></i>
                   <strong class="text-xs">Instructions</strong>
                   <p class="ml-8 text-xs">
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
+                    • Verify the accomplishment before clicking the "Apply" button.<br>
+                    • Once settled, please click the "Apply" button to the accomplishment you want to submit for the PASUC NBC 461 evaluation.<br>
+                    • The system will turn the button to violet if the accomplishment is successfully in the PASUC NBC 461 evaluation system. <br>
                   </p>
                 </span>
               </div>
-              <!--Add Accomplishment Button-->
-              <div class="flex items-center space-x-2">
-                <div class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded cursor-pointer">
-                  <div class="flex items-center space-x-2">
-                    <i class="fas fa-plus text-xs"></i>
-                    <p class="text-xs">Add an accomplishment</p>
-                  </div>
-                </div>
-              </div>
               <hr>
+              <div>
+              <!-- date picker -->
+              </div>
               <!--Limit and Search-->
               <div class="flex flex-row items-stretch justify-between">
                 <!--Show entries-->

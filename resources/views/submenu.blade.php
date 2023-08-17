@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="relative w-full bg-transparent border-green-500 text-base rounded-md items-center text-center p-5 mt-3">
-        <a href="{{ url('/eqar') }}"  class="absolute inset-0 flex items-center justify-center cursor-pointer bg-green-600 text-white text-base rounded-md">
+        <a href="{{ url('/application') }}"  class="absolute inset-0 flex items-center justify-center cursor-pointer bg-green-600 text-white text-base rounded-md">
             See all qualified consolidated accomplishments
         </a>
     </div>

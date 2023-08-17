@@ -14,7 +14,7 @@
   </head>
   <body class = "bg-ghostwhite">
     <div class="flex h-screen flex-col ">
-      <div>
+      <div class="h-[10%]">
         <!--Navigation Bar-->
         @include('navbar')
         <!--Submenu Modal-->
