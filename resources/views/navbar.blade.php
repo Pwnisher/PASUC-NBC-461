@@ -1,4 +1,4 @@
-<div class="bg-navbar sticky top-0 z-[10000]">
+<div class="bg-navbar sticky top-0 z-[10000] text-xs">
   <div class="w-[90%] mx-auto h-16">
     <div class="flex items-center justify-between h-full">
       <!-- Logo and Navigation Section -->
