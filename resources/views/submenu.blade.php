@@ -1,4 +1,4 @@
-<div id="accomplishment-container" class="hidden fixed inset-x-0 t-0 z-[9000] p-4 bg-ghostwhite shadow-lg border border-gray-300 rounded-md overflow-y-auto w-screen">
+<div id="accomplishment-container" class="hidden fixed inset-x-0 top-[10%] z-[999] p-4 bg-ghostwhite shadow-lg border border-gray-300 rounded-md overflow-y-auto w-screen">
     <div class="absolute inset-0 bg-center" style="background-image: url('{{ asset('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
     <div class="mx-auto w-[95%] relative z-10">
       <div class="flex flex-row items-stretch justify-between">
