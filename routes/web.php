@@ -15,7 +15,7 @@ use App\Http\Controllers\AddSummaryController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 });
 
