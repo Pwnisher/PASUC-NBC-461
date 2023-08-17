@@ -17,7 +17,7 @@
       <!--Navigation Bar-->
       <div class="flex-none">
         <nav class="bg-navbar shadow-lg sticky top-0 h-16 text-xs pl-10 pr-10 z-[9999]">
-          <div class="max-w-[80%] mx-auto h-full">
+          <div class="w-5/6 mx-auto h-full">
             <div class="flex justify-between items-center h-full">
               <div class="flex items-center space-x-7">
                 <a href="#" class="flex items-center py-2 mr-5">
