@@ -165,4 +165,17 @@ function showAddForm(option) {
         createDynamicCheckbox('checkbox-1', 'Checkbox 1');
         createDynamicCheckbox('checkbox-2', 'Checkbox 2');
     }
+    else if (option === "criterionD") {
+        addPageTitle.innerHTML = "Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services";
+        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
+
+        // Calls function to create unique select
+        createDynamicSelect('grid-state-4', 'Type of Evaluation 4', [
+            { value: 'part5', label: 'Evaluation 5' },
+            { value: 'part6', label: 'Evaluation 6' }
+        ]);
+        // Calls function to create unique checkbox
+        createDynamicCheckbox('checkbox-1', 'Checkbox 1');
+        createDynamicCheckbox('checkbox-2', 'Checkbox 2');
+    }
 }

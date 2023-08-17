@@ -18,124 +18,115 @@ function showAddForm(option) {
     clearDynamicFormContainer();
 
     if (option === "criterionA") { //------------------------------------------------------------------
-        addPageTitle.innerHTML = "Teaching Effectiveness";
-        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
+        addPageTitle.innerHTML = "Involvement in Professional Organizations";
+        addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
-      // Student Evaluation -------------------------------------
-        createDynamicInput('stdEval-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number');
-        createDynamicSelect('stdEval-reason', 'Reason for Reducing the Divisor', [
-            { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
-            { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
-            { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
-            { value: 'ON APPROVED MATERNITY LEAVE', label: 'ON APPROVED MATERNITY LEAVE' }
+      // TODO:ADD DIFFERENT ID NAME -------------------------------------
+        createDynamicInput('indivMember-NameOrg', 'Name of Organization', 'text');
+        createDynamicInput('indivMember-TypeOrg', 'Type of Organization', 'text');
+        createDynamicInput('indivMember-ActivityOrg', 'Activity of the Organization Participated by the Faculty', 'text');
+        createDynamicSelect('indivMember-Role', 'Role or Contribution to the activity of the Organization', [
+            { value: 'BOARD MEMBER', label: 'BOARD MEMBER' },
+            { value: 'OFFICER', label: 'OFFICER' },
+            { value: 'LEAD ORGANIZER', label: 'LEAD ORGANIZER' },
+            { value: 'CO-ORGANIZER', label: 'CO-ORGANIZER' },
+            { value: 'COMMITTEE CHAIR', label: 'COMMITTEE CHAIR' },
+            { value: 'COMMITTEE MEMBER', label: 'COMMITTEE MEMBER' },
+            { value: 'MODERATOR', label: 'MODERATOR' },
+            { value: 'FACILITATOR', label: 'FACILITATOR' },            
         ]);
-        // Note: need flexible
-        createDynamicSelect('stdEval-period', 'Evaluation Period', [
-            { value: 'AY 2019-2020', label: 'AY 2019-2020' },
-            { value: 'AY 2020-2021', label: 'AY 2020-2021' },
-            { value: 'AY 2021-2022', label: 'AY 2021-2022' },
-            { value: 'AY 2022-2023', label: 'AY 2022-2023' }
-        ]);
-        createDynamicCheckbox('stdEval-SD1', 'Student Evaluation Rating using prescribed template');
-
-      // Supervisor Evaluation -----------------------------------
-        createDynamicInput('supEval-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number');
-
-        createDynamicSelect('supEval-reason', 'Reason for Reducing the Divisor', [
-            { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
-            { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
-            { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
-            { value: 'ON APPROVED MATERNITY LEAVE', label: 'ON APPROVED MATERNITY LEAVE' }
-        ]);
-        // Note: need flexible
-        createDynamicSelect('supdEval-period', 'Evaluation Period', [
-            { value: 'AY 2019-2020', label: 'AY 2019-2020' },
-            { value: 'AY 2020-2021', label: 'AY 2020-2021' },
-            { value: 'AY 2021-2022', label: 'AY 2021-2022' },
-            { value: 'AY 2022-2023', label: 'AY 2022-2023' }
-        ]);
-        createDynamicCheckbox('supEval-SD1', 'Supervisor Evaluation Rating using prescribed template');
+        createDynamicInput('indivMember-DateActivity', 'DATE OF ACTIVITY', 'date');      
     } 
     else if (option === "criterionB") { //------------------------------------------------------------------
-        addPageTitle.innerHTML = "Curriculum and Instructional Materials Developed";
-        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
+        addPageTitle.innerHTML = "Continuing Development";
+        addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
-      // Instructional Material -------------------------------------
-        // Sole Authorship --------------------------------------------
-        createDynamicInput('im-title-sole', 'Title of Instructional Material', 'text');
-        createDynamicSelect('im-type-sole', 'Type of Instructional Material', [
-            { value: 'Textbook', label: 'Textbook' },
-            { value: 'Textbook Chapter', label: 'Textbook Chapter' },
-            { value: 'Manual/Module', label: 'Manual/Module' },
-            { value: 'Multimedia Teaching Materials', label: 'Multimedia Teaching Materials' },
-            { value: 'Testing Materials', label: 'Testing Materials' }
-        ]);
-        createDynamicInput('im-reviewer-sole', 'Reviewer of Its Equivalent', 'text');
-        createDynamicInput('im-pubrepo-sole', 'Publisher/Repository', 'text');
-        createDynamicInput('im-datePublished-sole', 'Date Published', 'date');
-        createDynamicInput('im-dateApproved-sole', 'Date Approved For Use', 'date');
+      // Educational Qualifications -------------------------------------
+        // For Doctorate Degree --------------------------------------------
+        createDynamicInput('qualDoc-NameDegree', 'Complete Name of the Doctorate Degree', 'text');
+        createDynamicInput('qualDoc-NameInstitution', 'Name of the Institution Where the Degree was Earned', 'text');
+        createDynamicInput('qualDoc-DateComp', 'Date Completed', 'date');
+        createDynamicSelect('qualDoc-IsQualified', 'Is the Faculty Qualified for the Automatic 1 Sub-Rank Increase?', [
+            { value: 'YES', label: 'YES' },
+            { value: 'NO', label: 'NO' },            
+        ]);        
 
-        // Co Authorship ----------------------------------------------
+        // Additional Degrees ----------------------------------------------
         //Note: not sure if ^ should be repeated
-        createDynamicInput('im-contribution-co', 'Percentage (%) Contribution', 'number');
+        createDynamicSelect('qualAdd-Degree', 'Degree', [
+            { value: 'ADDITIONAL DOCTORATE DEGREE', label: 'ADDITIONAL DOCTORATE DEGREE' },
+            { value: 'ADDITIONAL MASTER DEGREE', label: 'ADDITIONAL MASTER DEGREE' },
+            { value: 'POST-DOCTORATE DIPLOMA/CERTIFICATE', label: 'POST-DOCTORATE DIPLOMA/CERTIFICATE' },
+            { value: 'POST-MASTERS DIPLOMA/CERTIFICATE', label: 'POST-MASTERS DIPLOMA/CERTIFICATE' },
+        ]);     
+        createDynamicInput('qualAdd-DegreeName', 'Degree Name', 'text');
+        createDynamicInput('qualAdd-NameHEI', 'Name of HEI', 'text');
+        createDynamicInput('qualAdd-DateComp', 'Date Completed', 'date');
 
+        // For Every Participation in Conferences, Seminars, Workshops, Industry Immersion ----------------------------------------------
+        createDynamicInput('participate-NameConference', 'Name of Conference/Training', 'text');
+        createDynamicSelect('participate-Scope', 'Scope', [
+            { value: 'LOCAL', label: 'LOCAL' },
+            { value: 'INTERNATIONAL', label: 'INTERNATIONAL' },            
+        ]);
+        createDynamicInput('participate-Organizer', 'Organizer', 'text');
+        createDynamicInput('participate-DateActivity', 'Date of Activity', 'date');
 
-      // Acadmic Programs -------------------------------------------
-      createDynamicInput('ap-name', 'Complete Name of Academic Degree Program', 'text');
-      createDynamicSelect('ap-type', 'Type of Program', [
-            { value: 'New Program', label: 'New Program' },
-            { value: 'Revised Program', label: 'Revised Program' }
+        // For Every Paper Presentation in Conferences ----------------------------------------------
+        createDynamicInput('paperPresent-TitlePaper', 'Title of Paper', 'text');
+        createDynamicSelect('paperPresent-LocalInternational', 'Local or International', [
+            { value: 'LOCAL', label: 'LOCAL' },
+            { value: 'INTERNATIONAL', label: 'INTERNATIONAL' },  
         ]);
-      createDynamicInput('ap-boardReso', 'Board Approval (Board Resolution No.)', 'text');
-      createDynamicSelect('ap-acadYear', 'Academic Year Implemented', [
-            { value: '2019-2020', label: '2019-2020' },
-            { value: '2020-2021', label: '2020-2021' },
-            { value: '2021-2022', label: '2021-2022' },
-            { value: '2022-2023', label: '2022-2023' }
-        ]);
-        createDynamicSelect('ap-role', 'Role', [
-            { value: 'Lead', label: 'Lead' },
-            { value: 'Contributor', label: 'Contributor' }
-        ]);
-
+        createDynamicInput('paperPresent-TitleConference', 'Title of Conference', 'text');
+        createDynamicInput('paperPresent-ConferenceOrg', 'Conference Organizer', 'text');
+        createDynamicInput('paperPresent-DatePresent', 'Date Presented', 'date');
     } 
     else if (option === "criterionC") { //------------------------------------------------------------------
-        addPageTitle.innerHTML = "Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services";
-        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
+        addPageTitle.innerHTML = "Awards and Recognition";
+        addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
-        // Adviser/Panel ---------------------------------------------
-        createDynamicLabel('SPECIAL/CAPSTONE PROJECT');
-        // Note: find a way to make it 4 column
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+        // For Every Award of Distinction Received in Recognition of Achievement in Relevant Areas of Specialization, Profession and/or Assignment of the Faculty Concerned ---------------------------------------------
+        createDynamicInput('distinct-NameAward', 'Name of the Award', 'text');
+        createDynamicSelect('distinct-ScopeAward', 'Local or International', [
+            { value: 'INSTITUTIONAL', label: 'INSTITUTIONAL' },
+            { value: 'LOCAL', label: 'LOCAL' },  
+            { value: 'REGIONAL', label: 'REGIONAL' },  
+        ]);
+        createDynamicInput('distinct-AwardBody', 'Award-Giving Body/Organization', 'text');
+        createDynamicInput('distinct-DateGiven', 'Date the Award was Given', 'date');
+        createDynamicInput('distinct-VenueAward', 'Venue of the Award Ceremony', 'text');
+    }
+    else if (option === "criterionD") { //------------------------------------------------------------------
+        addPageTitle.innerHTML = "Bonus Indicators for Newly Appointed Faculty";
+        addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
-        createDynamicLabel('UNDERGRADUATE THESIS');
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+        // For Every Year of Full-Time Academic Service in an Institution of Higher Learning As ---------------------------------------------
+        createDynamicSelect('fullTime-Position', 'Designation/Position', [
+            { value: 'PRESIDENT', label: 'PRESIDENT' },
+            { value: 'VICE PRESIDENT, DEAN OR DIRECTOR', label: 'VICE PRESIDENT, DEAN OR DIRECTOR' },  
+            { value: 'DEPARTMENT/PROGRAM HEAD', label: 'DEPARTMENT/PROGRAM HEAD' },  
+            { value: 'FACULTY MEMBER', label: 'FACULTY MEMBER' },  
+        ]);
+        createDynamicInput('fullTime-NameHEI', 'Name of HEI', 'text');
+        createDynamicInput('fullTime-NoYears', 'No. of Years', 'number');
 
-        createDynamicLabel('MASTERS THESIS');
-        createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-        createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-        createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-        createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
+        //Period Covered
+        createDynamicInput('fullTime-PeriodStart', 'Start', 'date');
+        createDynamicInput('fullTime-PeriodEnd', 'End', 'date');
 
-        createDynamicLabel('DISSERTATION');
-          createDynamicInput('adviser-studentNum-q1', 'AY 2019-2020', 'number');
-          createDynamicInput('adviser-studentNum-q2', 'AY 2020-2021', 'number');
-          createDynamicInput('adviser-studentNum-q3', 'AY 2021-2022', 'number');
-          createDynamicInput('adviser-studentNum-q4', 'AY 2022-2023', 'number');
-        
-        // Repeat ^ to Panel -----------------------------------------
+        // For Every Year of Industry Experience (Non-Academic Organization) ---------------------------------------------
+        createDynamicInput('industry-NameCompany', 'Name of Company/Organization', 'text');
+        createDynamicSelect('industry-Designation', 'Designation/Position', [
+            { value: 'MANAGERIAL/SUPERVISORY', label: 'MANAGERIAL/SUPERVISORY' },
+            { value: 'TECHNICAL/SKILLED', label: 'TECHNICAL/SKILLED' },  
+            { value: 'SUPPORT/ADMINISTRATIVE', label: 'SUPPORT/ADMINISTRATIVE' },  
+        ]);        
+        createDynamicInput('industry-NoYears', 'No. of Years', 'number');
 
-        // Mentor ----------------------------------------------------
-        createDynamicInput('mentor-compeName', 'Name of Academic Competition', 'text');
-        createDynamicInput('mentor-sponsorOrg', 'Name of Sponsor Organization', 'text');
-        createDynamicInput('mentor-awardName', 'Award Received', 'text');
-        createDynamicInput('mentor-awardDate', 'Date Awarded', 'date');
+        //Period Covered
+        createDynamicInput('industry-PeriodStart', 'Start', 'date');
+        createDynamicInput('industry-PeriodEnd', 'End', 'date');
     }
 }
 </script>
@@ -145,6 +136,7 @@ function showAddForm(option) {
         <li><a href="#" onclick="showAddForm('criterionA')">Show Page 1</a></li>
         <li><a href="#" onclick="showAddForm('criterionB')">Show Page 2</a></li>
         <li><a href="#" onclick="showAddForm('criterionC')">Show Page 3</a></li>
+        <li><a href="#" onclick="showAddForm('criterionD')">Show Page 4</a></li>
     </ul>
         
 <!-- DYNAMIC PAGE CONTENT -->
