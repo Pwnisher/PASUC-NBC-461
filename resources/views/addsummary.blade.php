@@ -16,10 +16,10 @@
   </head>
   <body class = "bg-ghostwhite">
     <div class="flex h-screen flex-col ">
-        <!--Navigation Bar-->
-        @include('navbar')
-        <!--Submenu Modal-->
-        @include('submenu')
+      <!--Navigation Bar-->
+      @include('navbar')
+      <!--Submenu Modal-->
+      @include('submenu')
       <!--Main Container-->
       <div class="flex-1 relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
