@@ -1,35 +1,3 @@
-//-----------------------------------------------------------------------------------------------
-// WRAP DYNAMIC SELECT & INPUT FOR FLEXIBLE ROWS (CAN BE USED INDIVIDUALLY OR BOTH)
-// (EXAMPLE USE: CHANGE '2' in 1/2 BASED ON NEEDED ROWS) (CAN ALSO USE MULTIPLE SAME/DIFF TYPE)
-// wrapElements([], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-function wrapElements(params, colClass) {
-    const formContainer = document.getElementById('dynamic-form-container');
-
-    const rowDiv = document.createElement('div');
-    rowDiv.className = 'flex flex-wrap -mx-3 mb-6'; 
-
-    // Generate columns for each input or select based on the parameter type
-    for (const param of params) {
-        const [type, ...rest] = param;
-
-        const columnDiv = document.createElement('div');
-        columnDiv.className = colClass;
-
-        if (type === 'input') {
-            const [id, labelText, inputType] = rest;
-            const inputContainerDiv = createDynamicInput(id, labelText, inputType);
-            columnDiv.appendChild(inputContainerDiv);
-        } else if (type === 'select') {
-            const [id, labelText, options, selectClass] = rest;
-            const selectContainerDiv = createDynamicSelect(id, labelText, options, selectClass);
-            columnDiv.appendChild(selectContainerDiv);
-        }
-        rowDiv.appendChild(columnDiv);
-    }
-    formContainer.appendChild(rowDiv);
-}
-
-//-----------------------------------------------------------------------------------------------
 // DYNAMIC LABEL ELEMENT
 function createDynamicLabel(labelText) {
     const labelContainer = document.getElementById('dynamic-form-container');
@@ -43,20 +11,21 @@ function createDynamicLabel(labelText) {
     labelContainer.appendChild(label);
 }
 
-//-----------------------------------------------------------------------------------------------
 // DYNAMIC SELECT ELEMENT
 function createDynamicSelect(id, labelText, options) {
+    const selectContainer = document.getElementById('dynamic-form-container');
+    
     // Create the label
     const label = document.createElement('label');
     label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
     label.setAttribute('for', id);
     label.textContent = labelText;
-
+    
     // Create the select element
     const select = document.createElement('select');
     select.id = id;
     select.className = 'block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500';
-
+    
     // Create the default option
     const defaultOption = document.createElement('option');
     defaultOption.value = '';
@@ -84,18 +53,15 @@ function createDynamicSelect(id, labelText, options) {
     // Append all elements to the container
     dropdownArrowContainer.appendChild(select);
     dropdownArrowContainer.appendChild(dropdownArrow);
-    const containerDiv = document.createElement('div');
-    containerDiv.appendChild(label);
-    containerDiv.appendChild(select);
+    selectContainer.appendChild(label);
+    selectContainer.appendChild(dropdownArrowContainer);
 
-    return containerDiv; // Return the container with label and select
+    selectContainer.appendChild(document.createElement('br'));
 }
 
-//-----------------------------------------------------------------------------------------------
 // DYNAMIC INPUT ELEMENT
 function createDynamicInput(id, labelText, inputType) {
-    // Create a container div for the input element and label
-    const containerDiv = document.createElement('div');
+    const inputContainer = document.getElementById('dynamic-form-container');
 
     // Create the label
     const label = document.createElement('label');
@@ -110,13 +76,12 @@ function createDynamicInput(id, labelText, inputType) {
     input.className = 'block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500';
 
     // Append elements to the container
-    containerDiv.appendChild(label);
-    containerDiv.appendChild(input);
+    inputContainer.appendChild(label);
+    inputContainer.appendChild(input);
 
-    return containerDiv; // Return the container with label and input
+    inputContainer.appendChild(document.createElement('br'));
 }
 
-//-----------------------------------------------------------------------------------------------
 // DYNAMIC CHECKBOX ELEMENT
 function createDynamicCheckbox(id, labelText) {
     const checkboxContainer = document.getElementById('dynamic-form-container');
@@ -139,7 +104,6 @@ function createDynamicCheckbox(id, labelText) {
     checkboxContainer.appendChild(document.createElement('br'));
 }
 
-//-----------------------------------------------------------------------------------------------
 // CLEAR ELEMENTS IN 'dynamic-form-container'
 function clearDynamicFormContainer() {
     const dynamicFormContainer = document.getElementById('dynamic-form-container');
@@ -148,7 +112,6 @@ function clearDynamicFormContainer() {
     }
 }
 
-//-----------------------------------------------------------------------------------------------
 // CHANGE CONTENT PER CRITERIA OPTION
 function showAddForm(option) {
     var addPageTitle = document.getElementById("add_page_title");

@@ -300,8 +300,6 @@
         </div> 
         <!-- END ORIGINAL PAGE CONTENT -->
     </body>
-
-    </script>
 </html>
 
 

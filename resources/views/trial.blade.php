@@ -24,11 +24,59 @@
         <h2 id="add_page_kra">KRA</h2>
     </div>
 
-    <script>
-    // Function to create a dynamic select element
-        function createDynamicSelect(id, labelText, options) {
-            const container = document.getElementById('dynamic-selects-container');
-            
+    <script> 
+        /* For test label columns
+        // COLUMN CLASS BASED ON COLUMN NUMBER
+        function getColumnWidthClass(columnCount) {
+            switch (columnCount) {
+                case 1:
+                    return 'w-full px-3';
+                case 2:
+                    return 'w-full md:w-1/2 px-3';
+                case 3:
+                    return 'w-full md:w-1/3 px-3';
+                // Add more cases as needed
+                default:
+                    return 'w-full px-3';
+            }
+        }
+
+        // COLUMN DIV WITH LABEL
+        function createColumn(labelText, columnWidthClass) {
+            const column = document.createElement('div');
+            column.className = `${columnWidthClass} mb-6 md:mb-0`;
+
+            const label = document.createElement('label');
+            label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
+            label.textContent = labelText;
+
+            column.appendChild(label);
+
+            return column;
+        }
+
+        // DYNAMIC LABEL ELEMENT
+        function createDynamicLabel(columns) {
+            const labelContainer = document.getElementById('dynamic-form-container');
+            const rowDiv = document.createElement('div');
+            rowDiv.className = 'flex flex-wrap -mx-3 mb-6';
+
+            const columnWidthClass = getColumnWidthClass(columns.length);
+
+            for (let i = 0; i < columns.length; i++) {
+                const column = createColumn(columns[i].labelText, columnWidthClass);
+                rowDiv.appendChild(column);
+            }
+
+            labelContainer.appendChild(rowDiv);
+        }
+        */
+        function createDynamicSelect(id, labelText, options, containerClass) {
+            const selectContainer = document.getElementById('dynamic-form-container');
+            // Create a container div for the entire select element
+            const containerDiv = document.createElement('div');
+            containerDiv.className = containerClass; // Set the dynamic class here
+
             // Create the label
             const label = document.createElement('label');
             label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
@@ -67,8 +115,10 @@
             // Append all elements to the container
             dropdownArrowContainer.appendChild(select);
             dropdownArrowContainer.appendChild(dropdownArrow);
-            container.appendChild(label);
-            container.appendChild(dropdownArrowContainer);
+            selectContainer.appendChild(label);
+            selectContainer.appendChild(dropdownArrowContainer);s
+
+            selectContainer.appendChild(document.createElement('br'));
         }
 
     // Function to create a dynamic input element
@@ -111,6 +161,20 @@
                 addPageTitle.innerHTML = "Teaching Effectiveness";
                 addPageKRA.innerHTML = "KRA I - INSTRUCTION";
 
+                const columnSets = [
+                    ['dynamic-select1', 'Select an Option 1', optionsArray1],
+                    ['dynamic-select2', 'Select an Option 2', optionsArray2]
+                ];
+
+                const columnSets = [
+                    ['dynamic-select1', 'Select an Option 1', optionsArray1],
+                    ['dynamic-select2', 'Select an Option 2', optionsArray1]
+                ];
+
+                createDynamicSelectRow(columnSets, 'flex flex-wrap -mx-3');
+
+
+                /*
                 // Call the function to create dynamic select elements for criterionA
                 createDynamicSelect('grid-state-1', 'Type of Evaluation 1', [
                     { value: 'part1', label: 'Student Evaluation' },
@@ -121,11 +185,11 @@
                     { value: 'option1', label: 'Option 1' },
                     { value: 'option2', label: 'Option 2' },
                     { value: 'option3', label: 'Option 3' }
-                ]);
-            } else if (option === "criterionB") {
+                ]);*/
+            } /*else if (option === "criterionB") {
                 addPageTitle.innerHTML = "Curriculum and Instructional Materials Developed";
                 addPageKRA.innerHTML = "KRA I - INSTRUCTION";
-
+                
                 // Call the function to create dynamic select elements for criterionB
                 createDynamicSelect('grid-state-3', 'Type of Evaluation 3', [
                     { value: 'part3', label: 'Evaluation 3' },
@@ -144,7 +208,7 @@
                 ]);
 
                 // Add more dynamic select creations as needed
-            }
+            }*/
         }
     </script>
 </body>

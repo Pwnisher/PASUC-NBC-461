@@ -21,24 +21,24 @@ function showAddForm(option) {
     if (option === "criterionA") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Teaching Effectiveness";
         addPageKRA.innerHTML = "KRA I - INSTRUCTION";
-
+      /*
       // Student Evaluation -------------------------------------
-        createDynamicInput('stdEval-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number');
+        //createDynamicInput('stdEval-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number', 2);
         createDynamicSelect('stdEval-reason', 'Reason for Reducing the Divisor', [
             { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
             { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
             { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
             { value: 'ON APPROVED MATERNITY LEAVE', label: 'ON APPROVED MATERNITY LEAVE' }
-        ]);
+        ], 'w-full md:w-1/2 px-3 mb-6 md:mb-0'); 
         // Note: need flexible
         createDynamicSelect('stdEval-period', 'Evaluation Period', [
             { value: 'AY 2019-2020', label: 'AY 2019-2020' },
             { value: 'AY 2020-2021', label: 'AY 2020-2021' },
             { value: 'AY 2021-2022', label: 'AY 2021-2022' },
             { value: 'AY 2022-2023', label: 'AY 2022-2023' }
-        ]);
+        ]), 'w-full md:w-1/2 px-3 mb-6 md:mb-0';
         createDynamicCheckbox('stdEval-SD1', 'Student Evaluation Rating using prescribed template');
-
+      
       // Supervisor Evaluation -----------------------------------
         createDynamicInput('supEval-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number');
 
@@ -55,8 +55,8 @@ function showAddForm(option) {
             { value: 'AY 2021-2022', label: 'AY 2021-2022' },
             { value: 'AY 2022-2023', label: 'AY 2022-2023' }
         ]);
-        createDynamicCheckbox('supEval-SD1', 'Supervisor Evaluation Rating using prescribed template');
-    } 
+        createDynamicCheckbox('supEval-SD1', 'Supervisor Evaluation Rating using prescribed template');*/
+    } /*
     else if (option === "criterionB") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Curriculum and Instructional Materials Developed";
         addPageKRA.innerHTML = "KRA I - INSTRUCTION";
@@ -137,7 +137,7 @@ function showAddForm(option) {
         createDynamicInput('mentor-sponsorOrg', 'Name of Sponsor Organization', 'text');
         createDynamicInput('mentor-awardName', 'Award Received', 'text');
         createDynamicInput('mentor-awardDate', 'Date Awarded', 'date');
-    }
+    }*/
 }
 </script>
 <!------------------------------------------------------------------------------------------------------->
@@ -166,13 +166,9 @@ function showAddForm(option) {
               <div class="lg:col-span-2">
               <!-- START DYNAMIC FORM -->
               <form>
-                <div class="flex flex-wrap -mx-3 mb-6"> 
-                  <div class="w-full px-3">
-                    <div id="dynamic-form-container">
-                        <!-- CONTENT CHANGES HERE -->
-                    </div>
+                  <div id="dynamic-form-container">
+                    <!-- CONTENT CHANGES HERE -->
                   </div>
-                </div>
 
                 <!-- must always be present in all pages -->
                 <!-- box design for upload document -->

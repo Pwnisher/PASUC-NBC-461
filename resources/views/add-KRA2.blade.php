@@ -23,46 +23,65 @@ function showAddForm(option) {
 
       // Research Output Published --------------------------------------------------------------------
         // Sole Authorship --------------------------------------------
-        createDynamicInput('rePub-title-sole', 'Title of Research Ouput', 'text');
-        createDynamicSelect('rePub-type-sole', 'Type of Research Ouput', [
+        const in_rePub_title = ['input', 'rePub-title-sole', 'Title of Research Ouput', 'text'];
+        const sel_rePub_type = [
+          'select', 'rePub-type-sole', 'Type of Research Ouput', [
             { value: 'Book', label: 'Book' },
             { value: 'Journal Article', label: 'Journal Article' },
             { value: 'Book Chapter', label: 'Book Chapter' },
             { value: 'Monograph', label: 'Monograph' },
             { value: 'Other Peer-reviewed Scholarly Output', label: 'Other Peer-reviewed Scholarly Output' }
-        ]);
-        createDynamicInput('rePub-journal-sole', 'Name of Journal/Publisher', 'text');
-        createDynamicInput('rePub-reviewer-sole', 'Reviewer or its Equivalent', 'text');
-        createDynamicInput('rePub-intIndex-sole', 'International Indexing Body', 'text');
-        createDynamicInput('rePub-datePubl-sole', 'Date Published', 'date');
+        ]];
+        const in_rePub_journal = ['input', 'rePub-journal-sole', 'Name of Journal/Publisher', 'text'];
+        const in_rePub_reviewer = ['input','rePub-reviewer-sole', 'Reviewer or its Equivalent', 'text'];
+        const in_rePub_intIndex = ['input','rePub-intIndex-sole', 'Intl. Indexing Body', 'text'];
+        const in_rePub_datePubl = ['input','rePub-datePubl-sole', 'Date Published', 'date'];
+
+        wrapElements([in_rePub_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([sel_rePub_type, in_rePub_journal], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_rePub_reviewer, in_rePub_intIndex, in_rePub_datePubl], 'w-full md:w-1/3 px-3 mb-6 md:mb-0');
         
         // Co Authorship ----------------------------------------------
         //Note: not sure if ^ should be repeated
-        createDynamicInput('rePub-contribution-co', 'Percentage (%) Contribution', 'number');
-      
+        const in_rePub_contribution = ['input','rePub-contribution-co', 'Percentage (%) Contribution', 'number'];
+        wrapElements([in_rePub_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        
+
       // Research Output Translated --------------------------------------------------------------------
         // Lead Researcher --------------------------------------------
-        createDynamicInput('reTrans-title-sole', 'Title of Research', 'text');
-        createDynamicInput('reTrans-dateComp-sole', 'Date Completed', 'date');
-        createDynamicInput('reTrans-namePPP-sole', 'Name of Project, Policy, or Product', 'text');
-        createDynamicInput('reTrans-fundSource-sole', 'Funding Source', 'text');
-        createDynamicInput('reTrans-dateIAD-sole', 'Date Implemented, Adopted, or Developed', 'date');
+        const in_reTrans_title = ['input','reTrans-title-sole', 'Title of Research', 'text'];
+        const in_reTrans_dateComp = ['input','reTrans-dateComp-sole', 'Date Completed', 'date'];
+        const in_reTrans_namePPP = ['input','reTrans-namePPP-sole', 'Name of Project, Policy, or Product', 'text'];
+        const in_reTrans_fundSource = ['input','reTrans-fundSource-sole', 'Funding Source', 'text'];
+        const in_reTrans_dateIAD = ['input','reTrans-dateIAD-sole', 'Date Implemented, Adopted, or Developed', 'date'];
+
+        wrapElements([in_reTrans_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_reTrans_dateComp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_reTrans_namePPP, in_reTrans_fundSource], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_reTrans_dateIAD], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
 
         // Contributor ------------------------------------------------
         //Note: not sure if ^ should be repeated
-        createDynamicInput('reTrans-contribution-co', 'Percentage (%) Contribution', 'number');
+        const in_reTrans_contribution = ['reTrans-contribution-co', 'Percentage (%) Contribution', 'number'];
+        wrapElements([in_reTrans_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+      
 
       // Research Output Cited -------------------------------------------------------------------------
         // Local Authors ----------------------------------------------
-        createDynamicInput('reCited-titleJA-local', 'Title of Journal Article', 'text');
-        createDynamicInput('reCited-datePubl-local', 'Date Published', 'date');
-        createDynamicInput('reCited-nameJ-local', 'Name of Journal', 'text');
-        createDynamicInput('reCited-citeNo-local', 'No. of Citation', 'text');
-        createDynamicInput('reCited-citeIndex-local', 'Citation Index', 'text');
-        createDynamicInput('reCited-citeYears-local', 'Year/s Citation Published', 'text');
+        const in_reCited_titleJA = ['input','reCited-titleJA-local', 'Title of Journal Article', 'text'];
+        const in_reCited_datePubl = ['input','reCited-datePubl-local', 'Date Published', 'date'];
+        const in_reCited_nameJ = ['input','reCited-nameJ-local', 'Name of Journal', 'text'];
+        const in_reCited_citeNo = ['input','reCited-citeNo-local', 'No. of Citation', 'text'];
+        const in_reCited_citeIndex = ['input','reCited-citeIndex-local', 'Citation Index', 'text'];
+        const in_reCited_citeYears = ['input','reCited-citeYears-local', 'Year/s Citation Published', 'text'];
+
+        wrapElements([in_reCited_titleJA], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_reCited_datePubl], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_reCited_nameJ], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_reCited_citeNo, in_reCited_citeIndex, in_reCited_citeYears], 'w-full md:w-1/3 px-3 mb-6 md:mb-0');
 
         // International Authors --------------------------------------
-        //Note: not sure if ^ should be repeated (completely same lng)
+        //Note: not sure if ^ should be repeated (completely same lng) 
     } 
     else if (option === "criterionB") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion B: Inventions";
@@ -71,80 +90,114 @@ function showAddForm(option) {
       // PATENTED -----------------------------------------------------------------------
       // Invention Patents ------------------------------------------
         // Sole Inventor ----------------------------------------------
-        createDynamicInput('invP-name-sole', 'Name of the Invention', 'text');
-        createDynamicInput('invP-appDate-sole', 'Application Date', 'date');
-        createDynamicSelect('invP-appStage-sole', 'Patent Application Stage', [
+        const in_invP_name = ['input','invP-name-sole', 'Name of the Invention', 'text'];
+        const in_invP_appDate = ['input','invP-appDate-sole', 'Application Date', 'date'];
+        const sel_invP_appStage = ['select','invP-appStage-sole', 'Patent Application Stage', [
             { value: 'Accepted', label: 'Accepted' },
             { value: 'Published', label: 'Published' },
             { value: 'Granted', label: 'Granted' }
-        ]);
-        createDynamicInput('invP-dateAPG-sole', 'Date Accepted, Published, or Granted', 'date');
+        ]];
+        const in_invP_dateAPG = ['input','invP-dateAPG-sole', 'Date Accepted, Published, or Granted', 'date'];
+
+        wrapElements([in_invP_name, in_invP_appDate], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([sel_invP_appStage, in_invP_dateAPG], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
 
         // Multiple Inventors -----------------------------------------
         //Note: not sure if ^ should be repeated
-        createDynamicInput('invP-contribution-mult', 'Percentage (%) Contribution', 'number');
+        const in_invP_contribution = ['input','invP-contribution-mult', 'Percentage (%) Contribution', 'number'];
+        wrapElements([in_invP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
 
 
       // Utility Models and Industrial Designs ----------------------
         // Sole Inventor ----------------------------------------------
-        createDynamicInput('umidP-name-sole', 'Name of the Invention', 'text');
-        createDynamicSelect('umidP-type-sole', 'Type of Patent', [
+        const in_umidP_name = ['input','umidP-name-sole', 'Name of the Invention', 'text'];
+        const sel_umidP_type = ['select','umidP-type-sole', 'Type of Patent', [
             { value: 'Utility Model', label: 'Utility Model' },
             { value: 'Industrial Design', label: 'Industrial Design' }
-        ]);
-        createDynamicInput('umidP-dateApp-sole', 'Date of Application', 'date');
-        createDynamicInput('umidP-dateGrant-sole', 'Date Granted', 'date');
+        ]];
+        const in_umidP_dateApp = ['input','umidP-dateApp-sole', 'Date of Application', 'date'];
+        const in_umidP_dateGrant = ['input','umidP-dateGrant-sole', 'Date Granted', 'date'];
+
+        wrapElements([in_umidP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([sel_umidP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_umidP_dateApp, in_umidP_dateGrant], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
         
         // Multiple Inventors -----------------------------------------
         //Note: not sure if ^ should be repeated
-        createDynamicInput('umidP-contribution-mult', 'Percentage (%) Contribution', 'number');
+        const in_umidP_contribution = ['input','umidP-contribution-mult', 'Percentage (%) Contribution', 'number'];
+        wrapElements([in_umidP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
 
-
+        
       // Commercialized Patented ------------------------------------
         // Local ----------------------------------------------
-        createDynamicInput('comP-name-local', 'Name of the Patented Product', 'text');
-        createDynamicInput('comP-type-local', 'Type of Product', 'text');
-        createDynamicInput('comP-datePat-local', 'Date Patented', 'date');
-        createDynamicInput('comP-dateCom-local', 'Date Product was First Commercialized', 'date');
-        createDynamicInput('comP-areaCom-local', 'Area/Place Commercialized', 'text');
+        const in_comP_name = ['input','comP-name-local', 'Name of the Patented Product', 'text'];
+        const in_comP_type = ['input','comP-type-local', 'Type of Product', 'text'];
+        const in_comP_datePat = ['input','comP-datePat-local', 'Date Patented', 'date'];
+        const in_comP_dateCom = ['input','comP-dateCom-local', 'Date First Commercialized', 'date'];
+        const in_comP_areaCom = ['input','comP-areaCom-local', 'Area/Place Commercialized', 'text'];
+
+        wrapElements([in_comP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_comP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_comP_datePat, in_comP_dateCom], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_comP_areaCom], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
 
         // International --------------------------------------
         //Note: not sure if ^ should be repeated (completely same sa local)
 
 
+
       // NON-PATENTABLE -----------------------------------------------------------------
       // New Software Products --------------------------------------
         // Sole Developer ---------------------------------------------
-        createDynamicInput('newspNP-name-sole', 'Name of the Software', 'text');
-        createDynamicInput('newspNP-dateCop-sole', 'Date Copyrighted', 'date');
-        createDynamicInput('newspNP-dateUtil-sole', 'Date Utilized', 'date');
-        createDynamicInput('newspNP-endUser-sole', 'Name of End User/s', 'text');
+        const in_newspNP_name = ['input','newspNP-name-sole', 'Name of the Software', 'text'];
+        const in_newspNP_dateCop = ['input','newspNP-dateCop-sole', 'Date Copyrighted', 'date'];
+        const in_newspNP_dateUtil = ['input','newspNP-dateUtil-sole', 'Date Utilized', 'date'];
+        const in_newspNP_endUser = ['input','newspNP-endUser-sole', 'Name of End User/s', 'text'];
+
+        wrapElements([in_newspNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_newspNP_dateCop,in_newspNP_dateUtil ], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_newspNP_endUser], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+
+
         // Multiple Developer -----------------------------------------
         //Note: not sure if ^ should be repeated
-        createDynamicInput('newspNP-contribution-mult', 'Percentage (%) Contribution', 'number');
+        const in_newspNP_contribution = ['input','newspNP-contribution-mult', 'Percentage (%) Contribution', 'number'];
+        wrapElements([], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
 
       // Updated Software Products ----------------------------------
         // Sole/Co Developer ------------------------------------------
-        createDynamicInput('upspNP-name', 'Name of the Software', 'text');
-        createDynamicInput('upspNP-dateCop', 'Date Copyrighted', 'date');
-        createDynamicInput('upspNP-dateUtil', 'Date Utilized', 'date');
-        createDynamicSelect('upspNP-contribution', 'Contribution', [
+        const in_upspNP_name = ['input','upspNP-name', 'Name of the Software', 'text'];
+        const in_upspNP_dateCop = ['input','upspNP-dateCop', 'Date Copyrighted', 'date'];
+        const in_upspNP_dateUtil = ['select','upspNP-dateUtil', 'Date Utilized', 'date'];
+        const sel_upspNP_contribution = ['upspNP-contribution', 'Contribution', [
             { value: 'Sole Developer', label: 'Sole Developer' },
             { value: 'Co-Developer', label: 'Co-Developer' }
-        ]);
-        createDynamicInput('upspNP-newFeat', 'specify New Features', 'text');
-        createDynamicInput('upspNP-endUser', 'Name of End User/s', 'text');
+        ]];
+        const in_upspNP_newFeat = ['input','upspNP-newFeat', 'specify New Features', 'text'];
+        const in_upspNP_endUser = ['input','upspNP-endUser', 'Name of End User/s', 'text'];
+
+        wrapElements([in_upspNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_upspNP_dateCop, in_upspNP_dateUtil], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([sel_upspNP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_upspNP_newFeat], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_upspNP_endUser], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+
 
       // New Variety, Breed, Strain ---------------------------------
         // Sole Developer ---------------------------------------------
-        createDynamicInput('vbsNP-name-sole', 'Name of the Plant Variety, Animal Breed, or Microbial Strain', 'text');
-        createDynamicInput('vbsNP-type-sole', 'Type (Plant, Animal, or Microbe)', 'text');
-        createDynamicInput('vbsNP-dateComp-sole', 'Date Completed', 'date');
-        createDynamicInput('vbsNP-dateReg-sole', 'Date Registered', 'date');
-        createDynamicInput('vbsNP-dateProp-sole', 'Date of Propagation based on Certification', 'date');
+        const in_vbsNP_name = ['input','vbsNP-name-sole', 'Name of the Plant Variety, Animal Breed, or Microbial Strain', 'text'];
+        const in_vbsNP_type = ['input','vbsNP-type-sole', 'Type (Plant, Animal, or Microbe)', 'text'];
+        const in_vbsNP_dateComp = ['input','vbsNP-dateComp-sole', 'Date Completed', 'date'];
+        const in_vbsNP_dateReg = ['input','vbsNP-dateReg-sole', 'Date Registered', 'date'];
+        const in_vbsNP_dateProp = ['input','vbsNP-dateProp-sole', 'Date of Propagation based on Certification', 'date'];
         // Multiple Developer -----------------------------------------
         //Note: not sure if ^ should be repeated
-        createDynamicInput('vbsNP-contribution-mult', 'Percentage (%) Contribution', 'number');
+        const in_vbsNP_contribution = ['input','vbsNP-contribution-mult', 'Percentage (%) Contribution', 'number'];
+
+        wrapElements([in_vbsNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_vbsNP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_vbsNP_dateComp, in_vbsNP_dateReg], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_vbsNP_dateProp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
 
     } 
     else if (option === "criterionC") { //------------------------------------------------------------------
@@ -152,25 +205,31 @@ function showAddForm(option) {
         addPageKRA.innerHTML = "KRA II - RESEARCH, INVENTION, AND CREATIVE WORK";
 
       // Creative Performing Artwork --------------------------------
-        createDynamicInput('cpa-title', 'Title of Creative Performing Art', 'text');
-        createDynamicSelect('cpa-type', 'Type of Performing Art', [
+        const in_cpa_title = ['input','cpa-title', 'Title of Creative Performing Art', 'text'];
+        const sel_cpa_type = ['select','cpa-type', 'Type of Performing Art', [
             { value: 'Song/Music', label: 'Song/Music' },
             { value: 'Choreography/Dance', label: 'Choreography/Dance' },
             { value: 'Drama/Theater', label: 'Drama/Theater' },
             { value: 'Others', label: 'Others' }
-        ]);
-        createDynamicSelect('cpa-class', 'Classification', [
-            { value: 'New Creation', label: New Creation },
+        ]]; 
+        const sel_cpa_class = ['select','cpa-class', 'Classification', [
+            { value: 'New Creation', label: 'New Creation' },
             { value: 'Own Work', label: 'Own Work' },
             { value: 'Work of Others', label: 'Work of Others' }
-        ]);
-        createDynamicInput('cpa-dateCop', 'Date Copyrighted/Date Performed', 'date');
-        createDynamicInput('cpa-venue', 'Venue of Performance', 'text');
-        createDynamicInput('cpa-org', 'Organizer of the Event (or Publisher if Possible)', 'text');
+        ]];
+        const in_cpa_dateCop = ['input','cpa-dateCop', 'Date Copyrighted/Date Performed', 'date'];
+        const in_cpa_venue = ['input','cpa-venue', 'Venue of Performance', 'text'];
+        const in_cpa_org = ['input','cpa-org', 'Organizer of the Event (or Publisher)', 'text'];
+
+        wrapElements([in_cpa_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([sel_cpa_type, sel_cpa_class], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_cpa_dateCop], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_cpa_venue, in_cpa_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+
 
       // Exhibition -------------------------------------------------
-      createDynamicInput('exh-title', 'Title of Creative Work', 'text');
-      createDynamicSelect('exh-type', 'Type of Creative Work', [
+        const in_exh_title = ['input','exh-title', 'Title of Creative Work', 'text'];
+        const sel_exh_type = ['select','exh-type', 'Type of Creative Work', [
             { value: 'Painting/Drawing', label: 'Painting/Drawing' },
             { value: 'Film/Short Film', label: 'Film/Short Film' },
             { value: 'Architectural Design', label: 'Architectural Design' },
@@ -178,43 +237,60 @@ function showAddForm(option) {
             { value: 'Photography', label: 'Photography' },
             { value: 'Sculpture', label: 'Sculpture' },
             { value: 'Others', label: 'Others' }
-      ]);
-      createDynamicSelect('exh-class', 'Classification', [
+        ]];
+        const sel_exh_class = ['select','exh-class', 'Classification', [
             { value: 'Visual Arts', label: 'Visual Arts' },
             { value: 'Architecture', label: 'Architecture' },
             { value: 'Film', label: 'Film' },
             { value: 'Multimedia', label: 'Multimedia' }
-      ]);
-      createDynamicInput('exh-dateExh', 'Exhibition Date', 'date');
-      createDynamicInput('exh-venue', 'Venue of Exhibit', 'text');
-      createDynamicInput('exh-org', 'Organizer of the Event', 'text');
+        ]];
+        const in_exh_dateExh = ['input','exh-dateExh', 'Exhibition Date', 'date'];
+        const in_exh_venue = ['input','exh-venue', 'Venue of Exhibit', 'text'];
+        const in_exh_org = ['input','exh-org', 'Organizer of the Event', 'text'];
+
+        wrapElements([in_exh_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([sel_exh_type, sel_exh_class], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_exh_dateExh], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_exh_venue, in_exh_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+
 
       // Juried or Peer-reviewed Designs ----------------------------
-      createDynamicInput('des-title', 'Title of Design', 'text');
-      createDynamicSelect('des-class', 'Classification', [
+        const in_des_title = ['input','des-title', 'Title of Design', 'text'];
+        const sel_des_class = ['select','des-class', 'Classification', [
             { value: 'Architecture', label: 'Architecture' },
             { value: 'Engineering', label: 'Engineering' },
             { value: 'Industrial Design', label: 'Industrial Design' }
-      ]);
-      createDynamicInput('des-reviewer', 'Reviewer, Evaluator or Its Equivalent', 'text');
-      createDynamicInput('des-dateAct', 'Activity/Exhibition Date', 'date');
-      createDynamicInput('des-venue', 'Venue of Activity/Exhibit', 'text');
-      createDynamicInput('des-org', 'Organizer', 'text');
+        ]];
+        const in_des_reviewer = ['input','des-reviewer', 'Reviewer, Evaluator or Its Equivalent', 'text'];
+        const in_des_dateAct = ['input','des-dateAct', 'Activity/Exhibition Date', 'date'];
+        const in_des_venue = ['input','des-venue', 'Venue of Activity/Exhibit', 'text'];
+        const in_des_org = ['input','des-org', 'Organizer', 'text'];
+
+        wrapElements([in_des_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([sel_des_class, in_des_reviewer], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_des_dateAct], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_des_venue, in_des_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+
 
       // Literary Publications --------------------------------------
-      createDynamicInput('lit-title', 'Title of Literary Publications', 'text');
-      createDynamicSelect('lit-type', 'Type of Literary Publications', [
+        const in_lit_title = ['input','lit-title', 'Title of Literary Publications', 'text'];
+        const sel_lit_type = ['select','lit-type', 'Type of Literary Publications', [
             { value: 'Novel', label: 'Novel' },
             { value: 'Short Story', label: 'Short Story' },
             { value: 'Essay', label: 'Essay' },
             { value: 'Poetry', label: 'Poetry' },
             { value: 'Others', label: 'Others' }
-      ]);
-      createDynamicInput('lit-reviewer', 'Reviewer, Evaluator or Its Equivalent', 'text');
-      createDynamicInput('lit-namePubli', 'Name of Publication', 'text');
-      createDynamicInput('lit-namePress', 'Name of Publisher/Press', 'text');
-      createDynamicInput('lit-datePubl', 'Organizer', 'date');
-    }
+        ]];
+        const in_lit_reviewer = ['input','lit-reviewer', 'Reviewer, Evaluator or Its Equivalent', 'text'];
+        const in_lit_namePubli = ['input','lit-namePubli', 'Name of Publication', 'text'];
+        const in_lit_namePress = ['input','lit-namePress', 'Name of Publisher/Press', 'text'];
+        const in_lit_datePubl = ['input','lit-datePubl', 'Organizer', 'date']; 
+
+        wrapElements([in_lit_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([sel_lit_type, in_lit_reviewer], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_lit_namePubli, in_lit_namePress], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_lit_datePubl], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+    } 
 }
 </script>
 <!------------------------------------------------------------------------------------------------------->
@@ -243,13 +319,10 @@ function showAddForm(option) {
               <div class="lg:col-span-2">
               <!-- START DYNAMIC FORM -->
               <form>
-                <div class="flex flex-wrap -mx-3 mb-6"> 
-                  <div class="w-full px-3">
                     <div id="dynamic-form-container">
                         <!-- CONTENT CHANGES HERE -->
                     </div>
-                  </div>
-                </div>
+                  
 
                 <!-- must always be present in all pages -->
                 <!-- box design for upload document -->
