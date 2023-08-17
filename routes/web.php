@@ -19,7 +19,7 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/eqar', [AddSummaryController::class, 'eQAR']);
+Route::get('/eqar', [AddSummaryController::class, 'eqar']);
 Route::get('/accomplishment', [AddSummaryController::class, 'addsummary']);
 Route::get('/add', [AddController::class, 'add']);
 Route::get('/add-documents-KRA1', [AddController::class, 'showPAGEaddKRA1']);
