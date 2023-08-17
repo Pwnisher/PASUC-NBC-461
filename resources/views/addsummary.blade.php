@@ -9,12 +9,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico')}}">
+    <!-- Javascripts -->
+    <script src="{{ asset('js/contentOperations.js') }}"></script>
     
-    <title>[Add] Document</title>
+    <title>eQAR Documents</title>
   </head>
   <body class = "bg-ghostwhite">
     <div class="flex h-screen flex-col ">
-      <div class="h-[10%]">
+      <div>
         <!--Navigation Bar-->
         @include('navbar')
         <!--Submenu Modal-->
@@ -23,21 +25,22 @@
       <!--Main Container-->
       <div class="flex-1 relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
-          <div id="title_bar-container" class="bg-transparent text-left w-5/6">
-            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Course Syllabus / Guide Developed / Revised / Enhanced</h3>
+          <div id="title_bar-container" class="bg-transparent text-left w-[90%]">
+            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Application of Accomplishments</h3>
           </div>
-          <div id="add_summary_container" class="bg-white rounded-md p-4 shadow-lg w-5/6 border border-gray-300 relative">
+          <div id="add_summary_container" class="bg-white rounded-md p-4 shadow-lg w-[90%] border border-gray-300 relative">
             <div class="flex flex-col items-stretch space-y-2">
               <div id="reminder" class="bg-card-color rounded-sm p-4 text-card-font-color">
                 <span class="ml-3">
                   <i class="fas fa-lightbulb text-xs"></i>
                   <strong class="text-xs">Reminders:</strong>
                   <p class="ml-8 text-xs">
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
+                    • The system is connected to the PUP eQAR system, so no need to re-upload the same accomplishment. <br>
+                    • Upload your supporting documents on the Application tab. <br>
+                    • Once you apply an accomplishment, you are not allowed to undo it. If you want to remove the accomplishment, go to <a href="{{ url('/application') }}"><b>Application</b></a> tab and click "Remove". <br>
+                    • The application is based on the current cycle of the PASUC NBC No. 461.<br>
+                    • Once the accomplishment is applied for promotion, please go to <a href="{{ url('/application') }}"><b>Application</b></a> tab to add supporting documents.<br>
+                    • The system will automatically categorize the applied accomplishment. Click on the sub-menu of the <a href="{{ url('/application') }}"><b>Application</b></a> tab, or check the overall list on the <a href="{{ url('/application') }}"><b>Application</b></a> tab.<br>
                   </p>
                 </span>
               </div>
@@ -46,22 +49,44 @@
                   <i class="fas fa-lightbulb text-xs"></i>
                   <strong class="text-xs">Instructions</strong>
                   <p class="ml-8 text-xs">
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
-                    • Lorem Ipsum Dolor Sit Amet <br>
+                    • Verify the accomplishment before clicking the "Apply" button.<br>
+                    • Once settled, please click the "Apply" button to the accomplishment you want to submit for the PASUC NBC 461 evaluation.<br>
+                    • The system will turn the button to violet if the accomplishment is successfully in the PASUC NBC 461 evaluation system. <br>
                   </p>
                 </span>
               </div>
-              <!--Add Accomplishment Button-->
-              <div class="flex items-center space-x-2">
-                <div class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded cursor-pointer">
-                  <div class="flex items-center space-x-2">
-                    <i class="fas fa-plus text-xs"></i>
-                    <p class="text-xs">Add an accomplishment</p>
+              <hr>
+              <!-- Date Picker -->
+              <div class="flex flex-row justify-center space-x-4">
+                <!-- From -->
+                <div class="bg-gray-200 p-4 rounded-lg">
+                  <label class="block mb-2 font-semibold text-xs">From:</label>
+                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-xs" max="9999-12-31">
+                </div>
+
+                <!-- To -->
+                <div class="bg-gray-200 p-4 rounded-lg">
+                  <label class="block mb-2 font-semibold text-xs">To:</label>
+                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-xs" max="9999-12-31">
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex flex-col">
+                  <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center justify-center mb-2">
+                    <i class="fas fa-sort mr-2" style="line-height: 0;"></i> Sort
+                  </button>
+                  <div class="relative inline-block">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center" onclick="toggleCycleDropdown()">
+                      <i class="fas fa-cog mr-2"></i> Cycle
+                    </button>
+                    <ul id="cycleDropdown" class="absolute left-0 mt-2 py-1 text-sm bg-white border rounded-lg w-32 hidden">
+                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('8th')">8th cycle</li>
+                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('9th')">9th cycle</li>
+                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('10th')">10th cycle</li>
+                    </ul>
                   </div>
                 </div>
+
               </div>
               <hr>
               <!--Limit and Search-->
@@ -103,12 +128,13 @@
                     <table class="table-auto w-full">
                         <thead class="bg-red-800 text-white">
                             <tr>
-                                <th class="py-4 px-6 text-left">  </th>
-                                <th class="py-4 px-6 cursor-pointer text-left">File Title</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Date <span class="text-xs">(mm/dd/yy)</span></th>
+                                <th id="num_id" class="py-4 px-6 text-left">  </th>
+                                <th id="title" class="py-4 px-6 cursor-pointer text-left">Title</th>
+                                <th id="inclusive_date" class="py-4 px-6 cursor-pointer text-left">Inclusive Date</th>
+                                <th class="py-4 px-6 cursor-pointer text-left">Accomplishment</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Cycle</th>
+                                <th class="py-4 px-6 cursor-pointer text-left">Date Submitted</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Status</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Notes</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Actions</th>
                             </tr>
                         </thead>
@@ -117,32 +143,38 @@
                               <td class="py-4 px-6">1</td>
                               <td class="py-4 px-6">Document 1</td>
                               <td class="py-4 px-6">08/14/23</td>
-                              <td class="py-4 px-6">9th cycle</td>
+                              <td class="py-4 px-6">Extension</td>
+                              <td class="py-4 px-6">9th Cycle</td>
+                              <td class="py-4 px-6">8/17/2023</td>
                               <td class="py-4 px-6">Pending</td>
-                              <td class="py-4 px-6">-</td>
                               <td class="py-4 px-6">
-                                  <div class="flex justify-between w-full space-x-4">
-                                      <button class="flex-1 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded-md">View</button>
-                                      <button class="flex-1 px-4 py-2 bg-yellow-500 text-white hover:bg-yellow-700 rounded-md">Edit</button>
-                                      <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md">Submit</button>
-                                      <button class="flex-1 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md">Delete</button>
+                                  <div class="flex justify-between w-full space-x-2">
+                                    <button class="flex-1 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded-md">View</button>
+                                    <button class="flex-1 px-4 py-2 bg-yellow-300 text-black hover:bg-yellow-500 rounded-md">Edit</button>
+                                    <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md">Submit</button>
+                                    <button class="flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md flex items-center">
+                                      <i class="fas fa-plus-circle mr-2"></i> Add Supporting Documents
+                                    </button>
                                   </div>
                               </td>
                           </tr>
                           <tr class="hover:bg-gray-100">
-                              <td class="py-4 px-6">2</td>
-                              <td class="py-4 px-6">Certificate</td>
-                              <td class="py-4 px-6">08/14/23</td>
-                              <td class="py-4 px-6">9th cycle</td>
-                              <td class="py-4 px-6">Evaluated</td>
-                              <td class="py-4 px-6">-</td>
+                              <td class="py-4 px-6">1</td>
+                              <td class="py-4 px-6">Document 1</td>
+                              <td class="py-4 px-6">08/14/23 - 08/15/24</td>
+                              <td class="py-4 px-6">Expert Service Rendered as Consultant</td>
+                              <td class="py-4 px-6">9th Cycle</td>
+                              <td class="py-4 px-6">8/17/2023</td>
+                              <td class="py-4 px-6">Pending</td>
                               <td class="py-4 px-6">
-                                  <div class="flex justify-between w-full space-x-4">
-                                      <button class="flex-1 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded-md">View</button>
-                                      <button class="flex-1 px-4 py-2 bg-yellow-500 text-white hover:bg-yellow-700 rounded-md">Edit</button>
-                                      <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md">Submit</button>
-                                      <button class="flex-1 px-4 py-2 bg-red-500 text-white hover:bg-red-700 rounded-md">Delete</button>
-                                  </div>
+                                <div class="flex justify-between w-full space-x-2">
+                                  <button class="flex-1 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded-md">View</button>
+                                  <button class="flex-1 px-4 py-2 bg-yellow-300 text-black hover:bg-yellow-500 rounded-md">Edit</button>
+                                  <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md">Submit</button>
+                                  <button class="flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md flex items-center">
+                                    <i class="fas fa-plus-circle mr-2"></i> Add Supporting Documents
+                                  </button>
+                                </div>
                               </td>
                           </tr>
                           <!-- Add more rows as needed -->
@@ -187,7 +219,6 @@
             </div>
           </div>
         </div>
-      
       </div>
     </div>
   </body>

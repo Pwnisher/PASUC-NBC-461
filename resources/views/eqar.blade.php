@@ -9,6 +9,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico')}}">
+    <!-- Javascripts -->
+    <script src="{{ asset('js/contentOperations.js') }}"></script>
     
     <title>eQAR Documents</title>
   </head>
@@ -23,10 +25,10 @@
       <!--Main Container-->
       <div class="flex-1 relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
-          <div id="title_bar-container" class="bg-transparent text-left w-5/6">
+          <div id="title_bar-container" class="bg-transparent text-left w-[90%]">
             <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Qualified Consolidated eQAR Documents</h3>
           </div>
-          <div id="add_summary_container" class="bg-white rounded-md p-4 shadow-lg w-5/6 border border-gray-300 relative">
+          <div id="add_summary_container" class="bg-white rounded-md p-4 shadow-lg w-[90%] border border-gray-300 relative">
             <div class="flex flex-col items-stretch space-y-2">
               <div id="reminder" class="bg-card-color rounded-sm p-4 text-card-font-color">
                 <span class="ml-3">
@@ -84,9 +86,7 @@
                     </ul>
                   </div>
                 </div>
-
               </div>
-              <script src="{{ asset('js/contentOperations.js') }}"></script>
               <!--Limit and Search-->
               <div class="flex flex-row items-stretch justify-between">
                 <!--Show entries-->
