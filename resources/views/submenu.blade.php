@@ -1,17 +1,17 @@
 <div id="accomplishment-container" class="hidden fixed inset-x-0 top-[10%] z-[9000] p-4 bg-ghostwhite shadow-lg border border-gray-300 rounded-md overflow-y-auto">
     <div class="absolute inset-0 bg-center" style="background-image: url('{{ asset('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
-    <div class="mx-auto w-[95%] relative z-10"> <!-- mey kulang na /div, pero it breaks pag nilagyan lmao //jelo -->
+    <div class="mx-auto w-[95%] relative z-10">
       <div class="flex flex-row items-stretch justify-between">
-        <div class="flex-auto p-4">
+        <div class="flex-auto p-4 w-[25%]">
           <ul>
             <h6 class="font-semibold">KRA I - Instruction</h6>
             <hr>
             <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Teaching Effectiveness</a></li>
             <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Curriculum and Instructional Materials Developed</a></li>
-            <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Special Projects, Capstone Projects,<br>Thesis, Dissertation and Mentorship Services</a></li>                
+            <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services</a></li>                
           </ul>
         </div>
-        <div class="flex-auto p-4">
+        <div class="flex-auto p-4  w-[25%]">
             <ul>
                 <h6 class="font-semibold">KRA II - RESEARCH, INNOVATION AND/OR CREATIVE WORK</h6>
                 <hr>
@@ -20,7 +20,7 @@
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Creative Works</a></li>                
             </ul>
         </div>
-        <div class="flex-auto p-4">
+        <div class="flex-auto p-4 w-[25%]">
             <ul>
                 <h6 class="font-semibold">KRA III - EXTENSION SERVICES</h6>
                 <hr>
@@ -30,7 +30,7 @@
                 <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion D - Bonus Criterion</a></li>
             </ul>
         </div>
-        <div class="flex-auto p-4">
+        <div class="flex-auto p-4 w-[25%]">
             <ul>
                 <h6 class="font-semibold">KRA IV - PROFESSIONAL DEVELOPMENT </h6>
                 <hr>
@@ -41,6 +41,11 @@
             </ul>
         </div>
         </div>
+    </div>
+    <div class="relative w-full bg-transparent border-green-500 text-base rounded-md items-center text-center p-5 mt-3">
+        <a href="{{ url('/eqar') }}"  class="absolute inset-0 flex items-center justify-center cursor-pointer bg-green-600 text-white text-base rounded-md">
+            See all qualified consolidated accomplishments
+        </a>
     </div>
 </div>
 <script src="{{ asset('js/operations.js') }}"></script>

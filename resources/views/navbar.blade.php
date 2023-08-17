@@ -8,8 +8,9 @@
           <span class="font-medium text-white text-xl">PASUC NBC 461 EMIS</span>
         </a>
         <div class="hidden md:flex items-center space-x-3">
-          <a href="#" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
-          <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</button>
+          <a href="{{ url('/') }}"  class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Home</a>
+          <button id="accomplishmentBtn" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">eQAR Documents</button>
+          <a href="{{ url('/addsummary') }}" class="py-2 px-2 text-base text-white hover:border-b-2 border-yellow-400">Accomplishments</a>
         </div>
       </div>
 
