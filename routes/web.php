@@ -26,4 +26,3 @@ Route::get('/add-documents-KRA1', [AddController::class, 'showPAGEaddKRA1']);
 Route::get('/add-documents-KRA2', [AddController::class, 'showPAGEaddKRA2']);
 Route::get('/add-documents-KRA3', [AddController::class, 'showPAGEaddKRA3']);
 Route::get('/add-documents-KRA4', [AddController::class, 'showPAGEaddKRA4']);
-Route::get('/example', [AddController::class, 'example']);

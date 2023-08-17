@@ -25,7 +25,4 @@ class AddController extends Controller
     public function showPAGEaddKRA4() {
         return view('add-KRA4');
     }
-    public function example() {
-        return view('example');
-    }
 }
