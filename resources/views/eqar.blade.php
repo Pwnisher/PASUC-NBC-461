@@ -89,7 +89,7 @@
               <!--Limit and Search-->
               <div class="flex flex-row items-stretch justify-between">
                 <!--Show entries-->
-                <div class="text-sm text-gray-700 flex items-center space-x-2">
+                <div class="text-sm text-gray-700 flex items-center space-x-2 w-1/3 justify-start">
                   <span>Show</span>
                   <div class="relative">
                     <select class="appearance-none w-20 bg-white border border-gray-300 text-gray-700 py-1 px-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
@@ -105,7 +105,7 @@
                   <span>entries</span>
                 </div>
                 <!--Search-->
-                <div class="text-sm text-gray-700 flex items-center space-x-2">
+                <div class="text-sm text-gray-700 flex items-center space-x-2 w-1/3 justify-end">
                   <span>Search</span>
                   <div class="relative">
                     <input
