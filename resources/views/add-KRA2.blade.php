@@ -14,8 +14,9 @@ function showAddForm(option) {
     var addPageTitle = document.getElementById("add_page_title");
     var addPageKRA = document.getElementById("add_page_kra");
 
-    // Clear the dynamic-form-container
-    clearDynamicFormContainer();
+    // Clear the elements in dynamic form and category container
+    clearDynamicFormContainer('dynamic-form-container');
+    clearDynamicFormContainer('dynamic-category-container');
 
     if (option === "criterionA") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion A: Research Output Published";
@@ -37,14 +38,14 @@ function showAddForm(option) {
         const in_rePub_intIndex = ['input','rePub-intIndex-sole', 'Intl. Indexing Body', 'text'];
         const in_rePub_datePubl = ['input','rePub-datePubl-sole', 'Date Published', 'date'];
 
-        wrapElements([in_rePub_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([sel_rePub_type, in_rePub_journal], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_rePub_reviewer, in_rePub_intIndex, in_rePub_datePubl], 'w-full md:w-1/3 px-3 mb-6 md:mb-0');
+        wrapElements([in_rePub_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([sel_rePub_type, in_rePub_journal], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_rePub_reviewer, in_rePub_intIndex, in_rePub_datePubl], 'w-full md:w-1/3 px-3 mb-6 md:mb-0', 'dynamic-form-container');
         
         // Co Authorship ----------------------------------------------
         //Note: not sure if ^ should be repeated
         const in_rePub_contribution = ['input','rePub-contribution-co', 'Percentage (%) Contribution', 'number'];
-        wrapElements([in_rePub_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_rePub_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
         
 
       // Research Output Translated --------------------------------------------------------------------
@@ -55,15 +56,15 @@ function showAddForm(option) {
         const in_reTrans_fundSource = ['input','reTrans-fundSource-sole', 'Funding Source', 'text'];
         const in_reTrans_dateIAD = ['input','reTrans-dateIAD-sole', 'Date Implemented, Adopted, or Developed', 'date'];
 
-        wrapElements([in_reTrans_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_reTrans_dateComp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_reTrans_namePPP, in_reTrans_fundSource], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_reTrans_dateIAD], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_reTrans_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_reTrans_dateComp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_reTrans_namePPP, in_reTrans_fundSource], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_reTrans_dateIAD], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
         // Contributor ------------------------------------------------
         //Note: not sure if ^ should be repeated
         const in_reTrans_contribution = ['reTrans-contribution-co', 'Percentage (%) Contribution', 'number'];
-        wrapElements([in_reTrans_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_reTrans_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
       
 
       // Research Output Cited -------------------------------------------------------------------------
@@ -75,10 +76,10 @@ function showAddForm(option) {
         const in_reCited_citeIndex = ['input','reCited-citeIndex-local', 'Citation Index', 'text'];
         const in_reCited_citeYears = ['input','reCited-citeYears-local', 'Year/s Citation Published', 'text'];
 
-        wrapElements([in_reCited_titleJA], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_reCited_datePubl], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_reCited_nameJ], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_reCited_citeNo, in_reCited_citeIndex, in_reCited_citeYears], 'w-full md:w-1/3 px-3 mb-6 md:mb-0');
+        wrapElements([in_reCited_titleJA], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_reCited_datePubl], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_reCited_nameJ], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_reCited_citeNo, in_reCited_citeIndex, in_reCited_citeYears], 'w-full md:w-1/3 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
         // International Authors --------------------------------------
         //Note: not sure if ^ should be repeated (completely same lng) 
@@ -99,13 +100,13 @@ function showAddForm(option) {
         ]];
         const in_invP_dateAPG = ['input','invP-dateAPG-sole', 'Date Accepted, Published, or Granted', 'date'];
 
-        wrapElements([in_invP_name, in_invP_appDate], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([sel_invP_appStage, in_invP_dateAPG], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_invP_name, in_invP_appDate], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([sel_invP_appStage, in_invP_dateAPG], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
         // Multiple Inventors -----------------------------------------
         //Note: not sure if ^ should be repeated
         const in_invP_contribution = ['input','invP-contribution-mult', 'Percentage (%) Contribution', 'number'];
-        wrapElements([in_invP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_invP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
 
       // Utility Models and Industrial Designs ----------------------
@@ -118,14 +119,14 @@ function showAddForm(option) {
         const in_umidP_dateApp = ['input','umidP-dateApp-sole', 'Date of Application', 'date'];
         const in_umidP_dateGrant = ['input','umidP-dateGrant-sole', 'Date Granted', 'date'];
 
-        wrapElements([in_umidP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([sel_umidP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_umidP_dateApp, in_umidP_dateGrant], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_umidP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([sel_umidP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_umidP_dateApp, in_umidP_dateGrant], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
         
         // Multiple Inventors -----------------------------------------
         //Note: not sure if ^ should be repeated
         const in_umidP_contribution = ['input','umidP-contribution-mult', 'Percentage (%) Contribution', 'number'];
-        wrapElements([in_umidP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_umidP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
         
       // Commercialized Patented ------------------------------------
@@ -136,10 +137,10 @@ function showAddForm(option) {
         const in_comP_dateCom = ['input','comP-dateCom-local', 'Date First Commercialized', 'date'];
         const in_comP_areaCom = ['input','comP-areaCom-local', 'Area/Place Commercialized', 'text'];
 
-        wrapElements([in_comP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_comP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_comP_datePat, in_comP_dateCom], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_comP_areaCom], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_comP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_comP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_comP_datePat, in_comP_dateCom], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_comP_areaCom], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
         // International --------------------------------------
         //Note: not sure if ^ should be repeated (completely same sa local)
@@ -154,15 +155,15 @@ function showAddForm(option) {
         const in_newspNP_dateUtil = ['input','newspNP-dateUtil-sole', 'Date Utilized', 'date'];
         const in_newspNP_endUser = ['input','newspNP-endUser-sole', 'Name of End User/s', 'text'];
 
-        wrapElements([in_newspNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_newspNP_dateCop,in_newspNP_dateUtil ], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_newspNP_endUser], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_newspNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_newspNP_dateCop,in_newspNP_dateUtil ], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_newspNP_endUser], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
 
         // Multiple Developer -----------------------------------------
         //Note: not sure if ^ should be repeated
         const in_newspNP_contribution = ['input','newspNP-contribution-mult', 'Percentage (%) Contribution', 'number'];
-        wrapElements([], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
       // Updated Software Products ----------------------------------
         // Sole/Co Developer ------------------------------------------
@@ -176,11 +177,11 @@ function showAddForm(option) {
         const in_upspNP_newFeat = ['input','upspNP-newFeat', 'specify New Features', 'text'];
         const in_upspNP_endUser = ['input','upspNP-endUser', 'Name of End User/s', 'text'];
 
-        wrapElements([in_upspNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_upspNP_dateCop, in_upspNP_dateUtil], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([sel_upspNP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_upspNP_newFeat], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_upspNP_endUser], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_upspNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_upspNP_dateCop, in_upspNP_dateUtil], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([sel_upspNP_contribution], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_upspNP_newFeat], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_upspNP_endUser], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
 
       // New Variety, Breed, Strain ---------------------------------
@@ -194,10 +195,10 @@ function showAddForm(option) {
         //Note: not sure if ^ should be repeated
         const in_vbsNP_contribution = ['input','vbsNP-contribution-mult', 'Percentage (%) Contribution', 'number'];
 
-        wrapElements([in_vbsNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_vbsNP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_vbsNP_dateComp, in_vbsNP_dateReg], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_vbsNP_dateProp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_vbsNP_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_vbsNP_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_vbsNP_dateComp, in_vbsNP_dateReg], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_vbsNP_dateProp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
     } 
     else if (option === "criterionC") { //------------------------------------------------------------------
@@ -221,10 +222,10 @@ function showAddForm(option) {
         const in_cpa_venue = ['input','cpa-venue', 'Venue of Performance', 'text'];
         const in_cpa_org = ['input','cpa-org', 'Organizer of the Event (or Publisher)', 'text'];
 
-        wrapElements([in_cpa_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([sel_cpa_type, sel_cpa_class], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_cpa_dateCop], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_cpa_venue, in_cpa_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_cpa_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([sel_cpa_type, sel_cpa_class], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_cpa_dateCop], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_cpa_venue, in_cpa_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
 
       // Exhibition -------------------------------------------------
@@ -248,10 +249,10 @@ function showAddForm(option) {
         const in_exh_venue = ['input','exh-venue', 'Venue of Exhibit', 'text'];
         const in_exh_org = ['input','exh-org', 'Organizer of the Event', 'text'];
 
-        wrapElements([in_exh_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([sel_exh_type, sel_exh_class], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_exh_dateExh], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_exh_venue, in_exh_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_exh_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([sel_exh_type, sel_exh_class], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_exh_dateExh], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_exh_venue, in_exh_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
 
       // Juried or Peer-reviewed Designs ----------------------------
@@ -266,10 +267,10 @@ function showAddForm(option) {
         const in_des_venue = ['input','des-venue', 'Venue of Activity/Exhibit', 'text'];
         const in_des_org = ['input','des-org', 'Organizer', 'text'];
 
-        wrapElements([in_des_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([sel_des_class, in_des_reviewer], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_des_dateAct], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([in_des_venue, in_des_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
+        wrapElements([in_des_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([sel_des_class, in_des_reviewer], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_des_dateAct], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_des_venue, in_des_org], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
 
 
       // Literary Publications --------------------------------------
@@ -286,10 +287,10 @@ function showAddForm(option) {
         const in_lit_namePress = ['input','lit-namePress', 'Name of Publisher/Press', 'text'];
         const in_lit_datePubl = ['input','lit-datePubl', 'Organizer', 'date']; 
 
-        wrapElements([in_lit_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-        wrapElements([sel_lit_type, in_lit_reviewer], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_lit_namePubli, in_lit_namePress], 'w-full md:w-1/2 px-3 mb-6 md:mb-0');
-        wrapElements([in_lit_datePubl], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
+        wrapElements([in_lit_title], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([sel_lit_type, in_lit_reviewer], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_lit_namePubli, in_lit_namePress], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container');
+        wrapElements([in_lit_datePubl], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container');
     } 
 }
 </script>
@@ -312,8 +313,12 @@ function showAddForm(option) {
             <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3"> <!-- form content -->
               <div class="text-gray-600">
                 <p id="add_page_kra" class="font-bold text-lg">KRA I - INSTRUCTION</p>
-                <p>Please fill in the necessary details. No abbreviations.</p>
-                <p>All inputs with the symbol (*) are required.</p>
+                <p class="my-1">Please fill in the necessary details. No abbreviations.</p>
+                <p class="my-1">All inputs with the symbol (*) are required.</p>
+
+                <div id="dynamic-category-container" class="mt-6">
+                  <!-- CONTENT CHANGES HERE -->
+                </div>
               </div>
           
               <div class="lg:col-span-2">
