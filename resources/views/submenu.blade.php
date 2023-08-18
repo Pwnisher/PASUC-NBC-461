@@ -6,38 +6,38 @@
           <ul>
             <h6 class="font-semibold">KRA I - Instruction</h6>
             <hr>
-            <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Teaching Effectiveness</a></li>
-            <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Curriculum and Instructional Materials Developed</a></li>
-            <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services</a></li>                
+            <li><a id="k1A" class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Teaching Effectiveness</a></li>
+            <li><a id="k1B" class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Curriculum and Instructional Materials Developed</a></li>
+            <li><a id="k1C" class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services</a></li>                
           </ul>
         </div>
         <div class="flex-auto p-4  w-[25%]">
             <ul>
                 <h6 class="font-semibold">KRA II - RESEARCH, INNOVATION AND/OR CREATIVE WORK</h6>
                 <hr>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Research Output Published</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Inventions</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Creative Works</a></li>                
+                <li><a id="k2A" class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Research Output Published</a></li>
+                <li><a id="k2B" class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Inventions</a></li>
+                <li><a id="k2C" class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Creative Works</a></li>                
             </ul>
         </div>
         <div class="flex-auto p-4 w-[25%]">
             <ul>
                 <h6 class="font-semibold">KRA III - EXTENSION SERVICES</h6>
                 <hr>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Service to the Institution</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Service to the Community</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Quality of Extension Services</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion D - Bonus Criterion</a></li>
+                <li><a id="k3A" class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Service to the Institution</a></li>
+                <li><a id="k3B" class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Service to the Community</a></li>
+                <li><a id="k3C" class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Quality of Extension Services</a></li>
+                <li><a id="k3D" class="text-red-900 hover:text-yellow-500" href="">• Criterion D - Bonus Criterion</a></li>
             </ul>
         </div>
         <div class="flex-auto p-4 w-[25%]">
             <ul>
                 <h6 class="font-semibold">KRA IV - PROFESSIONAL DEVELOPMENT </h6>
                 <hr>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Involvement in Professional Organizations</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Continuing Development</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Awards and Recognition</a></li>
-                <li><a class="text-red-900 hover:text-yellow-500" href="">• Criterion D - Bonus Indicators for Newly Hired Faculty</a></li>
+                <li><a id="k4A" class="text-red-900 hover:text-yellow-500" href="">• Criterion A - Involvement in Professional Organizations</a></li>
+                <li><a id="k4B" class="text-red-900 hover:text-yellow-500" href="">• Criterion B - Continuing Development</a></li>
+                <li><a id="k4C" class="text-red-900 hover:text-yellow-500" href="">• Criterion C - Awards and Recognition</a></li>
+                <li><a id="k4D" class="text-red-900 hover:text-yellow-500" href="">• Criterion D - Bonus Indicators for Newly Hired Faculty</a></li>
             </ul>
         </div>
         </div>

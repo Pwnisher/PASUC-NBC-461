@@ -36,7 +36,7 @@ mobileMenuButton.addEventListener("click", () => {
 });
 
 const submenuBtn = document.getElementById("application_btn");
-  const submenu = document.getElementById("accomplishment-container");
+const submenu = document.getElementById("accomplishment-container");
 
 submenuBtn.addEventListener("click", (event) => {
   event.stopPropagation();
@@ -49,3 +49,30 @@ document.addEventListener("click", () => {
   }
 });
   
+//-----------------------------------------------------
+
+function handleAnchorClick(event) {
+  // Get the ID of the clicked anchor
+  const clickedId = event.target.id;
+  var urlstring = "/application";
+  // Perform actions based on the clicked ID
+  switch (clickedId) {
+    case 'k1A':
+
+      break;
+    case 'link2':
+      console.log('Link 2 clicked');
+      break;
+    default:
+      // Handle other cases
+      break;
+  }
+  document.getElementById(clickedId).href = urlstring;
+}
+
+// Get the hidden div and attach the function to the click event of anchor elements
+const accomplishment = submenu.querySelectorAll('a');
+
+accomplishment.forEach(link => {
+  link.addEventListener('click', handleAnchorClick);
+});
