@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico')}}">
     <!-- Javascripts -->
     <script src="{{ asset('js/contentOperations.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <title>eQAR Documents</title>
   </head>
@@ -24,7 +25,7 @@
       <div class="flex-1 relative">
         <div id="main_container" class="flex flex-col items-center h-screen mt-8">
           <div id="title_bar-container" class="bg-transparent text-left w-[90%]">
-            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">Application of Accomplishments</h3>
+            <h3 id="title_bar" class="mb-2 font-bold text-xl font-sans">{{ $title_bar }}</h3>
           </div>
           <div id="add_summary_container" class="bg-white rounded-md p-4 shadow-lg w-[90%] border border-gray-300 relative">
             <div class="flex flex-col items-stretch space-y-2">

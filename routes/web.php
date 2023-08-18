@@ -21,7 +21,8 @@ Route::get('/', function () {
 
 Route::get('/home', [TabController::class, 'home']);
 Route::get('/eqar', [TabController::class, 'eqar']);
-Route::get('/application', [TabController::class, 'application']);
+Route::get('/application', [TabController::class, 'application'])->name('application');
+Route::get('/application/{any}', [TabController::class, 'show'])->where('any', '.*');
 
 Route::get('/add', [AddController::class, 'add']);
 Route::get('/add-documents-KRA1', [AddController::class, 'showPAGEaddKRA1']);
