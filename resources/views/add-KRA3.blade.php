@@ -344,10 +344,7 @@ function showAddForm(option) {
                 <p class="my-1">Please fill in the necessary details. No abbreviations.</p>
                 <p class="my-1">All inputs with the symbol (*) are required.</p>
                 
-                  <div id="category-container" class="mt-6">
-                    <!-- CONTENT CHANGES HERE -->
-                    
-                  </div>
+                  <div id="category-container" class="mt-6"> <!-- CONTENT CHANGES HERE --> </div>
               </div>
           
               <div class="lg:col-span-2">

@@ -47,25 +47,25 @@ function showAddForm(option) {
         });
         
       // Student Evaluation -------------------------------------
-        const in_stdEval_semDed = ['input','stdEval-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
-        const sel_stdEval_reason = ['select','stdEval-reason', 'Reason for Reducing the Divisor', [
+        const in_stdEval_semDed = ['input','stdEval_semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
+        const sel_stdEval_reason = ['select','stdEval_reason', 'Reason for Reducing the Divisor', [
             { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
             { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
             { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
             { value: 'ON APPROVED MATERNITY LEAVE', label: 'ON APPROVED MATERNITY LEAVE' }
         ]]; 
         // Note: need flexible
-        const in_stdEval_1sem_q1 = ['input','stdEval-1sem-q1', '1ST SEMESTER', 'number'];
-        const in_stdEval_2sem_q1 = ['input','stdEval-2sem-q1', '2ND SEMESTER', 'number'];
+        const in_stdEval_1sem_q1 = ['input','stdEval_1sem_q1', '1ST SEMESTER', 'number'];
+        const in_stdEval_2sem_q1 = ['input','stdEval_2sem_q1', '2ND SEMESTER', 'number'];
 
-        const in_stdEval_1sem_q2 = ['input','stdEval-1sem-q2', '1ST SEMESTER', 'number'];
-        const in_stdEval_2sem_q2 = ['input','stdEval-2sem-q2', '2ND SEMESTER', 'number'];
+        const in_stdEval_1sem_q2 = ['input','stdEval_1sem_q2', '1ST SEMESTER', 'number'];
+        const in_stdEval_2sem_q2 = ['input','stdEval_2sem_q2', '2ND SEMESTER', 'number'];
 
-        const in_stdEval_1sem_q3 = ['input','stdEval-1sem-q3', '1ST SEMESTER', 'number'];
-        const in_stdEval_2sem_q3 = ['input','stdEval-2sem-q3', '2ND SEMESTER', 'number'];
+        const in_stdEval_1sem_q3 = ['input','stdEval_1sem_q3', '1ST SEMESTER', 'number'];
+        const in_stdEval_2sem_q3 = ['input','stdEval_2sem_q3', '2ND SEMESTER', 'number'];
 
-        const in_stdEval_1sem_q4 = ['input','stdEval-1sem-q4', '1ST SEMESTER', 'number'];
-        const in_stdEval_2sem_q4 = ['input','stdEval-2sem-q4', '2ND SEMESTER', 'number'];
+        const in_stdEval_1sem_q4 = ['input','stdEval_1sem_q4', '1ST SEMESTER', 'number'];
+        const in_stdEval_2sem_q4 = ['input','stdEval_2sem_q4', '2ND SEMESTER', 'number'];
 
         // Note: need id in label
         wrapElements([in_stdEval_semDed], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
@@ -79,13 +79,12 @@ function showAddForm(option) {
           createDynamicLabel('AY 2022-2023', 'form-container1');
         wrapElements([in_stdEval_1sem_q4, in_stdEval_2sem_q4 ], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
 
-
-        //createDynamicCheckbox('stdEval-SD1', 'Student Evaluation Rating using prescribed template');
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('stdEval_SD1', 'Student Evaluation Rating using prescribed template', 'form-container1');
         
       // Supervisor Evaluation -----------------------------------
-        const in_supEval_semDed = ['input','supEval-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
-
-        const in_supEval_reason = ['select','supEval-reason', 'Reason for Reducing the Divisor', [
+        const in_supEval_semDed = ['input','supEval_semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
+        const in_supEval_reason = ['select','supEval_reason', 'Reason for Reducing the Divisor', [
             { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
             { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
             { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
@@ -93,17 +92,17 @@ function showAddForm(option) {
         ]];
         // Note: need flexible 
         
-        const in_supEval_1sem_q1 = ['input','supEval-1sem-q1', '1ST SEMESTER', 'number'];
-        const in_supEval_2sem_q1 = ['input','supEval-2sem-q1', '2ND SEMESTER', 'number'];
+        const in_supEval_1sem_q1 = ['input','supEval_1sem_q1', '1ST SEMESTER', 'number'];
+        const in_supEval_2sem_q1 = ['input','supEval_2sem_q1', '2ND SEMESTER', 'number'];
 
-        const in_supEval_1sem_q2 = ['input','supEval-1sem-q2', '1ST SEMESTER', 'number'];
-        const in_supEval_2sem_q2 = ['input','supEval-2sem-q2', '2ND SEMESTER', 'number'];
+        const in_supEval_1sem_q2 = ['input','supEval_1sem_q2', '1ST SEMESTER', 'number'];
+        const in_supEval_2sem_q2 = ['input','supEval_2sem_q2', '2ND SEMESTER', 'number'];
 
-        const in_supEval_1sem_q3 = ['input','supEval-1sem-q3', '1ST SEMESTER', 'number'];
-        const in_supEval_2sem_q3 = ['input','supEval-2sem-q3', '2ND SEMESTER', 'number'];
+        const in_supEval_1sem_q3 = ['input','supEval_1sem_q3', '1ST SEMESTER', 'number'];
+        const in_supEval_2sem_q3 = ['input','supEval_2sem_q3', '2ND SEMESTER', 'number'];
 
-        const in_supEval_1sem_q4 = ['input','supEval-1sem-q4', '1ST SEMESTER', 'number'];
-        const in_supEval_2sem_q4 = ['input','supEval-2sem-q4', '2ND SEMESTER', 'number'];
+        const in_supEval_1sem_q4 = ['input','supEval_1sem_q4', '1ST SEMESTER', 'number'];
+        const in_supEval_2sem_q4 = ['input','supEval_2sem_q4', '2ND SEMESTER', 'number'];
 
         wrapElements([in_supEval_semDed], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
         wrapElements([in_supEval_reason], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
@@ -116,7 +115,8 @@ function showAddForm(option) {
           createDynamicLabel('AY 2022-2023', 'form-container2');
         wrapElements([in_supEval_1sem_q4, in_supEval_2sem_q4], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
 
-        //createDynamicCheckbox('supEval-SD1', 'Supervisor Evaluation Rating using prescribed template', 'form-container');
+        createDynamicLabel('Supporting Documents', 'form-container2');
+        createDynamicCheckbox('supEval_SD1', 'Supervisor Evaluation Rating using prescribed template', 'form-container2');
     } 
     else if (option === "criterionB") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion B: Curriculum and Instructional Materials Developed";
@@ -147,40 +147,46 @@ function showAddForm(option) {
 
       // Instructional Material -------------------------------------
         // Sole Authorship --------------------------------------------
-        const in_im_title_sole = ['input','im-title-sole', 'Title of Instructional Material', 'text'];
-        const sel_im_type_sole = ['select','im-type-sole', 'Type of Instructional Material', [
+        const in_im_title_sole = ['input','im_title_sole', 'Title of Instructional Material', 'text'];
+        const sel_im_type_sole = ['select','im_type_sole', 'Type of Instructional Material', [
             { value: 'Textbook', label: 'Textbook' },
             { value: 'Textbook Chapter', label: 'Textbook Chapter' },
             { value: 'Manual/Module', label: 'Manual/Module' },
             { value: 'Multimedia Teaching Materials', label: 'Multimedia Teaching Materials' },
             { value: 'Testing Materials', label: 'Testing Materials' }
         ]];
-        const in_im_reviewer_sole = ['input','im-reviewer-sole', 'Reviewer of Its Equivalent', 'text'];
-        const in_im_pubrepo_sole = ['input','im-pubrepo-sole', 'Publisher/Repository', 'text'];
-        const in_im_datePubl_sole = ['input','im-datePubl-sole', 'Date Published', 'date'];
-        const in_im_dateApprv_sole = ['input','im-dateApprv-sole', 'Date Approved For Use', 'date'];
+        const in_im_reviewer_sole = ['input','im_reviewer_sole', 'Reviewer of Its Equivalent', 'text'];
+        const in_im_pubrepo_sole = ['input','im_pubrepo_sole', 'Publisher/Repository', 'text'];
+        const in_im_datePubl_sole = ['input','im_datePubl_sole', 'Date Published', 'date'];
+        const in_im_dateApprv_sole = ['input','im_dateApprv_sole', 'Date Approved For Use', 'date'];
 
         wrapElements([in_im_title_sole], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([sel_im_type_sole], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_im_reviewer_sole, in_im_pubrepo_sole], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_im_datePubl_sole, in_im_dateApprv_sole], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
         
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('im_sole_SD1', 'Copy of instructional material developed', 'form-container1');
+        createDynamicCheckbox('im_sole_SD2', 'Copy of evidence that the instructional material has undergone peer-review or evaluation process', 'form-container1');
+        createDynamicCheckbox('im_sole_SD3', 'Copy of approval for use of the instructional material in the department/institution', 'form-container1');
+        createDynamicCheckbox('im_sole_SD4', 'Copy of the Testing Material (if Testing Material)', 'form-container1');
+        createDynamicCheckbox('im_sole_SD5', 'Copy of evidence that the testing material has been validated, reliability tested, secured, and verified by the authorized body within the institution', 'form-container1');
 
         // Co Authorship ----------------------------------------------
-        const in_im_title_co = ['input','im-title-co', 'Title of Instructional Material', 'text'];
-        const sel_im_type_co = ['select','im-type-co', 'Type of Instructional Material', [
+        const in_im_title_co = ['input','im_title_co', 'Title of Instructional Material', 'text'];
+        const sel_im_type_co = ['select','im_type_co', 'Type of Instructional Material', [
             { value: 'Textbook', label: 'Textbook' },
             { value: 'Textbook Chapter', label: 'Textbook Chapter' },
             { value: 'Manual/Module', label: 'Manual/Module' },
             { value: 'Multimedia Teaching Materials', label: 'Multimedia Teaching Materials' },
             { value: 'Testing Materials', label: 'Testing Materials' }
         ]];
-        const in_im_reviewer_co = ['input','im-reviewer-co', 'Reviewer of Its Equivalent', 'text'];
-        const in_im_pubrepo_co = ['input','im-pubrepo-co', 'Publisher/Repository', 'text'];
-        const in_im_datePubl_co = ['input','im-datePubl-co', 'Date Published', 'date'];
-        const in_im_dateApprv_co = ['input','im-dateApprv-co', 'Date Approved For Use', 'date'];
+        const in_im_reviewer_co = ['input','im_reviewer_co', 'Reviewer of Its Equivalent', 'text'];
+        const in_im_pubrepo_co = ['input','im_pubrepo_co', 'Publisher/Repository', 'text'];
+        const in_im_datePubl_co = ['input','im_datePubl_co', 'Date Published', 'date'];
+        const in_im_dateApprv_co = ['input','im_dateApprv_co', 'Date Approved For Use', 'date'];
 
-        const in_im_contri_co = ['input','im-contri-co', 'Percentage (%) Contribution', 'number'];
+        const in_im_contri_co = ['input','im_contri_co', 'Percentage (%) Contribution', 'number'];
 
         wrapElements([in_im_title_co], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
         wrapElements([sel_im_type_co], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
@@ -189,21 +195,29 @@ function showAddForm(option) {
         
         wrapElements([in_im_contri_co], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
 
+        createDynamicLabel('Supporting Documents', 'form-container2');
+        createDynamicCheckbox('im_co_SD1', 'Copy of instructional material developed', 'form-container2');
+        createDynamicCheckbox('im_co_SD2', 'Copy of evidence that the instructional material has undergone peer-review or evaluation process', 'form-container2');
+        createDynamicCheckbox('im_co_SD3', 'Copy of approval for use of the instructional material in the department/institution', 'form-container2');
+        createDynamicCheckbox('im_sole_SD3', 'Copy of the Testing Material (if Testing Material)', 'form-container1');
+        createDynamicCheckbox('im_sole_SD3', 'Copy of evidence that the testing material has been validated, reliability tested, secured, and verified by the authorized body within the institution', 'form-container1');
+        createDynamicCheckbox('im_co_SD4', '[Multiple Authors] Copy of certification signed by all the authors indicating their contribution in the development of the instructional material using prescribed template', 'form-container2');
+
 
       // Acadmic Programs -------------------------------------------
-      const in_ap_name = ['input','ap-name', 'Complete Name of Academic Degree Program', 'text'];
-      const sel_ap_type = ['select','ap-type', 'Type of Program', [
+      const in_ap_name = ['input','ap_name', 'Complete Name of Academic Degree Program', 'text'];
+      const sel_ap_type = ['select','ap_type', 'Type of Program', [
             { value: 'New Program', label: 'New Program' },
             { value: 'Revised Program', label: 'Revised Program' }
       ]];
-      const in_ap_boardReso = ['input','ap-boardReso', 'Board Approval (Board Resolution No.)', 'text'];
-      const sel_ap_acadYear = ['select','ap-acadYear', 'Academic Year Implemented', [
+      const in_ap_boardReso = ['input','ap_boardReso', 'Board Approval (Board Resolution No.)', 'text'];
+      const sel_ap_acadYear = ['select','ap_acadYear', 'Academic Year Implemented', [
             { value: '2019-2020', label: '2019-2020' },
             { value: '2020-2021', label: '2020-2021' },
             { value: '2021-2022', label: '2021-2022' },
             { value: '2022-2023', label: '2022-2023' }
       ]];
-      const sel_ap_role = ['select','ap-role', 'Role', [
+      const sel_ap_role = ['select','ap_role', 'Role', [
             { value: 'Lead', label: 'Lead' },
             { value: 'Contributor', label: 'Contributor' }
       ]];
@@ -211,6 +225,10 @@ function showAddForm(option) {
       wrapElements([in_ap_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container3');
       wrapElements([sel_ap_type, in_ap_boardReso], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container3');
       wrapElements([sel_ap_acadYear, sel_ap_role], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container3');
+
+      createDynamicLabel('Supporting Documents', 'form-container3');
+      createDynamicCheckbox('ap_SD1', 'Copy of certification signed by the academic unit head indicating the role of the faculty in the development/revision of academic degree program using prescribed template', 'form-container3');
+      createDynamicCheckbox('ap_SD2', 'Copy of governing board resolution approving the implementation of the academic program developed/revised', 'form-container3');
 
     } 
     else if (option === "criterionC") { //------------------------------------------------------------------
@@ -242,73 +260,85 @@ function showAddForm(option) {
 
         // Adviser ---------------------------------------------------
         createDynamicLabel('SPECIAL/CAPSTONE PROJECT', 'form-container1');
-          const in_adv_CstdNum_q1 = ['input','adv-CstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_adv_CstdNum_q2 = ['input','adv-CstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_adv_CstdNum_q3 = ['input','adv-CstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_adv_CstdNum_q4 = ['input','adv-CstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_adv_CstdNum_q1 = ['input','adv_CstdNum_q1', 'AY 2019-2020', 'number'];
+          const in_adv_CstdNum_q2 = ['input','adv_CstdNum_q2', 'AY 2020-2021', 'number'];
+          const in_adv_CstdNum_q3 = ['input','adv_CstdNum_q3', 'AY 2021-2022', 'number'];
+          const in_adv_CstdNum_q4 = ['input','adv_CstdNum_q4', 'AY 2022-2023', 'number'];
           wrapElements([in_adv_CstdNum_q1, in_adv_CstdNum_q2, in_adv_CstdNum_q3, in_adv_CstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container1');
 
         createDynamicLabel('UNDERGRADUATE THESIS', 'form-container1');
-          const in_adv_UstdNum_q1 = ['input','adv-UstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_adv_UstdNum_q2 = ['input','adv-UstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_adv_UstdNum_q3 = ['input','adv-UstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_adv_UstdNum_q4 = ['input','adv-UstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_adv_UstdNum_q1 = ['input','adv_UstdNum_q1', 'AY 2019-2020', 'number'];
+          const in_adv_UstdNum_q2 = ['input','adv_UstdNum_q2', 'AY 2020-2021', 'number'];
+          const in_adv_UstdNum_q3 = ['input','adv_UstdNum_q3', 'AY 2021-2022', 'number'];
+          const in_adv_UstdNum_q4 = ['input','adv_UstdNum_q4', 'AY 2022-2023', 'number'];
           wrapElements([in_adv_UstdNum_q1, in_adv_UstdNum_q2, in_adv_UstdNum_q3, in_adv_UstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container1');
 
         createDynamicLabel('MASTERS THESIS', 'form-container1');
-          const in_adv_MstdNum_q1 = ['input','adv-MstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_adv_MstdNum_q2 = ['input','adv-MstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_adv_MstdNum_q3 = ['input','adv-MstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_adv_MstdNum_q4 = ['input','adv-MstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_adv_MstdNum_q1 = ['input','adv_MstdNum_q1', 'AY 2019-2020', 'number'];
+          const in_adv_MstdNum_q2 = ['input','adv_MstdNum_q2', 'AY 2020-2021', 'number'];
+          const in_adv_MstdNum_q3 = ['input','adv_MstdNum_q3', 'AY 2021-2022', 'number'];
+          const in_adv_MstdNum_q4 = ['input','adv_MstdNum_q4', 'AY 2022-2023', 'number'];
           wrapElements([in_adv_MstdNum_q1, in_adv_MstdNum_q2, in_adv_MstdNum_q3, in_adv_MstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container1');
 
         createDynamicLabel('DISSERTATION', 'form-container1');
-          const in_adv_DstdNum_q1 = ['input','adv-DstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_adv_DstdNum_q2 = ['input','adv-DstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_adv_DstdNum_q3 = ['input','adv-DstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_adv_DstdNum_q4 = ['input','adv-DstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_adv_DstdNum_q1 = ['input','adv_DstdNum_q1', 'AY 2019-2020', 'number'];
+          const in_adv_DstdNum_q2 = ['input','adv_DstdNum_q2', 'AY 2020-2021', 'number'];
+          const in_adv_DstdNum_q3 = ['input','adv_DstdNum_q3', 'AY 2021-2022', 'number'];
+          const in_adv_DstdNum_q4 = ['input','adv_DstdNum_q4', 'AY 2022-2023', 'number'];
           wrapElements([in_adv_DstdNum_q1, in_adv_DstdNum_q2, in_adv_DstdNum_q3, in_adv_DstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container1');
         
+        createDynamicLabel('Supporting Documents', 'form-container1');
+          createDynamicCheckbox('adv_SD1', 'Copy of appointment/invitation as adviser or panel membe', 'form-container1');
+          createDynamicCheckbox('adv_SD2', 'Copy of evidence that the advisee passed the special project, capstone project, thesis, or dissertation', 'form-container1');
+
         
         // Panel -----------------------------------------------------
         createDynamicLabel('SPECIAL/CAPSTONE PROJECT', 'form-container2');
-          const in_pan_CstdNum_q1 = ['input','pan-CstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_pan_CstdNum_q2 = ['input','pan-CstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_pan_CstdNum_q3 = ['input','pan-CstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_pan_CstdNum_q4 = ['input','pan-CstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_pan_CstdNum_q1 = ['input','pan_CstdNum_q1', 'AY 2019-2020', 'number'];
+          const in_pan_CstdNum_q2 = ['input','pan_CstdNum_q2', 'AY 2020-2021', 'number'];
+          const in_pan_CstdNum_q3 = ['input','pan_CstdNum_q3', 'AY 2021-2022', 'number'];
+          const in_pan_CstdNum_q4 = ['input','pan_CstdNum_q4', 'AY 2022-2023', 'number'];
           wrapElements([in_adv_CstdNum_q1, in_adv_CstdNum_q2, in_adv_CstdNum_q3, in_adv_CstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container2');
 
         createDynamicLabel('UNDERGRADUATE THESIS', 'form-container2');
-          const in_pan_UstdNum_q1 = ['input','pan-UstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_pan_UstdNum_q2 = ['input', 'pan-UstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_pan_UstdNum_q3 = ['input','pan-UstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_pan_UstdNum_q4 = ['input','pan-UstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_pan_UstdNum_q1 = ['input','pan_UstdNum_q1', 'AY 2019-2020', 'number'];
+          const in_pan_UstdNum_q2 = ['input','pan_UstdNum_q2', 'AY 2020-2021', 'number'];
+          const in_pan_UstdNum_q3 = ['input','pan_UstdNum_q3', 'AY 2021-2022', 'number'];
+          const in_pan_UstdNum_q4 = ['input','pan_UstdNum_q4', 'AY 2022-2023', 'number'];
           wrapElements([in_pan_UstdNum_q1, in_pan_UstdNum_q2, in_pan_UstdNum_q3, in_pan_UstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container2');
 
         createDynamicLabel('MASTERS THESIS', 'form-container2');
-          const in_pan_MstdNum_q1 = ['input','pan-MstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_pan_MstdNum_q2 = ['input','pan-MstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_pan_MstdNum_q3 = ['input','pan-MstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_pan_MstdNum_q4 = ['input','pan-MstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_pan_MstdNum_q1 = ['input','pan_MstdNum_q1', 'AY 2019-2020', 'number'];
+          const in_pan_MstdNum_q2 = ['input','pan_MstdNum_q2', 'AY 2020-2021', 'number'];
+          const in_pan_MstdNum_q3 = ['input','pan_MstdNum_q3', 'AY 2021-2022', 'number'];
+          const in_pan_MstdNum_q4 = ['input','pan_MstdNum_q4', 'AY 2022-2023', 'number'];
           wrapElements([in_pan_MstdNum_q1, in_pan_MstdNum_q2, in_pan_MstdNum_q3, in_pan_MstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container2');
 
         createDynamicLabel('DISSERTATION', 'form-container2');
-          const in_pan_DstdNum_q1 = ['input','pan-DstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_pan_DstdNum_q2 = ['input','pan-DstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_pan_DstdNum_q3 = ['input','pan-DstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_pan_DstdNum_q4 = ['input','pan-DstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_pan_DstdNum_q1 = ['input','pan_DstdNum_q1', 'AY 2019-2020', 'number'];
+          const in_pan_DstdNum_q2 = ['input','pan_DstdNum_q2', 'AY 2020-2021', 'number'];
+          const in_pan_DstdNum_q3 = ['input','pan_DstdNum_q3', 'AY 2021-2022', 'number'];
+          const in_pan_DstdNum_q4 = ['input','pan_DstdNum_q4', 'AY 2022-2023', 'number'];
           wrapElements([in_pan_DstdNum_q1, in_pan_DstdNum_q2, in_pan_DstdNum_q3, in_pan_DstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container2');
         
+        createDynamicLabel('Supporting Documents', 'form-container2');
+          createDynamicCheckbox('pan_SD1', 'Copy of appointment/invitation as adviser or panel member', 'form-container2');
+          createDynamicCheckbox('pan_SD2', 'Copy of proof of participation', 'form-container2');
+
 
         // Mentor ----------------------------------------------------
-        const in_ment_compeName = ['input','ment-compeName', 'Name of Academic Competition', 'text'];
-        const in_ment_sponsorOrg = ['input','ment-sponsorOrg', 'Name of Sponsor Organization', 'text'];
-        const in_ment_awardName = ['input','ment-awardName', 'Award Received', 'text'];
-        const in_ment_awardDate = ['input','ment-awardDate', 'Date Awarded', 'date'];
+        const in_ment_compeName = ['input','ment_compeName', 'Name of Academic Competition', 'text'];
+        const in_ment_sponsorOrg = ['input','ment_sponsorOrg', 'Name of Sponsor Organization', 'text'];
+        const in_ment_awardName = ['input','ment_awardName', 'Award Received', 'text'];
+        const in_ment_awardDate = ['input','ment_awardDate', 'Date Awarded', 'date'];
 
         wrapElements([in_ment_compeName], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container3');
         wrapElements([in_ment_sponsorOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container3');
         wrapElements([in_ment_awardName, in_ment_awardDate], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container3');
+        
+        createDynamicLabel('Supporting Documents', 'form-container3');
+        createDynamicCheckbox('ment_SD1', 'Copy of appointment/designation as mentor for a student or a team of students', 'form-container3');
+        createDynamicCheckbox('ment_SD2', 'Copy of the award/certificate received by student/group of students mentored', 'form-container3');
     }
 }
 </script>
@@ -343,6 +373,7 @@ function showAddForm(option) {
                   <div id="form-container1" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <div id="form-container2" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <div id="form-container3" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
+                  <br>
 
                 <!-- must always be present in all pages -->
                 <!-- box design for upload document -->
