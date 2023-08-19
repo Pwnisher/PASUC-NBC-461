@@ -285,5 +285,140 @@
     </body>
 </html>
 
+<!--
+function showSpecificPart(selectionID) {
+    var selection = document.getElementById(selectionID).value;
+    var part1 = document.getElementById('dynamic-form-container1');
+    var part2 = document.getElementById('dynamic-form-container2');
+
+    // Hide all parts initially
+    part1.style.display = 'none';
+    part2.style.display = 'none';
+
+    // Show the selected part
+    if (selection === 'dynamic-form-container1') {
+        part1.style.display = 'block';
+    } else if (selection === 'dynamic-form-container2') {
+        part2.style.display = 'block';
+    }
+}
+
+function wrapElements(params, colClass, containerID) {
+    const formContainer = document.getElementById(containerID);
+
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'flex flex-wrap -mx-3 mb-6'; 
+
+    // Generate columns for each input or select based on the parameter type
+    for (const param of params) {
+        const [type, ...rest] = param;
+
+        const columnDiv = document.createElement('div');
+        columnDiv.className = colClass;
+
+        if (type === 'input') {
+            const [id, labelText, inputType] = rest;
+            const inputContainerDiv = createDynamicInput(id, labelText, inputType);
+            columnDiv.appendChild(inputContainerDiv);
+        } else if (type === 'select') {
+            const [id, labelText, options, selectClass] = rest;
+            const selectContainerDiv = createDynamicSelect(id, labelText, options, selectClass);
+            columnDiv.appendChild(selectContainerDiv);
+        }
+        rowDiv.appendChild(columnDiv);
+    }
+    formContainer.appendChild(rowDiv);
+}
+
+function createDynamicSelect(id, labelText, options) {
+    // Create the label
+    const label = document.createElement('label');
+    label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
+    label.setAttribute('for', id);
+    label.textContent = labelText;
+
+    // Create the select element
+    const select = document.createElement('select');
+    select.id = id;
+    select.className = 'block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500';
+
+    // Create the default option
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    defaultOption.textContent = 'Choose...';
+    
+    select.appendChild(defaultOption);
+    
+    // Create the option elements
+    for (const option of options) {
+        const optionElement = document.createElement('option');
+        optionElement.value = option.value;
+        optionElement.textContent = option.label;
+        select.appendChild(optionElement);
+    }
+
+    // Create the container for the dropdown arrow
+    const dropdownArrowContainer = document.createElement('div');
+    dropdownArrowContainer.className = 'relative';
+    
+    const dropdownArrow = document.createElement('div');
+    dropdownArrow.className = 'pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700';
+    
+    // Append all elements to the container
+    dropdownArrowContainer.appendChild(select);
+    dropdownArrowContainer.appendChild(dropdownArrow);
+    const containerDiv = document.createElement('div');
+    containerDiv.appendChild(label);
+    containerDiv.appendChild(select);
+
+    return containerDiv; // Return the container with label and select
+}
 
 
+        const sel_kra1_cA = ['select','kra1_cA', 'Type of Evaluation:', [
+            { value: 'part1', label: 'Student Evaluation' },
+            { value: 'part2', label: 'Supervisor Evaluation' }
+        ]]; 
+        //contains the part you select
+        wrapElements([sel_kra1_cA], 'w-full md:w-4/5 px-3 mb-6 md:mb-0', 'dynamic-category-container');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        // Add event listener to the select element
+        const selectionElement = document.getElementById('sel_kra1_cA');
+        selectionElement.addEventListener('change', function() {
+          showSpecificPart('sel_kra1_cA');
+        });
+        }); 
+
+
+      // Student Evaluation -------------------------------------
+        const in_stdEval_semDed = ['input','stdEval-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
+        const sel_stdEval_reason = ['select','stdEval-reason', 'Reason for Reducing the Divisor', [
+            { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
+            { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
+            { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
+            { value: 'ON APPROVED MATERNITY LEAVE', label: 'ON APPROVED MATERNITY LEAVE' }
+        ]]; 
+
+
+        wrapElements([in_stdEval_semDed], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
+        wrapElements([sel_stdEval_reason], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
+
+
+
+
+        /*
+        document.addEventListener('DOMContentLoaded', function() {
+        // Add event listener to the select element
+        const selectionElement = document.getElementById('sel_kra1_cA');
+        selectionElement.addEventListener('change', function() {
+          console.log('Event listener triggered');
+            showSpecificPart('sel_kra1_cA');
+        });
+
+        // Initial call to show the selected part based on the default value
+        showSpecificPart('sel_kra1_cA');
+        }); */
+    -->
