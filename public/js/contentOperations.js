@@ -1,6 +1,8 @@
 function generateUrlString(clickedId) {
     var option = "";
 
+    console.log(clickedId);
+
     switch (clickedId) {
         case 'k1A':
             option = "kra1/criteriaA";

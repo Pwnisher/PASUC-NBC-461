@@ -19,7 +19,7 @@ class TabController extends Controller
         return view('addsummary', ['title_bar' => $dynamicContent]);
     }    
 
-    public function show(Request $request, $any) {
+    public function show(Request $request, $any = null) {
 
         switch ($any) {
             case 'kra1/criteriaA':
@@ -33,23 +33,39 @@ class TabController extends Controller
                 break;
                 
             case 'kra2/criteriaA':
+                $dynamicContent = 'Criterion A - Research Output Published';
+                break;
             case 'kra2/criteriaB':
+                $dynamicContent = 'Criterion B - Inventions';
+                break;
             case 'kra2/criteriaC':
-                $dynamicContent = 'Criterion C - Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services';
+                $dynamicContent = 'Criterion C - Creative Works';
                 break;
 
             case 'kra3/criteriaA':
+                $dynamicContent = 'Criterion A - Service to the Institution';
+                break;
             case 'kra3/criteriaB':
+                $dynamicContent = 'Criterion B - Service to the Community';
+                break;
             case 'kra3/criteriaC':
+                $dynamicContent = 'Criterion C - Quality of Extension Services';
+                break;
             case 'kra3/criteriaD':
-                $dynamicContent = 'Criterion C - Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services';
+                $dynamicContent = 'Criterion D - Bonus Criterion';
                 break;
 
             case 'kra4/criteriaA':
+                $dynamicContent = 'Criterion A - Involvement in Professional Organizations';
+                break;
             case 'kra4/criteriaB':
+                $dynamicContent = 'Criterion B - Continuing Development';
+                break;
             case 'kra4/criteriaC':
+                $dynamicContent = 'Criterion  - Awards and Recognition';
+                break;
             case 'kra4/criteriaD':
-                $dynamicContent = 'Criterion C - Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services';
+                $dynamicContent = 'Criterion D - Bonus Indicators for Newly Hired Faculty';
                 break;
 
             default:

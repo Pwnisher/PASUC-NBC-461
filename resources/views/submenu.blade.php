@@ -1,5 +1,5 @@
-<div id="accomplishment-container" class="hidden fixed inset-x-0 top-[10%] z-[999] p-4 bg-ghostwhite shadow-lg border border-gray-300 rounded-md overflow-y-auto w-screen">
-    <div class="absolute inset-0 bg-center" style="background-image: url('{{ asset('storage/PUP.png') }}'); opacity: 0.10; background-size: cover;"></div>
+<div id="accomplishment-container" class="hidden fixed inset-x-0 top-14 z-[999] p-4 bg-ghostwhite shadow-lg border border-gray-300 rounded-md overflow-y-auto w-screen">
+    <div class="absolute inset-0 bg-center" style="background-image: url('{{ url('/storage/PUP.png/') }}'); opacity: 0.10; background-size: cover;"></div>
     <div class="mx-auto w-[95%] relative z-10">
       <div class="flex flex-row items-stretch justify-between">
         <div class="flex-auto p-4 w-[25%]">
@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="relative w-full bg-transparent border-green-500 text-base rounded-md items-center text-center p-5 mt-3">
-        <button href="{{ url('/application') }}"  class="absolute inset-0 flex items-center justify-center cursor-pointer bg-green-600 text-white text-base rounded-md">
+        <button onclick="window.location.href='{{ url('/application/') }}';" class="absolute inset-0 flex items-center justify-center cursor-pointer bg-green-600 text-white text-base rounded-md border-none">
             See all qualified consolidated accomplishments
         </button>
     </div>
