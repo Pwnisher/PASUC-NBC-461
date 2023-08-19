@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class AddController extends Controller
 {
-    public function add() {
-        return view('add');
+    public function addDocuments() {
+        return view('add-documents');
     }
     
     public function showPAGEaddKRA1() {

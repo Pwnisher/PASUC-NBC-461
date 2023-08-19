@@ -1,26 +1,4 @@
 //-----------------------------------------------------------------------------------------------
-// SHOW/HIDE CERTAIN ELEMENTS
-/*function showSpecificPart(selectionID, selectedValue) {
-    console.log(`Selected value: ${selectedValue}`);
-    var selection = document.getElementById(selectionID).value;
-
-    var part1 = document.getElementById('dynamic-form-container1');
-    var part2 = document.getElementById('dynamic-form-container2');
-
-    // Hide all parts initially
-    part1.style.display = 'none';
-    part2.style.display = 'none';
-
-    // Show the selected part
-    if (selection === 'part1') {
-        part1.style.display = 'block';
-    } else if (selection === 'part2') {
-        part2.style.display = 'block';
-    }
-
-}*/
-
-//-----------------------------------------------------------------------------------------------
 // WRAP DYNAMIC SELECT & INPUT FOR FLEXIBLE ROWS (CAN BE USED INDIVIDUALLY OR BOTH)
 // (EXAMPLE USE: CHANGE '2' in 1/2 BASED ON NEEDED ROWS) (CAN ALSO USE MULTIPLE SAME/DIFF TYPE)
 // wrapElements([], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
@@ -50,24 +28,6 @@ function wrapElements(params, colClass, containerID, onchangeCallback) {
         rowDiv.appendChild(columnDiv);
     }
     formContainer.appendChild(rowDiv);
-}
-
-//-----------------------------------------------------------------------------------------------
-// USE THE 'wrapElements'; DIFFERENT DIV ID // Need to revise so that it only changes the  container ID
-
-
-//-----------------------------------------------------------------------------------------------
-// DYNAMIC LABEL ELEMENT
-function createDynamicLabel(labelText, containerID) {
-    const labelContainer = document.getElementById(containerID);
-
-    // Create the label
-    const label = document.createElement('label');
-    label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
-    label.textContent = labelText;
-
-    // Append the label to the container
-    labelContainer.appendChild(label);
 }
 
 //-----------------------------------------------------------------------------------------------
@@ -152,6 +112,29 @@ function createDynamicInput(id, labelText, inputType) {
 }
 
 //-----------------------------------------------------------------------------------------------
+// CLEAR ELEMENTS IN 'dynamic-form-container'
+function clearFormContainer(containerID) {
+    const dynamicFormContainer = document.getElementById(containerID);
+    while (dynamicFormContainer.firstChild) {
+        dynamicFormContainer.removeChild(dynamicFormContainer.firstChild);
+    }
+}
+
+//-----------------------------------------------------------------------------------------------
+// DYNAMIC LABEL ELEMENT
+function createDynamicLabel(labelText, containerID) {
+    const labelContainer = document.getElementById(containerID);
+
+    // Create the label
+    const label = document.createElement('label');
+    label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
+    label.textContent = labelText;
+
+    // Append the label to the container
+    labelContainer.appendChild(label);
+}
+
+//-----------------------------------------------------------------------------------------------
 // DYNAMIC CHECKBOX ELEMENT
 function createDynamicCheckbox(id, labelText, containerID) {
     const checkboxContainer = document.getElementById(containerID);
@@ -174,15 +157,8 @@ function createDynamicCheckbox(id, labelText, containerID) {
     checkboxContainer.appendChild(document.createElement('br'));
 }
 
-//-----------------------------------------------------------------------------------------------
-// CLEAR ELEMENTS IN 'dynamic-form-container'
-function clearDynamicFormContainer(containerID) {
-    const dynamicFormContainer = document.getElementById(containerID);
-    while (dynamicFormContainer.firstChild) {
-        dynamicFormContainer.removeChild(dynamicFormContainer.firstChild);
-    }
-}
 
+/*
 //-----------------------------------------------------------------------------------------------
 // CHANGE CONTENT PER CRITERIA OPTION
 function showAddForm(option) {
@@ -190,7 +166,7 @@ function showAddForm(option) {
     var addPageKRA = document.getElementById("add_page_kra");
 
     // Clear the dynamic-form-container
-    clearDynamicFormContainer();
+    clearFormContainer();
 
     if (option === "criterionA") {
         addPageTitle.innerHTML = "Teaching Effectiveness";
@@ -238,3 +214,5 @@ function showAddForm(option) {
         createDynamicCheckbox('checkbox-2', 'Checkbox 2');
     }
 }
+
+*/
