@@ -272,31 +272,31 @@ function showAddForm(option) {
         
         // Panel -----------------------------------------------------
         createDynamicLabel('SPECIAL/CAPSTONE PROJECT', 'form-container2');
-          const in_pan_CstdNum_q1 = ['input','adv-CstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_pan_CstdNum_q2 = ['input','adv-CstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_pan_CstdNum_q3 = ['input','adv-CstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_pan_CstdNum_q4 = ['input','adv-CstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_pan_CstdNum_q1 = ['input','pan-CstdNum-q1', 'AY 2019-2020', 'number'];
+          const in_pan_CstdNum_q2 = ['input','pan-CstdNum-q2', 'AY 2020-2021', 'number'];
+          const in_pan_CstdNum_q3 = ['input','pan-CstdNum-q3', 'AY 2021-2022', 'number'];
+          const in_pan_CstdNum_q4 = ['input','pan-CstdNum-q4', 'AY 2022-2023', 'number'];
           wrapElements([in_adv_CstdNum_q1, in_adv_CstdNum_q2, in_adv_CstdNum_q3, in_adv_CstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container2');
 
         createDynamicLabel('UNDERGRADUATE THESIS', 'form-container2');
-          const in_pan_UstdNum_q1 = ['input','adv-UstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_pan_UstdNum_q2 = ['input','adv-UstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_pan_UstdNum_q3 = ['input','adv-UstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_pan_UstdNum_q4 = ['input','adv-UstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_pan_UstdNum_q1 = ['input','pan-UstdNum-q1', 'AY 2019-2020', 'number'];
+          const in_pan_UstdNum_q2 = ['input', 'pan-UstdNum-q2', 'AY 2020-2021', 'number'];
+          const in_pan_UstdNum_q3 = ['input','pan-UstdNum-q3', 'AY 2021-2022', 'number'];
+          const in_pan_UstdNum_q4 = ['input','pan-UstdNum-q4', 'AY 2022-2023', 'number'];
           wrapElements([in_pan_UstdNum_q1, in_pan_UstdNum_q2, in_pan_UstdNum_q3, in_pan_UstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container2');
 
         createDynamicLabel('MASTERS THESIS', 'form-container2');
-          const in_pan_MstdNum_q1 = ['input','adv-MstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_pan_MstdNum_q2 = ['input','adv-MstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_pan_MstdNum_q3 = ['input','adv-MstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_pan_MstdNum_q4 = ['input','adv-MstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_pan_MstdNum_q1 = ['input','pan-MstdNum-q1', 'AY 2019-2020', 'number'];
+          const in_pan_MstdNum_q2 = ['input','pan-MstdNum-q2', 'AY 2020-2021', 'number'];
+          const in_pan_MstdNum_q3 = ['input','pan-MstdNum-q3', 'AY 2021-2022', 'number'];
+          const in_pan_MstdNum_q4 = ['input','pan-MstdNum-q4', 'AY 2022-2023', 'number'];
           wrapElements([in_pan_MstdNum_q1, in_pan_MstdNum_q2, in_pan_MstdNum_q3, in_pan_MstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container2');
 
         createDynamicLabel('DISSERTATION', 'form-container2');
-          const in_pan_DstdNum_q1 = ['input','adv-DstdNum-q1', 'AY 2019-2020', 'number'];
-          const in_pan_DstdNum_q2 = ['input','adv-DstdNum-q2', 'AY 2020-2021', 'number'];
-          const in_pan_DstdNum_q3 = ['input','adv-DstdNum-q3', 'AY 2021-2022', 'number'];
-          const in_pan_DstdNum_q4 = ['input','adv-DstdNum-q4', 'AY 2022-2023', 'number'];
+          const in_pan_DstdNum_q1 = ['input','pan-DstdNum-q1', 'AY 2019-2020', 'number'];
+          const in_pan_DstdNum_q2 = ['input','pan-DstdNum-q2', 'AY 2020-2021', 'number'];
+          const in_pan_DstdNum_q3 = ['input','pan-DstdNum-q3', 'AY 2021-2022', 'number'];
+          const in_pan_DstdNum_q4 = ['input','pan-DstdNum-q4', 'AY 2022-2023', 'number'];
           wrapElements([in_pan_DstdNum_q1, in_pan_DstdNum_q2, in_pan_DstdNum_q3, in_pan_DstdNum_q4], 'w-full md:w-1/4 px-3 mb-6 md:mb-0', 'form-container2');
         
 
@@ -334,10 +334,7 @@ function showAddForm(option) {
                 <p class="my-1">Please fill in the necessary details. No abbreviations.</p>
                 <p class="my-1">All inputs with the symbol (*) are required.</p>
                 
-                  <div id="category-container" class="mt-6">
-                    <!-- CONTENT CHANGES HERE -->
-                    
-                  </div>
+                  <div id="category-container" class="mt-6"> <!-- CONTENT CHANGES HERE --> </div>
               </div>
           
               <div class="lg:col-span-2">
