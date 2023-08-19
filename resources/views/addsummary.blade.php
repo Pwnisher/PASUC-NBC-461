@@ -13,7 +13,7 @@
     <script src="{{ asset('js/contentOperations.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
-    <title>eQAR Documents</title>
+    <title>{{ $title_bar }}</title>
   </head>
   <body class = "bg-ghostwhite">
     <div class="flex h-screen flex-col ">

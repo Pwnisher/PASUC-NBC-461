@@ -15,11 +15,11 @@ class TabController extends Controller
     }
 
     public function application() {
-        return view('addsummary');
-    }
-
-    public function show(Request $request, $any = null) {
         $dynamicContent = 'Application of Accomplishments';
+        return view('addsummary', ['title_bar' => $dynamicContent]);
+    }    
+
+    public function show(Request $request, $any) {
 
         switch ($any) {
             case 'kra1/criteriaA':
@@ -53,8 +53,7 @@ class TabController extends Controller
                 break;
 
             default:
-                // Return a not found
-                return response()->json(['error' => 'Not Found'], 404);
+                return view('error');
         }
 
         if ($request->ajax()) {
