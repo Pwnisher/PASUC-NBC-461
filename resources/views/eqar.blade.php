@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico')}}">
     <!-- Javascripts -->
     <script src="{{ asset('js/contentOperations.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <title>eQAR Documents</title>
   </head>

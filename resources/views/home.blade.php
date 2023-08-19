@@ -2,15 +2,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PASUC EMIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--For Vite Dev-->
     @vite('resources/css/app.css')
     <!--Font Awesome Library (For icons)-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <!--Favicon-->
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico')}}">
+    <!-- Javascripts -->
+    <script src="{{ asset('js/contentOperations.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 

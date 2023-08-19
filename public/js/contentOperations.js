@@ -1,8 +1,6 @@
 function generateUrlString(clickedId) {
     var option = "";
 
-    console.log(clickedId);
-
     switch (clickedId) {
         case 'k1A':
             option = "kra1/criteriaA";
@@ -64,12 +62,12 @@ function handleAnchorClick(event) {
 
     const clickedId = event.target.id;
     var urlstring = generateUrlString(clickedId);
+    console.log(urlstring);
 
     if (urlstring !== null) {
         event.target.href = urlstring;
         window.history.pushState(null, null, urlstring);
 
-        // Move the AJAX call here, outside the $(document).ready() block
         $.ajax({
             url: urlstring,
             type: 'GET',
