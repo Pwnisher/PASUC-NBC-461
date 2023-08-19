@@ -35,11 +35,6 @@
                   <strong class="text-xs">Reminders:</strong>
                   <p class="ml-8 text-xs">
                     • The system is connected to the PUP eQAR system, so no need to re-upload the same accomplishment. <br>
-                    • Upload your supporting documents on the Application tab. <br>
-                    • Once you apply an accomplishment, you are not allowed to undo it. If you want to remove the accomplishment, go to <a href="{{ url('/application') }}"><b>Application</b></a> tab and click "Remove". <br>
-                    • The application is based on the current cycle of the PASUC NBC No. 461.<br>
-                    • Once the accomplishment is applied for promotion, please go to <a href="{{ url('/application') }}"><b>Application</b></a> tab to add supporting documents.<br>
-                    • The system will automatically categorize the applied accomplishment. Click on the sub-menu of the <a href="{{ url('/application') }}"><b>Application</b></a> tab, or check the overall list on the <a href="{{ url('/application') }}"><b>Application</b></a> tab.<br>
                   </p>
                 </span>
               </div>

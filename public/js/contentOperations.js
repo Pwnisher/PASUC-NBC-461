@@ -65,20 +65,26 @@ function handleAnchorClick(event) {
     console.log(urlstring);
 
     if (urlstring !== null) {
-        event.target.href = urlstring;
-        window.history.pushState(null, null, urlstring);
-
-        $.ajax({
-            url: urlstring,
-            type: 'GET',
-            success: function(response) {
-                var dynamicContent = response.title_bar;
-                $('#title_bar').text(dynamicContent); // Update content in the page
-                document.title = dynamicContent; // Update the title of the page
-            },
-            error: function() {
-                $('#title_bar').text('Error fetching dynamic content.');
-            }
-        });        
+        // Check if the current route is /application
+        if (window.location.pathname.indexOf('/application') === 0) {
+            event.target.href = urlstring;
+            window.history.pushState(null, null, urlstring);
+            // Update only the content using AJAX
+            $.ajax({
+                url: urlstring,
+                type: 'GET',
+                success: function(response) {
+                    var dynamicContent = response.title_bar;
+                    $('#title_bar').text(dynamicContent); // Update content in the page
+                    document.title = dynamicContent; // Update the title of the page
+                },
+                error: function() {
+                    $('#title_bar').text('Error fetching dynamic content.');
+                }
+            });
+        } else {
+            // Navigate to the requested URL
+            window.location.href = urlstring;
+        }
     }
 }
