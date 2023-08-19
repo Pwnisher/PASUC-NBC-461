@@ -58,3 +58,10 @@ const accomplishment = submenu.querySelectorAll('a');
 accomplishment.forEach(link => {
   link.addEventListener('click', handleAnchorClick);
 });
+
+// Cycle Dropdown
+
+function toggleCycleDropdown() {
+  const dropdown = document.getElementById('cycleDropdown');
+  dropdown.classList.toggle('hidden');
+}
