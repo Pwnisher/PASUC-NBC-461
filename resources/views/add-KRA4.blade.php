@@ -20,9 +20,9 @@ function showAddForm(option) {
     var part4 = document.getElementById('dynamic-form-container4');
 
     // Clear the elements in dynamic form and category container
-    clearDynamicFormContainer('dynamic-form-container1');
-    clearDynamicFormContainer('dynamic-form-container2');
-    clearDynamicFormContainer('dynamic-category-container');
+    clearFormContainer('dynamic-form-container1'); clearFormContainer('dynamic-form-container2');
+    clearFormContainer('dynamic-form-container3'); clearFormContainer('dynamic-form-container4');
+    clearFormContainer('dynamic-category-container');
 
     if (option === "criterionA") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Involvement in Professional Organizations";
@@ -34,7 +34,7 @@ function showAddForm(option) {
         const in_stdEval_semDed = ['input','stdEval-semDed', 'Name of Organization', 'text'];
         const in_stdEval_semDed2 = ['input','stdEval-semDed2', 'Type of Organization', 'text'];
         const in_stdEval_semDed3 = ['input','stdEval-semDed3', 'Activity of the Organization Participated by the Faculty', 'text'];
-        const sel_stdEval_reason = ['select','stdEval-reason', 'Role or Contribution to the activity of the Organization', [
+        const sel_stdEval_reason = ['select','stdEval-reason', 'Role or Contribution to the Activity', [
             { value: 'BOARD MEMBER', label: 'BOARD MEMBER' },
             { value: 'OFFICER', label: 'OFFICER' },
             { value: 'LEAD ORGANIZER', label: 'LEAD ORGANIZER' },
@@ -46,12 +46,10 @@ function showAddForm(option) {
         ]]; 
         const in_stdEval_semDed4 = ['input','stdEval_semDed4', 'Date of Activity', 'date'];
 
-        // Note: need id in label
         wrapElements([in_stdEval_semDed], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
         wrapElements([in_stdEval_semDed2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
         wrapElements([in_stdEval_semDed3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
-        wrapElements([sel_stdEval_reason], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
-        wrapElements([in_stdEval_semDed4], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
+        wrapElements([sel_stdEval_reason, in_stdEval_semDed4], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
 
         //createDynamicCheckbox('stdEval-SD1', 'Student Evaluation Rating using prescribed template');
     } 
@@ -60,8 +58,8 @@ function showAddForm(option) {
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
         // KRA 4 : Criterion B Categories
-        const sel_kra1_cB = ['select','sel_kra1_cB', 'ano title nito:', [
-            { value: 'part1', label: 'Educational Qualification - Doctorate Degree' },
+        const sel_kra1_cB = ['select','sel_kra1_cB', 'Type of Continuing Development:', [
+            { value: 'part1', label: 'Educational Qualification - Doctorate Degree (First Time)' },
             { value: 'part2', label: 'Educational Qualification - Additional Degree' },
             { value: 'part3', label: 'Participation in Conferences, Seminars, Workshops, Industry Immersion' },
             { value: 'part4', label: 'Paper Presentation in Conferences' }
@@ -113,8 +111,7 @@ function showAddForm(option) {
         const in_im_reviewer_co2 = ['input','im-reviewer-co', 'Name of HEI', 'text'];
         const in_im_reviewer_co3 = ['input','im-reviewer-co', 'Date Completed', 'date'];        
         
-        wrapElements([sel_im_type_co], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
-        wrapElements([in_im_reviewer_co], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
+        wrapElements([sel_im_type_co, in_im_reviewer_co], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
         wrapElements([in_im_reviewer_co2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
         wrapElements([in_im_reviewer_co3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
 
@@ -129,8 +126,7 @@ function showAddForm(option) {
         const in_ap_name3 = ['input','ap-name3', 'Date of Activity', 'date'];
 
         wrapElements([in_ap_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container3');
-        wrapElements([sel_ap_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container3');
-        wrapElements([in_ap_name2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container3');
+        wrapElements([sel_ap_type, in_ap_name2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container3');
         wrapElements([in_ap_name3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container3');
 
         // Paper Presentation in Conferences ----------------------------------------------
@@ -144,8 +140,7 @@ function showAddForm(option) {
         const in_conf_name4 = ['input','conf-name3', 'Date Presented', 'date'];
 
         wrapElements([in_conf_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container4');
-        wrapElements([sel_conf_type], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container4');
-        wrapElements([in_conf_name2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container4');
+        wrapElements([sel_conf_type, in_conf_name2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container4');
         wrapElements([in_conf_name3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container4');
         wrapElements([in_conf_name4], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container4');
     } 
@@ -166,8 +161,7 @@ function showAddForm(option) {
         const in_award_recog4 = ['input','award_recog4', 'Venue of the Award Ceremony', 'text'];
 
         wrapElements([in_award_recog], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');   
-        wrapElements([sel_award_recog], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');   
-        wrapElements([in_award_recog2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');   
+        wrapElements([sel_award_recog, in_award_recog2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container1');   
         wrapElements([in_award_recog3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');   
         wrapElements([in_award_recog4], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');   
     }
@@ -176,7 +170,7 @@ function showAddForm(option) {
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
         // KRA 4 : Criterion C Categories
-        const sel_kra1_cC = ['select','sel_kra1_cC', 'ano title nito: ', [
+        const sel_kra1_cC = ['select','sel_kra1_cC', 'Type of Appointment/Designation: ', [
             { value: 'part1', label: 'Every Year of Full-Time Academic Service in an Institution of Higher Learning' },
             { value: 'part2', label: 'Every Year of Industry Experience' }
         ]]; 
@@ -209,8 +203,7 @@ function showAddForm(option) {
         const in_year_acad4 = ['input','year_acad4', 'End', 'date'];
 
         wrapElements([sel_year_acad], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
-        wrapElements([in_year_acad], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
-        wrapElements([in_year_acad2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
+        wrapElements([in_year_acad, in_year_acad2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
           createDynamicLabel('Period Covered', 'dynamic-form-container1');
         wrapElements([in_year_acad3, in_year_acad4], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container1');
 
@@ -226,9 +219,7 @@ function showAddForm(option) {
         const in_year_indus4 = ['input','year_indus', 'End', 'date'];
 
         wrapElements([in_year_indus], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
-        wrapElements([sel_year_indus], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
-        wrapElements([in_year_indus], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
-        wrapElements([in_year_indus2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
+        wrapElements([sel_year_indus, in_year_indus2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
           createDynamicLabel('Period Covered', 'dynamic-form-container2');
         wrapElements([in_year_indus3, in_year_indus4], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'dynamic-form-container2');
     }
@@ -266,18 +257,10 @@ function showAddForm(option) {
               <div class="lg:col-span-2">
               <!-- START DYNAMIC FORM -->
               <form>
-                  <div id="dynamic-form-container1" style="display: none;">
-                    <!-- CONTENT CHANGES HERE -->
-                  </div>
-                  <div id="dynamic-form-container2" style="display: none;">
-                    <!-- CONTENT CHANGES HERE -->
-                  </div>
-                  <div id="dynamic-form-container3" style="display: none;">
-                    <!-- CONTENT CHANGES HERE -->
-                  </div>
-                  <div id="dynamic-form-container4" style="display: none;">
-                    <!-- CONTENT CHANGES HERE -->
-                  </div>
+                  <div id="dynamic-form-container1" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
+                  <div id="dynamic-form-container2" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
+                  <div id="dynamic-form-container3" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
+                  <div id="dynamic-form-container4" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
 
                 <!-- must always be present in all pages -->
                 <!-- box design for upload document -->
