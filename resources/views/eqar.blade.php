@@ -12,7 +12,10 @@
     <!-- Javascripts -->
     <script src="{{ asset('js/contentOperations.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+    <script src="{{ asset('js/eqarOperations.js') }}"></script>
+    <!-- CSRF meta tags -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>eQAR Documents</title>
   </head>
   <body class = "bg-ghostwhite">
@@ -129,42 +132,40 @@
                                 <th id="num_id" class="py-4 px-6 text-left">  </th>
                                 <th id="title" class="py-4 px-6 cursor-pointer text-left">Title</th>
                                 <th id="inclusive_date" class="py-4 px-6 cursor-pointer text-left">Inclusive Date</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Accomplishment</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Cycle</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Date Submitted</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Status</th>
+                                <th id="accomplishment_name" class="py-4 px-6 cursor-pointer text-left">Accomplishment</th>
+                                <th id="department_section" class="py-4 px-6 cursor-pointer text-left">Department/Section</th>
+                                <th id="qar_type" class="py-4 px-6 cursor-pointer text-left">QAR Type</th>
+                                <th id="date_submitted" class="py-4 px-6 cursor-pointer text-left">Date Submitted</th>
+                                <th id="status" class="py-4 px-6 cursor-pointer text-left">Status</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-300">
-                          <tr class="hover:bg-gray-100">
-                              <td class="py-4 px-6">1</td>
-                              <td class="py-4 px-6">Document 1</td>
-                              <td class="py-4 px-6">08/14/23</td>
-                              <td class="py-4 px-6">Extension</td>
-                              <td class="py-4 px-6">9th Cycle</td>
-                              <td class="py-4 px-6">8/17/2023</td>
-                              <td class="py-4 px-6">Pending</td>
-                              <td class="py-4 px-6">
-                                  <div class="flex justify-between w-full space-x-4">
-                                      <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md">Apply</button>
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr class="hover:bg-gray-100">
-                              <td class="py-4 px-6">1</td>
-                              <td class="py-4 px-6">Document 1</td>
-                              <td class="py-4 px-6">08/14/23</td>
-                              <td class="py-4 px-6">Extension</td>
-                              <td class="py-4 px-6">9th Cycle</td>
-                              <td class="py-4 px-6">8/17/2023</td>
-                              <td class="py-4 px-6">Pending</td>
-                              <td class="py-4 px-6">
-                                  <div class="flex justify-between w-full space-x-4">
-                                      <button class="flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md" disabled>Applied</button>
-                                  </div>
-                              </td>
-                          </tr>
+                          @foreach ($eqarFiles as $index => $file)
+                              <tr class="hover:bg-gray-100">
+                                  <td class="py-4 px-6">{{ $index + 1 }}</td>
+                                  <td class="py-4 px-6">{{ $file->title }}</td>
+                                  <td class="py-4 px-6">{{ $file->inclusive_date }}</td>
+                                  <td class="py-4 px-6">{{ $file->accomplishment_name }}</td>
+                                  <td class="py-4 px-6">{{ $file->department_section }}</td>
+                                  <td class="py-4 px-6">{{ $file->qar_type }}</td>
+                                  <td class="py-4 px-6">{{ $file->date_submitted }}</td>
+                                  <td class="py-4 px-6">{{ $file->status }}</td>
+                                  <td class="py-4 px-6">
+                                      <div class="flex justify-between w-full space-x-4">
+                                          @if ($file->status === 'Pending')
+                                              <button class="flex-1 px-4 py-2 bg-gray-500 text-white hover:bg-gray-700 rounded-md disabled">Pending</button>
+                                          @elseif ($file->status === 'Qualified')
+                                              @if ($file->is_applied)
+                                                <button class="cursor-not-allowed flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md" disabled>Applied</button>
+                                              @else
+                                                <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md" onclick="applyFile('{{ $file->eqar_id }}')">Apply</button>    
+                                              @endif
+                                          @endif
+                                      </div>
+                                  </td>
+                              </tr>
+                          @endforeach
                           <!-- Add more rows as needed -->
                         </tbody>
                     </table>

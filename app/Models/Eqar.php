@@ -12,7 +12,7 @@ class Eqar extends Model
 
     protected $fillable = [
         'user_user_id',
-        'is_approved',
+        'is_applied',
         'file_path',
         'title',
         'inclusive_date',

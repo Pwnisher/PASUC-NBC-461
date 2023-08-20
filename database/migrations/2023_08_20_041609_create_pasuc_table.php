@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('eqar_user_user_id');
             $table->string('eval_status', 45);
             $table->tinyInteger('is_submitted');
+            $table->string('cycle');
             $table->timestamps();
 
             $table->foreign('eqar_eqar_id')->references('eqar_id')->on('eqars')

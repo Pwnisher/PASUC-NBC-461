@@ -17,6 +17,7 @@ class Pasuc extends Model
         'eqar_files_user_user_id',
         'eval_status',
         'is_submitted',
+        'cycle',
     ];
 
     public function eqars()
