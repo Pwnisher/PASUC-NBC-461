@@ -65,9 +65,12 @@ function showAddForm(option) {
         wrapElements([in_partner_moaS, in_partner_moaE], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_partner_act], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_partner_date], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-          
 
-        //createDynamicCheckbox('stdEval-SD1', 'Student Evaluation Rating using prescribed template');
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('partner_SD1', 'Copy of MOA', 'form-container1');
+        createDynamicCheckbox('partner_SD2', 'Certification from the President that the partnership was initiated/implemented successfully by the faculty', 'form-container1');
+        createDynamicCheckbox('partner_SD3', 'Copy of implementation report or activity terminal report', 'form-container1');
+        
         
       // Total Contribution to Income Generation -----------------------------------
         const in_contriIn_name = ['input','contriIn_name', 'Name of Commercialized Product, Funded Project, or Project with Industry', 'text'];
@@ -79,14 +82,16 @@ function showAddForm(option) {
         const in_contriIn_perE = ['input','contriIn_perE', 'End', 'date'];
         const in_contriIn_amt = ['input','contriIn_amt', 'Total Amount', 'text'];
 
-        
         wrapElements([in_contriIn_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
         wrapElements([in_contriIn_role], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
           createDynamicLabel('Coverage Period', 'form-container2');
         wrapElements([in_contriIn_perS, in_contriIn_perE], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
         wrapElements([in_contriIn_amt], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
           
-        //createDynamicCheckbox('supEval-SD1', 'Supervisor Evaluation Rating using prescribed template', 'form-container');
+        createDynamicLabel('Supporting Documents', 'form-container2');
+        createDynamicCheckbox('contriIn_SD1', 'Copy of financial reports showing income generated from the sale of the product developed by the faculty', 'form-container2');
+        createDynamicCheckbox('contriIn_SD2', 'Certification from the President acknowledging the faculty’s contribution to income generation', 'form-container2');
+        
     } 
     else if (option === "criterionB") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion B: Service to the Community";
@@ -253,25 +258,25 @@ function showAddForm(option) {
         part1.style.display = 'block';
 
         // Client Satisfaction Rating ---------------------------------------------------
-        const in_cliSatRate_semDed = ['input','cliSatRate-semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
-        const sel_cliSatRate_reason = ['select','cliSatRate-reason', 'Reason for Reducing the Divisor', [
+        const in_cliSatRate_semDed = ['input','cliSatRate_semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
+        const sel_cliSatRate_reason = ['select','cliSatRate_reason', 'Reason for Reducing the Divisor', [
             { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
             { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
             { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
             { value: 'ON APPROVED MATERNITY LEAVE', label: 'ON APPROVED MATERNITY LEAVE' }
         ]]
         // Note: need flexible
-        const in_cliSatRate_1sem_q1 = ['input','cliSatRate-1sem-q1', '1ST SEMESTER', 'number'];
-        const in_cliSatRate_2sem_q1 = ['input','cliSatRate-2sem-q1', '2ND SEMESTER', 'number'];
+        const in_cliSatRate_1sem_q1 = ['input','cliSatRate_1sem_q1', '1ST SEMESTER', 'number'];
+        const in_cliSatRate_2sem_q1 = ['input','cliSatRate_2sem_q1', '2ND SEMESTER', 'number'];
 
-        const in_cliSatRate_1sem_q2 = ['input','cliSatRate-1sem-q2', '1ST SEMESTER', 'number'];
-        const in_cliSatRate_2sem_q2 = ['input','cliSatRate-2sem-q2', '2ND SEMESTER', 'number'];
+        const in_cliSatRate_1sem_q2 = ['input','cliSatRate_1sem_q2', '1ST SEMESTER', 'number'];
+        const in_cliSatRate_2sem_q2 = ['input','cliSatRate_2sem_q2', '2ND SEMESTER', 'number'];
 
-        const in_cliSatRate_1sem_q3 = ['input','cliSatRate-1sem-q3', '1ST SEMESTER', 'number'];
-        const in_cliSatRate_2sem_q3 = ['input','cliSatRate-2sem-q3', '2ND SEMESTER', 'number'];
+        const in_cliSatRate_1sem_q3 = ['input','cliSatRate_1sem_q3', '1ST SEMESTER', 'number'];
+        const in_cliSatRate_2sem_q3 = ['input','cliSatRate_2sem_q3', '2ND SEMESTER', 'number'];
 
-        const in_cliSatRate_1sem_q4 = ['input','cliSatRate-1sem-q4', '1ST SEMESTER', 'number'];
-        const in_cliSatRate_2sem_q4 = ['input','cliSatRate-2sem-q4', '2ND SEMESTER', 'number'];
+        const in_cliSatRate_1sem_q4 = ['input','cliSatRate_1sem_q4', '1ST SEMESTER', 'number'];
+        const in_cliSatRate_2sem_q4 = ['input','cliSatRate_2sem_q4', '2ND SEMESTER', 'number'];
 
         // Note: need id in label
         wrapElements([in_cliSatRate_semDed], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
@@ -284,6 +289,10 @@ function showAddForm(option) {
         wrapElements([in_cliSatRate_1sem_q3, in_cliSatRate_2sem_q3], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
           createDynamicLabel('AY 2022-2023', 'form-container1');
         wrapElements([in_cliSatRate_1sem_q4, in_cliSatRate_2sem_q4 ], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('cliSatRate_SD1', 'Summary of satisfaction/ evaluation ratings per evaluation period of the outreach and extension activities and its computed average using prescribed template', 'form-container1');
+      _
     }
     else if (option === "criterionD") { //------------------------------------------------------------------
       addPageTitle.innerHTML = "Criterion D: Bonus Criterion";
@@ -318,6 +327,11 @@ function showAddForm(option) {
         wrapElements([sel_adminDesig_Desig], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
           createDynamicLabel('Effectivity Period', 'form-container1');
         wrapElements([in_adminDesig_perS, in_adminDesig_perE], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('adminDesig_SD1', 'Copy of Appointment or Designation with effectivity period (e.g. memorandum order, appointment letter, board resolution, notice of designation, etc.)', 'form-container1');
+        createDynamicCheckbox('adminDesig_SD1', 'Copy of accomplishment report per designation duly submitted to the authorized official/supervisor', 'form-container1');
+        
     }
 }
 </script>
@@ -344,10 +358,7 @@ function showAddForm(option) {
                 <p class="my-1">Please fill in the necessary details. No abbreviations.</p>
                 <p class="my-1">All inputs with the symbol (*) are required.</p>
                 
-                  <div id="category-container" class="mt-6">
-                    <!-- CONTENT CHANGES HERE -->
-                    
-                  </div>
+                  <div id="category-container" class="mt-6"> <!-- CONTENT CHANGES HERE --> </div>
               </div>
           
               <div class="lg:col-span-2">
@@ -359,6 +370,7 @@ function showAddForm(option) {
                 <div id="form-container4" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                 <div id="form-container5" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                 <div id="form-container6" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
+                <br>
 
                 <!-- must always be present in all pages -->
                 <!-- box design for upload document -->

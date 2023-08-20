@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddController;
 use App\Http\Controllers\TabController;
+use App\Http\Controllers\DBController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,8 @@ use App\Http\Controllers\TabController;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('DBController', [DBController::class, 'index']);
 
 Route::get('/home', [TabController::class, 'home']);
 Route::get('/eqar', [TabController::class, 'eqar']);

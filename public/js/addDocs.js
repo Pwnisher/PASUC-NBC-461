@@ -141,7 +141,7 @@ function createDynamicCheckbox(id, labelText, containerID) {
 
     // Create the label
     const label = document.createElement('label');
-    label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
+    label.className = 'block tracking-wide text-gray-700 text-base mb-2';
 
     // Create the checkbox input element
     const checkbox = document.createElement('input');
@@ -153,8 +153,6 @@ function createDynamicCheckbox(id, labelText, containerID) {
     label.appendChild(checkbox);
     label.appendChild(document.createTextNode(labelText));
     checkboxContainer.appendChild(label);
-
-    checkboxContainer.appendChild(document.createElement('br'));
 }
 
 
