@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Eqar;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Pasuc>
@@ -17,11 +18,17 @@ class PasucFactory extends Factory
     public function definition(): array
     {
         return [
-            'kra'=>fake()->word(),
+            'kra'=>fake()->randomElement(['1','2','3','4']),
             'criteria'=>fake()->word(),
-            'eval_status'=>fake()->word(),
+            'eval_status'=>fake()->randomElement(['Ongoing','Finished','Returned']),
             'is_submitted'=>fake()->boolean(),
             'cycle'=>'9th',
+            'eqar_user_user_id' => function () {
+                return Eqar::inRandomOrder()->first()->user_user_id;
+            },
+            'eqar_eqar_id' => function () {
+                return Eqar::inRandomOrder()->first()->eqar_id;
+            },
         ];
     }
 }

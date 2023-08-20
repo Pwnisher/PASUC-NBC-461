@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Eqar;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -27,7 +27,10 @@ class EqarFactory extends Factory
             'department_section' => fake()->word(),
             'qar_type' => fake()->word(),
             'date_submitted' => fake()->date($format = 'Y-m-d', $max = 'now'),
-            'status' => fake()->word(),
+            'status' => fake()->randomElement(['Pending','Qualified']),
+            'user_user_id' => function () {
+                return User::inRandomOrder()->first()->user_id;
+            },
         ];
     }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Eqar;
 
 return new class extends Migration
 {
@@ -11,10 +12,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pasuc', function (Blueprint $table) {
+        Schema::create('pasucs', function (Blueprint $table) {
             $table->id('pasuc_id');
             $table->integer('kra');
-            $table->char('criteria', 1);
+            $table->string('criteria');
             $table->unsignedBigInteger('eqar_eqar_id');
             $table->string('eqar_user_user_id');
             $table->string('eval_status', 45);

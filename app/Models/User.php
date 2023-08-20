@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Eqar;
 
 class User extends Model
 {
@@ -21,8 +22,17 @@ class User extends Model
         'middle_name',
     ];
 
-    public function eqars()
+    public function eqar()
     {
         return $this->hasMany(Eqar::class, 'user_user_id', 'user_id');
+    }
+
+    public function transferUserIdToEqar()
+    {
+        $eqars = Eqar::all();
+
+        foreach ($eqars as $eqar) {
+            $eqar->update(['user_user_id' => $eqar->user_id]);
+        }
     }
 }

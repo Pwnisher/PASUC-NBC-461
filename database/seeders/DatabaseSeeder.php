@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         UserFactory::new()->count(10)->create();
-        // EqarFactory::new()->count(10)->create();  
+        EqarFactory::new()->count(10)->create();  
         PasucFactory::new()->count(10)->create();  
         //\App\Models\User::factory(10)->create();
 
