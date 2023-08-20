@@ -21,6 +21,7 @@ class PasucFactory extends Factory
             'criteria'=>fake()->word(),
             'eval_status'=>fake()->word(),
             'is_submitted'=>fake()->boolean(),
+            'cycle'=>'9th',
         ];
     }
 }
