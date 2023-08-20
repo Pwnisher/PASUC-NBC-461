@@ -8,7 +8,7 @@ class CreateEqarFilesTable extends Migration
     public function up()
     {
         Schema::create('eqar_files', function (Blueprint $table) {
-            $table->id('eqar_id');
+            $table->unsignedBigInteger('eqar_id')->primary();
             $table->string('user_user_id');
             $table->tinyInteger('is_approved');
             $table->string('file_path')->nullable();
@@ -20,7 +20,6 @@ class CreateEqarFilesTable extends Migration
             $table->date('date_submitted');
             $table->string('status')->nullable();
 
-            $table->primary(['eqar_id', 'user_user_id']);
             $table->foreign('user_user_id')->references('user_id')->on('users')
                   ->onDelete('NO ACTION')->onUpdate('NO ACTION');
         });
