@@ -17,7 +17,10 @@ class PasucFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'kra'=>fake()->word(),
+            'criteria'=>fake()->word(),
+            'eval_status'=>fake()->word(),
+            'is_submitted'=>fake()->boolean(),
         ];
     }
 }

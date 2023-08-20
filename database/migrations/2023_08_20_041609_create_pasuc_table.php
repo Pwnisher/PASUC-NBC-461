@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->foreign('eqar_eqar_id')->references('eqar_id')->on('eqars')
             ->onDelete('NO ACTION')->onUpdate('NO ACTION');
-             $table->foreign('eqar_user_user_id')->references('user_user_id')->on('eqars')
+            $table->foreign('eqar_user_user_id')->references('user_user_id')->on('eqars')
             ->onDelete('NO ACTION')->onUpdate('NO ACTION');
         });
     }
