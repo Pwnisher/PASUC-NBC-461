@@ -19,7 +19,7 @@ use App\Http\Controllers\DBController;
 */
 
 Route::get('/', function () {
-    return view('accomplishment-direct');
+    return view('home');
 });
 
 Route::get('DBController', [DBController::class, 'index']);
