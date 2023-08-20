@@ -1,49 +1,31 @@
-//-----------------------------------------------------------------------------------------------
-// WRAP DYNAMIC SELECT & INPUT FOR FLEXIBLE ROWS (CAN BE USED INDIVIDUALLY OR BOTH)
-// (EXAMPLE USE: CHANGE '2' in 1/2 BASED ON NEEDED ROWS) (CAN ALSO USE MULTIPLE SAME/DIFF TYPE)
-// wrapElements([], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
-// import { myFunction } from './file1'; // Path to the file1.js
-function wrapElements(params, colClass, containerID, onchangeCallback) {
-    const formContainer = document.getElementById(containerID);
+// DYNAMIC LABEL ELEMENT
+function createDynamicLabel(labelText) {
+    const labelContainer = document.getElementById('dynamic-form-container');
 
-    const rowDiv = document.createElement('div');
-    rowDiv.className = 'flex flex-wrap -mx-3 mb-6'; 
+    // Create the label
+    const label = document.createElement('label');
+    label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
+    label.textContent = labelText;
 
-    // Generate columns for each input or select based on the parameter type
-    for (const param of params) {
-        const [type, ...rest] = param;
-
-        const columnDiv = document.createElement('div');
-        columnDiv.className = colClass;
-
-        if (type === 'input') {
-            const [id, labelText, inputType] = rest;
-            const inputContainerDiv = createDynamicInput(id, labelText, inputType);
-            columnDiv.appendChild(inputContainerDiv);
-        } else if (type === 'select') {
-            const [id, labelText, options, selectClass] = rest;
-            const selectContainerDiv = createDynamicSelect(id, labelText, options, onchangeCallback, selectClass);
-            columnDiv.appendChild(selectContainerDiv);
-        }
-        rowDiv.appendChild(columnDiv);
-    }
-    formContainer.appendChild(rowDiv);
+    // Append the label to the container
+    labelContainer.appendChild(label);
 }
 
-//-----------------------------------------------------------------------------------------------
 // DYNAMIC SELECT ELEMENT
-function createDynamicSelect(id, labelText, options, onchangeCallback) {
+function createDynamicSelect(id, labelText, options) {
+    const selectContainer = document.getElementById('dynamic-form-container');
+    
     // Create the label
     const label = document.createElement('label');
     label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
     label.setAttribute('for', id);
     label.textContent = labelText;
-
+    
     // Create the select element
     const select = document.createElement('select');
     select.id = id;
     select.className = 'block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500';
-
+    
     // Create the default option
     const defaultOption = document.createElement('option');
     defaultOption.value = '';
@@ -60,15 +42,7 @@ function createDynamicSelect(id, labelText, options, onchangeCallback) {
         optionElement.textContent = option.label;
         select.appendChild(optionElement);
     }
-
-    // Add onchange event listener if provided
-    if (onchangeCallback) {
-        select.addEventListener('change', function(event) {
-            const selectedValue = event.target.value;
-            onchangeCallback(selectedValue); // Call the callback with the selected value
-        });
-    }
-
+    
     // Create the container for the dropdown arrow
     const dropdownArrowContainer = document.createElement('div');
     dropdownArrowContainer.className = 'relative';
@@ -79,18 +53,15 @@ function createDynamicSelect(id, labelText, options, onchangeCallback) {
     // Append all elements to the container
     dropdownArrowContainer.appendChild(select);
     dropdownArrowContainer.appendChild(dropdownArrow);
-    const containerDiv = document.createElement('div');
-    containerDiv.appendChild(label);
-    containerDiv.appendChild(select);
+    selectContainer.appendChild(label);
+    selectContainer.appendChild(dropdownArrowContainer);
 
-    return containerDiv; // Return the container with label and select
+    selectContainer.appendChild(document.createElement('br'));
 }
 
-//-----------------------------------------------------------------------------------------------
 // DYNAMIC INPUT ELEMENT
 function createDynamicInput(id, labelText, inputType) {
-    // Create a container div for the input element and label
-    const containerDiv = document.createElement('div');
+    const inputContainer = document.getElementById('dynamic-form-container');
 
     // Create the label
     const label = document.createElement('label');
@@ -105,43 +76,19 @@ function createDynamicInput(id, labelText, inputType) {
     input.className = 'block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500';
 
     // Append elements to the container
-    containerDiv.appendChild(label);
-    containerDiv.appendChild(input);
+    inputContainer.appendChild(label);
+    inputContainer.appendChild(input);
 
-    return containerDiv; // Return the container with label and input
+    inputContainer.appendChild(document.createElement('br'));
 }
 
-//-----------------------------------------------------------------------------------------------
-// CLEAR ELEMENTS IN 'dynamic-form-container'
-function clearFormContainer(containerID) {
-    const dynamicFormContainer = document.getElementById(containerID);
-    while (dynamicFormContainer.firstChild) {
-        dynamicFormContainer.removeChild(dynamicFormContainer.firstChild);
-    }
-}
-
-//-----------------------------------------------------------------------------------------------
-// DYNAMIC LABEL ELEMENT
-function createDynamicLabel(labelText, containerID) {
-    const labelContainer = document.getElementById(containerID);
+// DYNAMIC CHECKBOX ELEMENT
+function createDynamicCheckbox(id, labelText) {
+    const checkboxContainer = document.getElementById('dynamic-form-container');
 
     // Create the label
     const label = document.createElement('label');
     label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
-    label.textContent = labelText;
-
-    // Append the label to the container
-    labelContainer.appendChild(label);
-}
-
-//-----------------------------------------------------------------------------------------------
-// DYNAMIC CHECKBOX ELEMENT
-function createDynamicCheckbox(id, labelText, containerID) {
-    const checkboxContainer = document.getElementById(containerID);
-
-    // Create the label
-    const label = document.createElement('label');
-    label.className = 'block tracking-wide text-gray-700 text-base mb-2';
 
     // Create the checkbox input element
     const checkbox = document.createElement('input');
@@ -153,18 +100,25 @@ function createDynamicCheckbox(id, labelText, containerID) {
     label.appendChild(checkbox);
     label.appendChild(document.createTextNode(labelText));
     checkboxContainer.appendChild(label);
+
+    checkboxContainer.appendChild(document.createElement('br'));
 }
 
+// CLEAR ELEMENTS IN 'dynamic-form-container'
+function clearDynamicFormContainer() {
+    const dynamicFormContainer = document.getElementById('dynamic-form-container');
+    while (dynamicFormContainer.firstChild) {
+        dynamicFormContainer.removeChild(dynamicFormContainer.firstChild);
+    }
+}
 
-/*
-//-----------------------------------------------------------------------------------------------
 // CHANGE CONTENT PER CRITERIA OPTION
 function showAddForm(option) {
     var addPageTitle = document.getElementById("add_page_title");
     var addPageKRA = document.getElementById("add_page_kra");
 
     // Clear the dynamic-form-container
-    clearFormContainer();
+    clearDynamicFormContainer();
 
     if (option === "criterionA") {
         addPageTitle.innerHTML = "Teaching Effectiveness";
@@ -211,19 +165,4 @@ function showAddForm(option) {
         createDynamicCheckbox('checkbox-1', 'Checkbox 1');
         createDynamicCheckbox('checkbox-2', 'Checkbox 2');
     }
-    else if (option === "criterionD") {
-        addPageTitle.innerHTML = "Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services";
-        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
-
-        // Calls function to create unique select
-        createDynamicSelect('grid-state-4', 'Type of Evaluation 4', [
-            { value: 'part5', label: 'Evaluation 5' },
-            { value: 'part6', label: 'Evaluation 6' }
-        ]);
-        // Calls function to create unique checkbox
-        createDynamicCheckbox('checkbox-1', 'Checkbox 1');
-        createDynamicCheckbox('checkbox-2', 'Checkbox 2');
-    }
 }
-
-*/

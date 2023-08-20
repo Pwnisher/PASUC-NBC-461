@@ -44,7 +44,7 @@ Route::get('/eqar', [TabController::class, 'eqar']);
 Route::get('/application', [TabController::class, 'application'])->name('application');
 Route::get('/application/{any}', [TabController::class, 'show'])->where('any', '.*');
 
-Route::get('/add', [AddController::class, 'add']);
+Route::get('/add-documents', [AddController::class, 'addDocuments']);
 Route::get('/add-documents-KRA1', [AddController::class, 'showPAGEaddKRA1']);
 Route::get('/add-documents-KRA2', [AddController::class, 'showPAGEaddKRA2']);
 Route::get('/add-documents-KRA3', [AddController::class, 'showPAGEaddKRA3']);
