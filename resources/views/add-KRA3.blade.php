@@ -115,6 +115,7 @@ function showAddForm(option) {
 
             // Hide all parts initially
             part1.style.display = 'none'; part2.style.display = 'none'; part3.style.display = 'none';
+            part4.style.display = 'none'; part5.style.display = 'none'; part6.style.display = 'none';
 
             // Show the selected part
             if (categ_kra3_cB === 'part1') part1.style.display = 'block'; else if (categ_kra3_cB === 'part2') part2.style.display = 'block';
@@ -140,6 +141,10 @@ function showAddForm(option) {
         wrapElements([in_accred_QAserv], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([sel_accred_scope, in_accred_deploy], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
         
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('accred_SD1', 'Copy of appointment from the organization/agency', 'form-container1');
+        createDynamicCheckbox('accred_SD2', 'Copy of proof of engagement (e.g. certificate of participation)', 'form-container1');
+        
 
       // Judge/Examiner for Local/International ------------------------------------------------------------
         const in_judge_title = ['input','judge_title', 'Title of the Event/Activity', 'text'];
@@ -156,6 +161,9 @@ function showAddForm(option) {
         wrapElements([in_judge_date, sel_judge_nature], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
         wrapElements([in_judge_venue], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
 
+        createDynamicLabel('Supporting Documents', 'form-container2');
+        createDynamicCheckbox('judge_SD1', 'Copy of proof of engagement (e.g. official invitation, certificate of appreciation)', 'form-container2');
+        
 
       // Short-term Consultant/Expert ----------------------------------------------------------------------
         const in_consult_title = ['input','consult_title', 'Title of the Project/Consultancy', 'text'];
@@ -174,6 +182,10 @@ function showAddForm(option) {
         wrapElements([in_consult_perS, in_consult_perE], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container3');
         wrapElements([in_consult_role], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container3');
 
+        createDynamicLabel('Supporting Documents', 'form-container3');
+        createDynamicCheckbox('consult_SD1', 'Copy of contract of service or its equivalent', 'form-container3');
+        createDynamicCheckbox('consult_SD2', 'Copy of proof of engagement', 'form-container3');
+        
       
       // Services through Media ----------------------------------------------------------------------------
         createDynamicLabel('Writer of Occassional Newspaper Column', 'form-container4');
@@ -216,7 +228,13 @@ function showAddForm(option) {
           wrapElements([in_med_title_guest], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
           wrapElements([in_med_perS_guest, in_med_perE_guest, in_med_eng_guest], 'w-full md:w-1/3 px-3 mb-6 md:mb-0', 'form-container4');
         
-        
+        createDynamicLabel('Supporting Documents', 'form-container4');
+        createDynamicCheckbox('med_SD1', 'Copy of the newspaper article for Writer of Occasional Newspaper Column', 'form-container4');
+        createDynamicCheckbox('med_SD2', 'Copy of compiled articles for Writer of Regular Newspaper Column', 'form-container4');
+        createDynamicCheckbox('med_SD3', 'Copy of contract, invitation letter, or similar documents for Host of TV/Radio Program', 'form-container4');
+        createDynamicCheckbox('med_SD4', 'Copy of Invitation letter for Guesting as Technical Expert', 'form-container4');
+
+
       // For every hour of training Course/Seminar/Workshop ------------------------------------------------
         const in_train_title = ['input','train_title', 'Title of the Training', 'text'];
         const in_train_type = ['input','train_type', 'Type of PArticipation', 'text'];
@@ -235,6 +253,11 @@ function showAddForm(option) {
         wrapElements([in_train_perS, in_train_perE], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container5');
         wrapElements([sel_train_scope, in_train_hrs], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container5');
 
+        createDynamicLabel('Supporting Documents', 'form-container5');
+        createDynamicCheckbox('train_SD1', 'Copy of invitation letter', 'form-container5');
+        createDynamicCheckbox('train_SD2', 'Copy of program', 'form-container5');
+        createDynamicCheckbox('train_SD3', 'Copy of certificate of appreciation or similar documents', 'form-container5');
+
       
       // For every service-oriented project in the community -----------------------------------------------
         const in_servcom_act = ['input','servcom_act', 'Name of Community Extention Activity', 'text'];
@@ -249,6 +272,11 @@ function showAddForm(option) {
         wrapElements([in_servcom_act], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container6');
         wrapElements([in_servcom_com, in_servcom_ben], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container6');
         wrapElements([sel_servcom_role, in_servcom_date], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container6');
+
+        createDynamicLabel('Supporting Documents', 'form-container6');
+        createDynamicCheckbox('servcom_SD1', 'Copy of approval for the conduct of the outreach or extension activity/ project/ program (governing board resolution, memorandum, official communication, etc.)', 'form-container6');
+        createDynamicCheckbox('servcom_SD2', 'Copy of appointment/designation as head of the activity/project/program', 'form-container6');
+        createDynamicCheckbox('servcom_SD3', 'Copy of extension activity/project/program report', 'form-container6');
 
     } 
     else if (option === "criterionC") { //------------------------------------------------------------------
@@ -292,7 +320,7 @@ function showAddForm(option) {
 
         createDynamicLabel('Supporting Documents', 'form-container1');
         createDynamicCheckbox('cliSatRate_SD1', 'Summary of satisfaction/ evaluation ratings per evaluation period of the outreach and extension activities and its computed average using prescribed template', 'form-container1');
-      _
+      
     }
     else if (option === "criterionD") { //------------------------------------------------------------------
       addPageTitle.innerHTML = "Criterion D: Bonus Criterion";

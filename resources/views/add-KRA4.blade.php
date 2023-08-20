@@ -28,7 +28,15 @@ function showAddForm(option) {
         addPageTitle.innerHTML = "Criterion A: Involvement in Professional Organizations";
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
         //since walang choice sa ISS ung criteria A, always show part1
-        part1.style.display = 'block'
+        /*// Event Listener
+        const kra4_cA = document.getElementById('sel_kra4_cA');
+        kra4_cA.addEventListener('change', function() {
+        var categ_kra4_cA = kra4_cA.value;
+
+            // Hide all parts initially    // Show Part Container
+            part1.style.display = 'none';  if (categ_kra4_cA === 'part1') part1.style.display = 'block';
+        });*/
+
         
       // Student Evaluation -------------------------------------
         const in_stdEval_semDed = ['input','stdEval-semDed', 'Name of Organization', 'text'];
@@ -58,28 +66,28 @@ function showAddForm(option) {
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
         // KRA 4 : Criterion B Categories
-        const sel_kra1_cB = ['select','sel_kra1_cB', 'Type of Continuing Development:', [
+        const sel_kra4_cB = ['select','sel_kra4_cB', 'Type of Continuing Development:', [
             { value: 'part1', label: 'Educational Qualification - Doctorate Degree (First Time)' },
             { value: 'part2', label: 'Educational Qualification - Additional Degree' },
             { value: 'part3', label: 'Participation in Conferences, Seminars, Workshops, Industry Immersion' },
             { value: 'part4', label: 'Paper Presentation in Conferences' }
         ]]; 
-        wrapElements([sel_kra1_cB], 'w-full md:w-4/5 px-3 mb-6 md:mb-0', 'category-container');
+        wrapElements([sel_kra4_cB], 'w-full md:w-4/5 px-3 mb-6 md:mb-0', 'category-container');
 
         // Event Listener
-        const kra1_cB = document.getElementById('sel_kra1_cB');
-        kra1_cB.addEventListener('change', function() {
-        var categ_kra1_cB = kra1_cB.value;
+        const kra4_cB = document.getElementById('sel_kra4_cB');
+        kra4_cB.addEventListener('change', function() {
+        var categ_kra4_cB = kra4_cB.value;
 
             // Hide all parts initially
             part1.style.display = 'none'; part2.style.display = 'none';
             part3.style.display = 'none'; part4.style.display = 'none';
 
             // Show the selected part
-            if (categ_kra1_cB === 'part1') part1.style.display = 'block';
-            else if (categ_kra1_cB === 'part2') part2.style.display = 'block';
-            else if (categ_kra1_cB === 'part3') part3.style.display = 'block';
-            else if (categ_kra1_cB === 'part4') part4.style.display = 'block';
+            if (categ_kra4_cB === 'part1') part1.style.display = 'block';
+            else if (categ_kra4_cB === 'part2') part2.style.display = 'block';
+            else if (categ_kra4_cB === 'part3') part3.style.display = 'block';
+            else if (categ_kra4_cB === 'part4') part4.style.display = 'block';
         });
 
 
@@ -146,7 +154,14 @@ function showAddForm(option) {
         addPageTitle.innerHTML = "Criterion C: Awards and Recognition";
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
         //since walang choice sa ISS ung criteria A, always show part1
-        part1.style.display = 'block'
+        // Event Listener
+        const kra4_cC = document.getElementById('sel_kra4_cC');
+        kra4_cC.addEventListener('change', function() {
+        var categ_kra4_cC = kra4_cC.value;
+
+            // Hide all parts initially    // Show Part Container
+            part1.style.display = 'none';  if (categ_kra4_cC === 'part1') part1.style.display = 'block';
+        });
         
         const in_award_recog = ['input','award_recog', 'Name of the Award', 'text'];
         const sel_award_recog = ['select','award_recog', 'Scope of the Award', [
@@ -168,24 +183,24 @@ function showAddForm(option) {
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
         // KRA 4 : Criterion C Categories
-        const sel_kra1_cC = ['select','sel_kra1_cC', 'Type of Appointment/Designation: ', [
+        const sel_kra4_cD = ['select','sel_kra1_cC', 'Type of Appointment/Designation: ', [
             { value: 'part1', label: 'Every Year of Full-Time Academic Service in an Institution of Higher Learning' },
             { value: 'part2', label: 'Every Year of Industry Experience' }
         ]]; 
-        wrapElements([sel_kra1_cC], 'w-full md:w-4/5 px-3 mb-6 md:mb-0', 'category-container');
+        wrapElements([sel_kra4_cD], 'w-full md:w-4/5 px-3 mb-6 md:mb-0', 'category-container');
 
         // Event Listener
-        const kra1_cC = document.getElementById('sel_kra1_cC');
-        kra1_cC.addEventListener('change', function() {
-        var categ_kra1_cC = kra1_cC.value;
+        const kra4_cD = document.getElementById('sel_kra4_cD');
+        kra4_cD.addEventListener('change', function() {
+        var categ_kra4_cD = kra4_cD.value;
 
             // Hide all parts initially
             part1.style.display = 'none';
             part2.style.display = 'none';            
 
             // Show the selected part
-            if (categ_kra1_cC === 'part1') part1.style.display = 'block';
-            else if (categ_kra1_cC === 'part2') part2.style.display = 'block';            
+            if (categ_kra4_cD === 'part1') part1.style.display = 'block';
+            else if (categ_kra4_cD === 'part2') part2.style.display = 'block';            
         });
 
         // Every Year of Full-Time Academic Service in an Institution of Higher Learning ---------------------------------------------
