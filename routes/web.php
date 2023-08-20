@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::get('/home', [TabController::class, 'home']);
 Route::get('/eqar', [TabController::class, 'eqar']);
+Route::get('/eqar', 'TableController@fetchData');
+
 Route::get('/application', [TabController::class, 'application'])->name('application');
 Route::get('/application/{any}', [TabController::class, 'show'])->where('any', '.*');
 
