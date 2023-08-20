@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+//use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Eqar extends Model
@@ -23,13 +23,13 @@ class Eqar extends Model
         'status',
     ];
 
-    public function user()
+    public function users()
     {
         return $this->belongsTo(User::class, 'user_user_id', 'user_id');
     }
 
-    public function pasucFiles()
+    public function pasuc()
     {
-        return $this->hasMany(Pasuc::class, 'eqar_files_eqar_id', 'eqar_id');
+        return $this->hasMany(Pasuc::class, 'eqar_eqar_id', 'eqar_id');
     }
 }

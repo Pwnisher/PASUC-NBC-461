@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eqar_files', function (Blueprint $table) {
+        Schema::create('eqars', function (Blueprint $table) {
             $table->id('eqar_id');
             $table->string('user_user_id');
-            $table->tinyInteger('is_approved');
+            $table->tinyInteger('is_applied');
             $table->string('file_path')->nullable();
             $table->string('title');
             $table->date('inclusive_date');
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('qar_type');
             $table->date('date_submitted');
             $table->string('status')->nullable();
+            $table->timestamps();
 
             $table->foreign('user_user_id')->references('user_id')->on('users')
                   ->onDelete('NO ACTION')->onUpdate('NO ACTION');
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('eqar');
+        Schema::dropIfExists('eqars');
     }
 };

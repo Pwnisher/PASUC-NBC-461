@@ -11,18 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pasuc_files', function (Blueprint $table) {
+        Schema::create('pasuc', function (Blueprint $table) {
             $table->id('pasuc_id');
             $table->integer('kra');
             $table->char('criteria', 1);
-            $table->unsignedBigInteger('eqar_files_eqar_id');
-            $table->string('eqar_files_user_user_id');
+            $table->unsignedBigInteger('eqar_eqar_id');
+            $table->string('eqar_user_user_id');
             $table->string('eval_status', 45);
             $table->tinyInteger('is_submitted');
+            $table->timestamps();
 
-            $table->foreign('eqar_files_eqar_id')->references('eqar_id')->on('eqar_files')
+            $table->foreign('eqar_eqar_id')->references('eqar_id')->on('eqars')
             ->onDelete('NO ACTION')->onUpdate('NO ACTION');
-             $table->foreign('eqar_files_user_user_id')->references('user_user_id')->on('eqar_files')
+             $table->foreign('eqar_user_user_id')->references('user_user_id')->on('eqars')
             ->onDelete('NO ACTION')->onUpdate('NO ACTION');
         });
     }

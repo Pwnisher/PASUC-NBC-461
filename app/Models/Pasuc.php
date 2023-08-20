@@ -19,8 +19,8 @@ class Pasuc extends Model
         'is_submitted',
     ];
 
-    public function eqar()
+    public function eqars()
     {
-        return $this->belongsTo(Eqar::class, 'eqar_files_eqar_id', 'eqar_id')->where('eqar_files_user_user_id', $this->eqar_files_user_user_id);
+        return $this->belongsTo(Eqar::class, 'eqar_eqar_id', 'eqar_id')->where('eqar_user_user_id', $this->eqar_files_user_user_id);
     }
 }

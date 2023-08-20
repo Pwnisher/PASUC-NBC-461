@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('accomplishment-direct');
 });
 
-Route::get('DBController', [DBController::class, 'index']);
+Route::get('DBController', [DBController::class, 'store']);
 
 Route::get('/home', [TabController::class, 'home']);// Use the TabController's eqar method for GET requests
 // Use the TableController's fetchData method for POST requests
