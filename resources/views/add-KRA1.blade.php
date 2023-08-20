@@ -6,6 +6,14 @@
         <title>Add Supporting Documents</title>
 
         @vite('resources/css/app.css')
+        <!--Font Awesome Library (For icons)-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        <!--Favicon-->
+        <link rel="icon" type="image/png" href="{{ asset('favicon.ico')}}">
+        <!-- Javascripts -->
+        <script src="{{ asset('js/contentOperations.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Add Functions Js -->
         <script src="{{ asset('js/addDocs.js') }}"></script>
     </head>
 <script>
@@ -347,12 +355,20 @@ function showAddForm(option) {
 </script>
 <!------------------------------------------------------------------------------------------------------->
 <body class="bg-ghostwhite">
-    <ul> <!-- for links from accomplishments tab -->
-        <li><a href="#" onclick="showAddForm('criterionA')">Show Page 1</a></li>
-        <li><a href="#" onclick="showAddForm('criterionB')">Show Page 2</a></li>
-        <li><a href="#" onclick="showAddForm('criterionC')">Show Page 3</a></li>
-    </ul>
-        
+  <div class="flex h-screen flex-col ">
+    <!--Navigation Bar--> @include('navbar')
+    <!--Submenu Modal--> @include('submenu')
+    <!--Confirmation Modal--> @include('modal')
+    <!--Main Container-->
+    <div class="flex-1 relative">
+
+    <!-- for links to input supporting documents from applications tab -->
+      <h2 class="text-center mt-4">
+        <a href="#" onclick="showAddForm('criterionA')">•   Criterion A   •</a> 
+        <a href="#" onclick="showAddForm('criterionB')">•   Criterion B   •</a>
+        <a href="#" onclick="showAddForm('criterionC')">•   Criterion C   •</a>
+      </h2>
+
 <!-- DYNAMIC PAGE CONTENT -->
     <div id="main_container" class="flex flex-col items-center h-full mt-16">
       <div id="title_bar-container" class="bg-transparent text-left w-5/6">
@@ -402,11 +418,12 @@ function showAddForm(option) {
                   </div>
                 </div>
 
-                <!-- SAVE?CANCEL BUTTON -->
+                <!-- SAVE/CANCEL BUTTON -->
                 <div class="md:col-span-5 text-right">
                   <div class="inline-flex items-end">
-                    <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button>
-                    <button class="bg-green-500 hover:bg-green-600 text-white font-bold ml-3 py-2 px-4 rounded">Submit</button>
+                    <a href="{{ url('/eqar') }}">
+                    <button id="SaveButton" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button> </a>
+                    <button id="openSaveButton" onclick="openModal('modelConfirm')" class="bg-green-500 hover:bg-green-600 text-white font-bold ml-3 py-2 px-4 rounded">Submit</button>
                     </div>
                 </div>
                 <!-- END DYNAMIC FORM -->
@@ -417,6 +434,8 @@ function showAddForm(option) {
       </div>
     </div>
     <!-- END DYNAMIC PAGE CONTENT -->
+    </div>
+  </div>
     </body>
 </html>
 

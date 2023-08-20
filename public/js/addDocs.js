@@ -156,74 +156,38 @@ function createDynamicCheckbox(id, labelText, containerID) {
 }
 
 
-/*
 //-----------------------------------------------------------------------------------------------
-// CHANGE CONTENT PER CRITERIA OPTION
-function showAddForm(option) {
-    var addPageTitle = document.getElementById("add_page_title");
-    var addPageKRA = document.getElementById("add_page_kra");
-
-    // Clear the dynamic-form-container
-    clearFormContainer();
-
-    if (option === "criterionA") {
-        addPageTitle.innerHTML = "Teaching Effectiveness";
-        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
-
-        // Calls function to create unique select
-        createDynamicSelect('grid-state-1', 'Type of Evaluation 1', [
-            { value: 'part1', label: 'Student Evaluation' },
-            { value: 'part2', label: 'Supervisor Evaluation' }
-        ]);
-        // Calls function to create unique select
-        createDynamicSelect('grid-state-2', 'Type of Evaluation 2', [
-            { value: 'option1', label: 'Option 1' },
-            { value: 'option2', label: 'Option 2' },
-            { value: 'option3', label: 'Option 3' }
-        ]);
-        // Calls function to create unique input type="text"
-        createDynamicInput('input-text', 'Text Input', 'text');
-        // Calls function to create unique input type="date"
-        createDynamicInput('input-date', 'Date Input', 'date');
-    } 
-    else if (option === "criterionB") {
-        addPageTitle.innerHTML = "Curriculum and Instructional Materials Developed";
-        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
-
-        // Calls function to create unique select
-        createDynamicSelect('grid-state-3', 'Type of Evaluation 3', [
-            { value: 'part3', label: 'Evaluation 3' },
-            { value: 'part4', label: 'Evaluation 4' }
-        ]);
-        // Calls function to create unique input type="text"
-        createDynamicInput('input-text', 'Text Input', 'text');
-    } 
-    else if (option === "criterionC") {
-        addPageTitle.innerHTML = "Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services";
-        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
-
-        // Calls function to create unique select
-        createDynamicSelect('grid-state-4', 'Type of Evaluation 4', [
-            { value: 'part5', label: 'Evaluation 5' },
-            { value: 'part6', label: 'Evaluation 6' }
-        ]);
-        // Calls function to create unique checkbox
-        createDynamicCheckbox('checkbox-1', 'Checkbox 1');
-        createDynamicCheckbox('checkbox-2', 'Checkbox 2');
-    }
-    else if (option === "criterionD") {
-        addPageTitle.innerHTML = "Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services";
-        addPageKRA.innerHTML = "KRA I - INSTRUCTION";
-
-        // Calls function to create unique select
-        createDynamicSelect('grid-state-4', 'Type of Evaluation 4', [
-            { value: 'part5', label: 'Evaluation 5' },
-            { value: 'part6', label: 'Evaluation 6' }
-        ]);
-        // Calls function to create unique checkbox
-        createDynamicCheckbox('checkbox-1', 'Checkbox 1');
-        createDynamicCheckbox('checkbox-2', 'Checkbox 2');
-    }
+// CONFIRM MODAL WHEN 'SAVE'
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'block';
+    document.getElementsByTagName('body')[0].classList.add('overflow-y-hidden');
 }
 
-*/
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
+    document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+}
+
+function closeAllModals() {
+    document.getElementsByTagName('body')[0].classList.remove('overflow-y-hidden');
+    const modals = document.getElementsByClassName('modal');
+    Array.from(modals).forEach(modal => {
+        modal.style.display = 'none';
+    });
+}
+
+// CLOSE MODAL WHEN 'ESC'
+document.onkeydown = function(event) {
+    event = event || window.event;
+    if (event.keyCode === 27) {
+        closeAllModals();
+    }
+};
+
+//-----------------------------------------------------------------------------------------------
+// CHANGE CONTENT PER CRITERIA OPTION
+// showAddForm
+
+
