@@ -12,6 +12,8 @@
     <!-- Javascripts -->
     <script src="{{ asset('js/contentOperations.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- CSRF meta tags -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <title>{{ $title_bar }}</title>
   </head>
@@ -124,11 +126,13 @@
                             <tr>
                                 <th id="num_id" class="py-4 px-6 text-left">  </th>
                                 <th id="title" class="py-4 px-6 cursor-pointer text-left">Title</th>
-                                <th id="inclusive_date" class="py-4 px-6 cursor-pointer text-left">Inclusive Date</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Accomplishment</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Cycle</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Date Submitted</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Status</th>
+                                <th id="kra" class="py-4 px-6 text-left">KRA</th>
+                                <th id="criteria" class="py-4 px-6 text-left">Criteria</th>
+                                <th id="inclusive_date" class="py-4 px-6 cursor-pointer text-left">Inclusive Date</th>
+                                <th id="accomplishment_name" class="py-4 px-6 cursor-pointer text-left">Accomplishment</th>
+                                <th id="date_submitted" class="py-4 px-6 cursor-pointer text-left">Date Submitted</th>
+                                <th id="eval_status" class="py-4 px-6 cursor-pointer text-left">Status</th>
                                 <th class="py-4 px-6 cursor-pointer text-left">Actions</th>
                             </tr>
                         </thead>

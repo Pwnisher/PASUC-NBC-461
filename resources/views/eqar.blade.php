@@ -137,7 +137,7 @@
                                 <th id="qar_type" class="py-4 px-6 cursor-pointer text-left">QAR Type</th>
                                 <th id="date_submitted" class="py-4 px-6 cursor-pointer text-left">Date Submitted</th>
                                 <th id="status" class="py-4 px-6 cursor-pointer text-left">Status</th>
-                                <th id="is_applied" class="py-4 px-6 cursor-pointer text-left">Actions</th>
+                                <th class="py-4 px-6 cursor-pointer text-left">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-300">
@@ -157,7 +157,7 @@
                                               <button class="flex-1 px-4 py-2 bg-gray-500 text-white hover:bg-gray-700 rounded-md disabled">Pending</button>
                                           @elseif ($file->status === 'Qualified')
                                               @if ($file->is_applied)
-                                                <button class="flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md" disabled>Applied</button>
+                                                <button class="cursor-not-allowed flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md" disabled>Applied</button>
                                               @else
                                                 <button class="flex-1 px-4 py-2 bg-green-500 text-white hover:bg-green-700 rounded-md" onclick="applyFile('{{ $file->eqar_id }}')">Apply</button>    
                                               @endif
