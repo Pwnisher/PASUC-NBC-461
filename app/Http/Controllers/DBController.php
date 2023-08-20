@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Eqar;
 use App\Models\User;
+use App\Models\Pasuc;
 
 class DBController extends Controller
 {
@@ -24,24 +25,27 @@ class DBController extends Controller
                 ->where('eqar_id', $eqarId)
                 ->update(['is_applied' => true]);
 
-            // Check if the is_applied is now true
-            $eqarData = DB::table('eqars')
-                ->where('eqar_id', $eqarId)
-                ->first();
-    
-            if ($eqarData->is_applied) {
-                // Insert into pasuc_files table with the corresponding data
-                DB::table('pasucs')->insert([
-                    'kra' => 'I',
-                    'criteria' => 'A',
-                    'eqar_files_eqar_id' => $eqarId,
-                    'eqar_files_eqar_user_id' => $eqarData->eqar_user_id,
-                    'eval_status' => 'Pending',
-                    'is_submitted' => false,
-                    'cycle' => '9th'
-                ]);
-            }
-    
+           // Update the is_applied field in the "eqars" table
+        DB::table('eqars')
+        ->where('eqar_id', $eqarId)
+        ->update(['is_applied' => true]);
+
+        // Retrieve data from the "eqars" table for the specified eqar_id
+        $eqarData = DB::table('eqars')
+            ->where('eqar_id', $eqarId)
+            ->first();
+
+        // Insert data into the "pasucs" table using Eloquent
+        $pasuc = new Pasuc;
+        $pasuc->eqar_eqar_id = $eqarData->eqar_id;
+        $pasuc->kra = 'I';
+        $pasuc->criteria = 'A';
+        $pasuc->eqar_user_user_id = $eqarData->user_user_id;
+        $pasuc->eval_status = 'Pending';
+        $pasuc->is_submitted = false;
+        $pasuc->cycle = '9th';
+        $pasuc->save();
+        
             return response()->json(['success' => true]);
         } catch (\Exception $e) {
             return response()->json(['success' => false, 'error' => $e->getMessage()]);
@@ -50,5 +54,28 @@ class DBController extends Controller
     
     public function getPasuc()
     {
+        $pasucFiles = DB::select("SELECT p.pasuc_id, e.title, p.cycle, p.kra, p.criteria, e.inclusive_date, e.accomplishment_name, e.date_submitted, p.eval_status, p.is_submitted FROM pasucs p INNER JOIN eqars e ON p.eqar_eqar_id = e.eqar_id;");
+        
+        $dynamicContent = 'Application of Accomplishments'; // Set your dynamic content here
+    
+        return view('application', [
+            'pasucFiles' => $pasucFiles,
+            'title_bar' => $dynamicContent
+        ]);
+    }
+
+
+    public function pasucUpdateApplied($pasucId)
+    {
+        try {
+            // Update the is_submitted field in the database for the given pasuc_id
+            DB::table('pasucs')
+                ->where('pasuc_id', $pasucId)
+                ->update(['is_submitted' => true]);
+    
+            return response()->json(['success' => true]);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'error' => $e->getMessage()]);
+        }
     }
 }

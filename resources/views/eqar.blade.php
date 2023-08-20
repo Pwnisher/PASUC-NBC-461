@@ -154,7 +154,7 @@
                                   <td class="py-4 px-6">
                                       <div class="flex justify-between w-full space-x-4">
                                           @if ($file->status === 'Pending')
-                                              <button class="flex-1 px-4 py-2 bg-gray-500 text-white hover:bg-gray-700 rounded-md disabled">Pending</button>
+                                              <button class="cursor-not-allowed flex-1 px-4 py-2 bg-gray-500 text-white hover:bg-gray-700 rounded-md" disabled>Pending</button>
                                           @elseif ($file->status === 'Qualified')
                                               @if ($file->is_applied)
                                                 <button class="cursor-not-allowed flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md" disabled>Applied</button>
