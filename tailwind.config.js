@@ -9,7 +9,8 @@ module.exports = {
     extend: {
       colors:{
         'ghostwhite': '#f8f8ff',
-        'card-color': '#e2f0fb'
+        'card-color': '#e2f0fb',
+        'navbar': '#212529', 
       },
       textColor: {
         'card-font-color': '#385d7a',
