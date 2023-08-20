@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Factories\UserFactory;
 use Database\Factories\EqarFactory;
+use Database\Factories\PasucFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,7 +16,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         UserFactory::new()->count(10)->create();
-        EqarFactory::new()->count(10)->create();  
+        // EqarFactory::new()->count(10)->create();  
+        PasucFactory::new()->count(10)->create();  
         //\App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
