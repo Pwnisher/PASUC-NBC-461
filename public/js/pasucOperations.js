@@ -14,10 +14,10 @@ function applyFile(pasucId) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                alert('Applied successfully.');
+                alert('Submitted successfully.');
                 location.reload(); // Reload the page to reflect the changes
             } else {
-                alert('An error occurred while applying.');
+                alert('An error occurred while submitting.');
             }
         })
         .catch(error => {

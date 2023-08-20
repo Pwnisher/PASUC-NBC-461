@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Eqar;
 use App\Models\User;
 use App\Models\Pasuc;
+use Illuminate\Support\Facades\Log; 
 
 class DBController extends Controller
 {
@@ -18,39 +19,44 @@ class DBController extends Controller
     }
 
     public function eqarUpdateApplied($eqarId)
-    {
-        try {
-            // Update the is_applied field in the database for the given eqar_id
-            DB::table('eqars')
-                ->where('eqar_id', $eqarId)
-                ->update(['is_applied' => true]);
-
-           // Update the is_applied field in the "eqars" table
+{
+    try {
+        // Update the is_applied field in the database for the given eqar_id
         DB::table('eqars')
-        ->where('eqar_id', $eqarId)
-        ->update(['is_applied' => true]);
+            ->where('eqar_id', $eqarId)
+            ->update(['is_applied' => true]);
 
         // Retrieve data from the "eqars" table for the specified eqar_id
         $eqarData = DB::table('eqars')
             ->where('eqar_id', $eqarId)
             ->first();
 
-        // Insert data into the "pasucs" table using Eloquent
-        $pasuc = new Pasuc;
-        $pasuc->eqar_eqar_id = $eqarData->eqar_id;
-        $pasuc->kra = 'I';
-        $pasuc->criteria = 'A';
-        $pasuc->eqar_user_user_id = $eqarData->user_user_id;
-        $pasuc->eval_status = 'Pending';
-        $pasuc->is_submitted = false;
-        $pasuc->cycle = '9th';
-        $pasuc->save();
-        
-            return response()->json(['success' => true]);
-        } catch (\Exception $e) {
-            return response()->json(['success' => false, 'error' => $e->getMessage()]);
-        }
+        // Debug: Log the retrieved eqarData
+        Log::debug('Retrieved eqarData:', (array) $eqarData);
+
+        $data = [
+            'eqar_eqar_id' => $eqarData->eqar_id,
+            'kra' => 1,
+            'criteria' => 'A',
+            'eqar_user_user_id' => $eqarData->user_user_id,
+            'eval_status' => 'Pending',
+            'is_submitted' => false,
+            'cycle' => '9th',
+        ];
+
+        // Debug: Log the data to be inserted
+        Log::debug('Data to be inserted:', $data);
+
+        DB::table('pasucs')->insert($data);
+
+        return response()->json(['success' => true]);
+    } catch (\Exception $e) {
+        // Debug: Log the error
+        Log::error('Error occurred:', ['error' => $e->getMessage()]);
+
+        return response()->json(['success' => false, 'error' => $e->getMessage()]);
     }
+}    
     
     public function getPasuc()
     {
@@ -63,7 +69,6 @@ class DBController extends Controller
             'title_bar' => $dynamicContent
         ]);
     }
-
 
     public function pasucUpdateApplied($pasucId)
     {
