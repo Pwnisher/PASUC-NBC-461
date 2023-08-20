@@ -14,11 +14,6 @@ class TabController extends Controller
         return view('eqar');
     }
 
-    public function application() {
-        $dynamicContent = 'Application of Accomplishments';
-        return view('addsummary', ['title_bar' => $dynamicContent]);
-    }    
-
     public function show(Request $request, $any = null) {
 
         switch ($any) {
@@ -77,7 +72,7 @@ class TabController extends Controller
             return response()->json(['title_bar' => $dynamicContent]);
         } else {
             // Render the view with the dynamic content
-            return view('addsummary', ['title_bar' => $dynamicContent]);
+            return view('application', ['title_bar' => $dynamicContent]);
         }
     }
 }

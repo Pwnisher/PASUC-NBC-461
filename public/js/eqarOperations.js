@@ -3,7 +3,7 @@ function applyFile(eqarId) {
         const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
 
         // Perform an AJAX request to update the is_applied field
-        fetch(`/update-applied/${eqarId}`, {
+        fetch(`/eqar-update-applied/${eqarId}`, {
             method: 'PUT',
             headers: {
                 'X-CSRF-TOKEN': csrfToken,

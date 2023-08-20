@@ -28,10 +28,12 @@ Route::get('/home', [TabController::class, 'home']);
 Route::get('/home', [TabController::class, 'home']);
 Route::get('/eqar', [TabController::class, 'eqar']);
 Route::get('/eqar', [DBController::class, 'getEqar'])->name('eqar');
-Route::put('/update-applied/{eqarId}', [DBController::class, 'eqarUpdateApplied']);
+Route::put('/eqar-update-applied/{eqarId}', [DBController::class, 'eqarUpdateApplied']);
 
-Route::get('/application', [TabController::class, 'application'])->name('application');
+Route::get('/application', [DBController::class, 'getPasuc'])->name('application');
 Route::get('/application/{any}', [TabController::class, 'show'])->where('any', '.*');
+Route::put('/pasuc-update-applied/{pasucId}', [DBController::class, 'pasucUpdateApplied']);
+
 
 Route::get('/add-documents', [AddController::class, 'addDocuments']);
 Route::get('/add-documents-KRA1', [AddController::class, 'showPAGEaddKRA1']);
