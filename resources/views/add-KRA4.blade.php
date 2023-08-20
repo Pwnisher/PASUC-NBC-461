@@ -24,7 +24,7 @@ function showAddForm(option) {
     clearFormContainer('form-container3'); clearFormContainer('form-container4');
     clearFormContainer('category-container');
 
-    if (option === "criterionA") { //------------------------------------------------------------------
+    if (option === "criterionA") {
         addPageTitle.innerHTML = "Criterion A: Involvement in Professional Organizations";
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
         //since walang choice sa ISS ung criteria A, always show part1
@@ -38,11 +38,11 @@ function showAddForm(option) {
         });*/
 
         
-      // Student Evaluation -------------------------------------
-        const in_stdEval_semDed = ['input','stdEval-semDed', 'Name of Organization', 'text'];
-        const in_stdEval_semDed2 = ['input','stdEval-semDed2', 'Type of Organization', 'text'];
-        const in_stdEval_semDed3 = ['input','stdEval-semDed3', 'Activity of the Organization Participated by the Faculty', 'text'];
-        const sel_stdEval_reason = ['select','stdEval-reason', 'Role or Contribution to the Activity', [
+      // Individual Membership -------------------------------------
+      const in_indMem_nameOrg = ['input','indMem_nameOrg', 'Name of Organization', 'text'];
+        const in_indMem_typeOrg = ['input','indMem_typeOrg', 'Type of Organization', 'text'];
+        const in_indMem_actOrg = ['input','indMem_actOrg', 'Activity of the Organization Participated by the Faculty', 'text'];
+        const sel_indMem_role = ['select','indMem_role', 'Role or Contribution to the activity of the Organization', [
             { value: 'BOARD MEMBER', label: 'BOARD MEMBER' },
             { value: 'OFFICER', label: 'OFFICER' },
             { value: 'LEAD ORGANIZER', label: 'LEAD ORGANIZER' },
@@ -52,14 +52,18 @@ function showAddForm(option) {
             { value: 'MODERATOR', label: 'MODERATOR' },
             { value: 'FACILITATOR', label: 'FACILITATOR' }
         ]]; 
-        const in_stdEval_semDed4 = ['input','stdEval_semDed4', 'Date of Activity', 'date'];
+        const in_indMem_dateAct = ['input','indMem_dateAct', 'Date of Activity', 'date'];
 
-        wrapElements([in_stdEval_semDed], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([in_stdEval_semDed2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([in_stdEval_semDed3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([sel_stdEval_reason, in_stdEval_semDed4], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
+        // Note: need id in label
 
-        //createDynamicCheckbox('stdEval-SD1', 'Student Evaluation Rating using prescribed template');
+        wrapElements([in_indMem_nameOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([in_indMem_typeOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([in_indMem_actOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([sel_indMem_role], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([in_indMem_dateAct], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('indMem_SD1', 'Copy of Certification of Engagement, Role, Assignment from the Head of the Organization', 'form-container1');
     } 
     else if (option === "criterionB") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion B: Continuing Development";
@@ -93,62 +97,68 @@ function showAddForm(option) {
 
       // Educational Qualification -------------------------------------
         // Doctorate Degree --------------------------------------------
-        const in_im_title_sole = ['input','im-title-sole', 'Complete Name of the Doctorate Degree', 'text'];
-        const in_im_title_sole2 = ['input','im-title-sole2', 'Name of the Institution Where the Degree was Earned', 'text'];
-        const in_im_title_sole3 = ['input','in_im_title_sole3', 'Date Completed', 'date'];
-        const sel_im_type_sole = ['select','im-type-sole', 'Is the Faculty Qualified for the Automatic 1 Sub-Rank Increase?', [
+        const in_eq_dd_nameDegree = ['input','eq_dd_nameDegree', 'Complete Name of the Doctorate Degree', 'text'];
+        const in_eq_dd_nameInst = ['input','eq_dd_nameInst', 'Name of the Institution Where the Degree was Earned', 'text'];
+        const in_eq_dd_dateComp = ['input','eq_dd_dateComp', 'Date Completed', 'date'];
+        const sel_eq_dd_isQualified = ['select','eq_dd_isQualified', 'Is the Faculty Qualified for the Automatic 1 Sub-Rank Increase?', [
             { value: 'YES', label: 'YES' },
             { value: 'NO', label: 'NO' },
         ]];
 
-        wrapElements([in_im_title_sole], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([in_im_title_sole2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([in_im_title_sole3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([sel_im_type_sole], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');        
+        wrapElements([in_eq_dd_nameDegree], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([in_eq_dd_nameInst], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([in_eq_dd_dateComp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([sel_eq_dd_isQualified], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('eq_dd_SD1', 'Copy of Transcript of Records, Diploma or Certificate', 'form-container1');     
 
         // Additional Degree ----------------------------------------------        
-        const sel_im_type_co = ['select','im-type-co', 'Degree', [
+        const sel_eq_ad_degree = ['select','eq_ad_degree', 'Degree', [
             { value: 'ADDITIONAL DOCTORATE DEGREE', label: 'ADDITIONAL DOCTORATE DEGREE' },
             { value: 'ADDITIONAL MASTER DEGREE', label: 'ADDITIONAL MASTER DEGREE' },
             { value: 'POST-DOCTORATE DIPLOMA/CERTIFICATE', label: 'POST-DOCTORATE DIPLOMA/CERTIFICATE' },
             { value: 'POST-MASTERS DIPLOMA/CERTIFICATE', label: 'POST-MASTERS DIPLOMA/CERTIFICATE' },
         ]];
-        const in_im_reviewer_co = ['input','im-reviewer-co', 'Degree Name', 'text'];
-        const in_im_reviewer_co2 = ['input','im-reviewer-co', 'Name of HEI', 'text'];
-        const in_im_reviewer_co3 = ['input','im-reviewer-co', 'Date Completed', 'date'];        
+        const in_eq_ad_degreeName = ['input','eq_ad_degreeName', 'Degree Name', 'text'];
+        const in_eq_ad_nameHEI = ['input','eq_ad_nameHEI', 'Name of HEI', 'text'];
+        const in_eq_ad_dateComp = ['input','eq_ad_dateComp', 'Date Completed', 'date'];        
         
-        wrapElements([sel_im_type_co, in_im_reviewer_co], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
-        wrapElements([in_im_reviewer_co2], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
-        wrapElements([in_im_reviewer_co3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
+        wrapElements([sel_eq_ad_degree, in_eq_ad_degreeName], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
+        wrapElements([in_eq_ad_nameHEI], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
+        wrapElements([in_eq_ad_dateComp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
 
 
         // Participation in Conferences, Seminars, Workshops, Industry Immersion ----------------------------------------------
-        const in_ap_name = ['input','ap-name', 'Name of Conference/Training', 'text'];
-        const sel_ap_type = ['select','ap-type', 'Scope', [
+        const in_partconf_nameConf = ['input','partconf_nameConf', 'Name of Conference/Training', 'text'];
+        const sel_partconf_scope = ['select','partconf_scope', 'Scope', [
               { value: 'LOCAL', label: 'LOCAL' },
               { value: 'INTERNATIONAL', label: 'INTERNATIONAL' },
         ]];
-        const in_ap_name2 = ['input','ap-name2', 'Organizer', 'text']; //di ko knows if organizer lang or organizer name
-        const in_ap_name3 = ['input','ap-name3', 'Date of Activity', 'date'];
+        const in_partconf_orgnzr = ['input','partconf_orgnzr', 'Organizer', 'text']; //di ko knows if organizer lang or organizer name
+        const in_partconf_dateAct = ['input','partconf_dateAct', 'Date of Activity', 'date'];
 
-        wrapElements([in_ap_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container3');
-        wrapElements([sel_ap_type, in_ap_name2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container3');
-        wrapElements([in_ap_name3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container3');
+        wrapElements([in_partconf_nameConf], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container3');
+        wrapElements([sel_partconf_scope, in_partconf_orgnzr], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container3');
+        wrapElements([in_partconf_dateAct], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container3');
 
         // Paper Presentation in Conferences ----------------------------------------------
-        const in_conf_name = ['input','conf-name', 'Title of Paper', 'text'];
-        const sel_conf_type = ['select','conf-type', 'Local or International', [
+        const in_presconf_titlePaper = ['input','presconf_titlePaper', 'Title of Paper', 'text'];
+        const sel_presconf_scope = ['select','presconf_scope', 'Local or International', [
               { value: 'LOCAL', label: 'LOCAL' },
               { value: 'INTERNATIONAL', label: 'INTERNATIONAL' },
         ]];
-        const in_conf_name2 = ['input','conf-name2', 'Title of Conference', 'text'];
-        const in_conf_name3 = ['input','conf-name2', 'Conference Organizer', 'text'];
-        const in_conf_name4 = ['input','conf-name3', 'Date Presented', 'date'];
+        const in_presconf_titleConf = ['input','presconf_titleConf', 'Title of Conference', 'text'];
+        const in_presconf_orgnzr = ['input','presconf_orgnzr', 'Conference Organizer', 'text'];
+        const in_presconf_datePres = ['input','presconf_datePres', 'Date Presented', 'date'];
 
-        wrapElements([in_conf_name], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
-        wrapElements([sel_conf_type, in_conf_name2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container4');
-        wrapElements([in_conf_name3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
-        wrapElements([in_conf_name4], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
+        wrapElements([in_presconf_titlePaper], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
+        wrapElements([sel_presconf_scope, in_presconf_titleConf], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container4');
+        wrapElements([in_presconf_orgnzr], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
+        wrapElements([in_presconf_datePres], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
+
+        createDynamicLabel('Supporting Documents', 'form-container4');
+        createDynamicCheckbox('presconf_SD1', 'Copy of Letter/Certificate of Acceptance', 'form-container4');
     } 
     else if (option === "criterionC") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion C: Awards and Recognition";
@@ -163,27 +173,30 @@ function showAddForm(option) {
             part1.style.display = 'none';  if (categ_kra4_cC === 'part1') part1.style.display = 'block';
         });
         
-        const in_award_recog = ['input','award_recog', 'Name of the Award', 'text'];
-        const sel_award_recog = ['select','award_recog', 'Scope of the Award', [
+        const in_award_nameAward = ['input','award_nameAward', 'Name of the Award', 'text'];
+        const sel_award_scope = ['select','award_scope', 'Scope of the Award', [
               { value: 'INSTITUTIONAL', label: 'INSTITUTIONAL' },
               { value: 'LOCAL', label: 'LOCAL' },
               { value: 'REGIONAL', label: 'REGIONAL' },
         ]];
-        const in_award_recog2 = ['input','award_recog2', 'Award-Giving Body/Organization', 'text'];
-        const in_award_recog3 = ['input','award_recog3', 'Date the Award was Given', 'date'];
-        const in_award_recog4 = ['input','award_recog4', 'Venue of the Award Ceremony', 'text'];
+        const in_award_agBody = ['input','award_agBody', 'Award-Giving Body/Organization', 'text'];
+        const in_award_dateAward = ['input','award_dateAward', 'Date the Award was Given', 'date'];
+        const in_award_venueAward = ['input','award_venueAward', 'Venue of the Award Ceremony', 'text'];
 
-        wrapElements([in_award_recog], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');   
-        wrapElements([sel_award_recog, in_award_recog2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');   
-        wrapElements([in_award_recog3], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');   
-        wrapElements([in_award_recog4], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');   
+        wrapElements([in_award_nameAward], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');   
+        wrapElements([sel_award_scope, in_award_agBody], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');   
+        wrapElements([in_award_dateAward], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');   
+        wrapElements([in_award_venueAward], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');   
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('award_SD1', 'Copy of the picture of plaque, trophy, medal, or other similar items', 'form-container1');
     }
     else if (option === "criterionD") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion D: Bonus Indicators for Newly Appointed Faculty";
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
 
-        // KRA 4 : Criterion C Categories
-        const sel_kra4_cD = ['select','sel_kra1_cC', 'Type of Appointment/Designation: ', [
+        // KRA 4 : Criterion D Categories
+        const sel_kra4_cD = ['select','sel_kra4_cD', 'Type of Appointment/Designation: ', [
             { value: 'part1', label: 'Every Year of Full-Time Academic Service in an Institution of Higher Learning' },
             { value: 'part2', label: 'Every Year of Industry Experience' }
         ]]; 
@@ -204,42 +217,48 @@ function showAddForm(option) {
         });
 
         // Every Year of Full-Time Academic Service in an Institution of Higher Learning ---------------------------------------------
-        const sel_year_acad = ['select','year_acad', 'Designation/Position', [
+        const sel_yracad_pos = ['select','yracad_pos', 'Designation/Position', [
             { value: 'PRESIDENT', label: 'PRESIDENT' },
             { value: 'VICE PRESIDENT, DEAN OR DIRECTOR', label: 'VICE PRESIDENT, DEAN OR DIRECTOR' },  
             { value: 'DEPARTMENT/PROGRAM HEAD', label: 'DEPARTMENT/PROGRAM HEAD' },  
             { value: 'FACULTY MEMBER', label: 'FACULTY MEMBER' },
         ]];
-        const in_year_acad = ['input','year_acad', 'Name of HEI', 'text'];
-        const in_year_acad2 = ['input','year_acad2', 'Number of Years', 'number'];
-        const in_year_acad3 = ['input','year_acad3', 'Start', 'date'];
-        const in_year_acad4 = ['input','year_acad4', 'End', 'date'];
+        const in_yracad_nameHEI = ['input','yracad_nameHEI', 'Name of HEI', 'text'];
+        const in_yracad_numYrs = ['input','yracad_numYrs', 'Number of Years', 'number'];
+        const in_yracad_start = ['input','yracad_start', 'Start', 'date'];
+        const in_yracad_end = ['input','yracad_end', 'End', 'date'];
 
-        wrapElements([sel_year_acad], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([in_year_acad, in_year_acad2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([sel_yracad_pos], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([in_yracad_nameHEI, in_yracad_numYrs], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
           createDynamicLabel('Period Covered', 'form-container1');
-        wrapElements([in_year_acad3, in_year_acad4], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([in_yracad_start, in_yracad_end], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('yracad_SD1', 'Copy of Service Record, Certificate of Employment, Notice of Appointment/Designation or similar documents', 'form-container1');
 
         // Every Year of Industry Experience (Non-Academic Organization) ---------------------------------------------
-        const in_year_indus = ['input','year_indus', 'Name of Company/Organization', 'text'];
-        const sel_year_indus = ['select','year_indus', 'Designation/Position', [
+        const in_yrindus_nameOrg = ['input','yrindus_nameOrg', 'Name of Company/Organization', 'text'];
+        const sel_yrindus_pos = ['select','yrindus_pos', 'Designation/Position', [
             { value: 'MANAGERIAL/SUPERVISORY', label: 'MANAGERIAL/SUPERVISORY' },
             { value: 'TECHNICAL/SKILLED', label: 'TECHNICAL/SKILLED' },  
             { value: 'SUPPORT/ADMINISTRATIVE', label: 'SUPPORT/ADMINISTRATIVE' },
         ]];        
-        const in_year_indus2 = ['input','year_indus', 'Number of Years', 'number'];
-        const in_year_indus3 = ['input','year_indus', 'Start', 'date'];
-        const in_year_indus4 = ['input','year_indus', 'End', 'date'];
+        const in_yrindus_numYrs = ['input','yrindus_numYrs', 'Number of Years', 'number'];
+        const in_yrindus_start = ['input','yrindus_start', 'Start', 'date'];
+        const in_yrindus_end = ['input','yrindus_end', 'End', 'date'];
 
-        wrapElements([in_year_indus], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
-        wrapElements([sel_year_indus, in_year_indus2], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
+        wrapElements([in_yrindus_nameOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container2');
+        wrapElements([sel_yrindus_pos, in_yrindus_numYrs], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
           createDynamicLabel('Period Covered', 'form-container2');
-        wrapElements([in_year_indus3, in_year_indus4], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
+        wrapElements([in_yrindus_start, in_yrindus_end], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
+
+        createDynamicLabel('Supporting Documents', 'form-container2');
+        createDynamicCheckbox('yrindus_SD1', 'Copy of Service Record, Certificate of Employment, Notice of Appointment/Designation or similar documents', 'form-container2');
     }
 }
 </script>
 <!------------------------------------------------------------------------------------------------------->
-<body class="bg-ghostwhite">
+<body class="bg-ghostwhite">  
     <ul> <!-- for links from accomplishments tab -->
         <li><a href="#" onclick="showAddForm('criterionA')">Show Page 1</a></li>
         <li><a href="#" onclick="showAddForm('criterionB')">Show Page 2</a></li>
@@ -271,6 +290,7 @@ function showAddForm(option) {
                   <div id="form-container2" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <div id="form-container3" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <div id="form-container4" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
+                  <br>
 
                 <!-- must always be present in all pages -->
                 <!-- box design for upload document -->
