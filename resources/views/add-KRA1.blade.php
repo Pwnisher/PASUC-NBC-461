@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Add Accomplishments</title>
+        <title>Add Supporting Documents</title>
 
         @vite('resources/css/app.css')
         <script src="{{ asset('js/addDocs.js') }}"></script>
@@ -21,6 +21,9 @@ function showAddForm(option) {
     // Clear the elements in dynamic form and category container
     clearFormContainer('form-container1'); clearFormContainer('form-container2'); clearFormContainer('form-container3');
     clearFormContainer('category-container');
+
+    // Hide all parts initially
+    part1.style.display = 'none'; part2.style.display = 'none'; part3.style.display = 'none';
 
     if (option === "criterionA") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion A: Teaching Effectiveness";

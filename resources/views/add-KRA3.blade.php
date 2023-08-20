@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Add Accomplishments</title>
+        <title>Add Supporting Documents</title>
 
         @vite('resources/css/app.css')
         <script src="{{ asset('js/addDocs.js') }}"></script>
@@ -22,6 +22,10 @@ function showAddForm(option) {
     clearFormContainer('form-container1'); clearFormContainer('form-container2'); clearFormContainer('form-container3'); 
     clearFormContainer('form-container4'); clearFormContainer('form-container5'); clearFormContainer('form-container6');
     clearFormContainer('category-container');
+
+    // Hide all parts initially
+    part1.style.display = 'none'; part2.style.display = 'none'; part3.style.display = 'none';
+    part4.style.display = 'none'; part5.style.display = 'none'; part6.style.display = 'none';
 
     if (option === "criterionA") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion A: Service to the Institution";

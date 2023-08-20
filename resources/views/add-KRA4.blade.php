@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Add Accomplishments</title>
+        <title>Add Supporting Documents</title>
 
         @vite('resources/css/app.css')
         <script src="{{ asset('js/addDocs.js') }}"></script>
@@ -24,20 +24,17 @@ function showAddForm(option) {
     clearFormContainer('form-container3'); clearFormContainer('form-container4');
     clearFormContainer('category-container');
 
+     // Hide all parts initially
+     part1.style.display = 'none'; part2.style.display = 'none';
+     part3.style.display = 'none'; part4.style.display = 'none';
+
     if (option === "criterionA") {
         addPageTitle.innerHTML = "Criterion A: Involvement in Professional Organizations";
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
-        //since walang choice sa ISS ung criteria A, always show part1
-        /*// Event Listener
-        const kra4_cA = document.getElementById('sel_kra4_cA');
-        kra4_cA.addEventListener('change', function() {
-        var categ_kra4_cA = kra4_cA.value;
-
-            // Hide all parts initially    // Show Part Container
-            part1.style.display = 'none';  if (categ_kra4_cA === 'part1') part1.style.display = 'block';
-        });*/
-
         
+        //since walang choice sa ISS ung criteria A, always show part1
+        part1.style.display = 'block';
+
       // Individual Membership -------------------------------------
       const in_indMem_nameOrg = ['input','indMem_nameOrg', 'Name of Organization', 'text'];
         const in_indMem_typeOrg = ['input','indMem_typeOrg', 'Type of Organization', 'text'];
@@ -53,8 +50,6 @@ function showAddForm(option) {
             { value: 'FACILITATOR', label: 'FACILITATOR' }
         ]]; 
         const in_indMem_dateAct = ['input','indMem_dateAct', 'Date of Activity', 'date'];
-
-        // Note: need id in label
 
         wrapElements([in_indMem_nameOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_indMem_typeOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
@@ -163,15 +158,9 @@ function showAddForm(option) {
     else if (option === "criterionC") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion C: Awards and Recognition";
         addPageKRA.innerHTML = "KRA IV - PROFESSIONAL DEVELOPMENT";
+        
         //since walang choice sa ISS ung criteria A, always show part1
-        // Event Listener
-        const kra4_cC = document.getElementById('sel_kra4_cC');
-        kra4_cC.addEventListener('change', function() {
-        var categ_kra4_cC = kra4_cC.value;
-
-            // Hide all parts initially    // Show Part Container
-            part1.style.display = 'none';  if (categ_kra4_cC === 'part1') part1.style.display = 'block';
-        });
+        part1.style.display = 'block';
         
         const in_award_nameAward = ['input','award_nameAward', 'Name of the Award', 'text'];
         const sel_award_scope = ['select','award_scope', 'Scope of the Award', [
