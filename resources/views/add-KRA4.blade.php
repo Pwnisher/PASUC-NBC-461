@@ -47,11 +47,15 @@ function showAddForm(option) {
         const in_indMem_dateAct = ['input','indMem_dateAct', 'Date of Activity', 'date'];
 
         // Note: need id in label
+
         wrapElements([in_indMem_nameOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_indMem_typeOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_indMem_actOrg], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([sel_indMem_role], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_indMem_dateAct], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('indMem_SD1', 'Copy of Certification of Engagement, Role, Assignment from the Head of the Organization', 'form-container1');
     } 
     else if (option === "criterionB") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion B: Continuing Development";
@@ -96,7 +100,10 @@ function showAddForm(option) {
         wrapElements([in_eq_dd_nameDegree], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_eq_dd_nameInst], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
         wrapElements([in_eq_dd_dateComp], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([sel_eq_dd_isQualified], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');        
+        wrapElements([sel_eq_dd_isQualified], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('eq_dd_SD1', 'Copy of Transcript of Records, Diploma or Certificate', 'form-container1');     
 
         // Additional Degree ----------------------------------------------        
         const sel_eq_ad_degree = ['select','eq_ad_degree', 'Degree', [
@@ -141,6 +148,9 @@ function showAddForm(option) {
         wrapElements([sel_presconf_scope, in_presconf_titleConf], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container4');
         wrapElements([in_presconf_orgnzr], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
         wrapElements([in_presconf_datePres], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container4');
+
+        createDynamicLabel('Supporting Documents', 'form-container4');
+        createDynamicCheckbox('presconf_SD1', 'Copy of Letter/Certificate of Acceptance', 'form-container4');
     } 
     else if (option === "criterionC") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion C: Awards and Recognition";
@@ -162,6 +172,9 @@ function showAddForm(option) {
         wrapElements([sel_award_scope, in_award_agBody], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');   
         wrapElements([in_award_dateAward], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');   
         wrapElements([in_award_venueAward], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');   
+
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('award_SD1', 'Copy of the picture of plaque, trophy, medal, or other similar items', 'form-container1');
     }
     else if (option === "criterionD") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion D: Bonus Indicators for Newly Appointed Faculty";
@@ -205,6 +218,9 @@ function showAddForm(option) {
           createDynamicLabel('Period Covered', 'form-container1');
         wrapElements([in_yracad_start, in_yracad_end], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
 
+        createDynamicLabel('Supporting Documents', 'form-container1');
+        createDynamicCheckbox('yracad_SD1', 'Copy of Service Record, Certificate of Employment, Notice of Appointment/Designation or similar documents', 'form-container1');
+
         // Every Year of Industry Experience (Non-Academic Organization) ---------------------------------------------
         const in_yrindus_nameOrg = ['input','yrindus_nameOrg', 'Name of Company/Organization', 'text'];
         const sel_yrindus_pos = ['select','yrindus_pos', 'Designation/Position', [
@@ -220,6 +236,9 @@ function showAddForm(option) {
         wrapElements([sel_yrindus_pos, in_yrindus_numYrs], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
           createDynamicLabel('Period Covered', 'form-container2');
         wrapElements([in_yrindus_start, in_yrindus_end], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container2');
+
+        createDynamicLabel('Supporting Documents', 'form-container2');
+        createDynamicCheckbox('yrindus_SD1', 'Copy of Service Record, Certificate of Employment, Notice of Appointment/Designation or similar documents', 'form-container2');
     }
 }
 </script>
@@ -256,6 +275,7 @@ function showAddForm(option) {
                   <div id="form-container2" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <div id="form-container3" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <div id="form-container4" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
+                  <br>
 
                 <!-- must always be present in all pages -->
                 <!-- box design for upload document -->
