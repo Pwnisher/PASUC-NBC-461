@@ -1,11 +1,15 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEqarFilesTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
         Schema::create('eqar_files', function (Blueprint $table) {
             $table->id('eqar_id');
@@ -20,14 +24,16 @@ class CreateEqarFilesTable extends Migration
             $table->date('date_submitted');
             $table->string('status')->nullable();
 
-            $table->primary(['eqar_id', 'user_user_id']);
             $table->foreign('user_user_id')->references('user_id')->on('users')
                   ->onDelete('NO ACTION')->onUpdate('NO ACTION');
         });
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
-        Schema::dropIfExists('eqar_files');
+        Schema::dropIfExists('eqar');
     }
-}
+};

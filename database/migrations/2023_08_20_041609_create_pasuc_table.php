@@ -4,9 +4,12 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePasucFilesTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
     {
         Schema::create('pasuc_files', function (Blueprint $table) {
             $table->id('pasuc_id');
@@ -17,15 +20,17 @@ class CreatePasucFilesTable extends Migration
             $table->string('eval_status', 45);
             $table->tinyInteger('is_submitted');
 
-            $table->primary(['pasuc_id', 'eqar_files_eqar_id', 'eqar_files_user_user_id']);
             $table->foreign(['eqar_files_eqar_id', 'eqar_files_user_user_id'])
                   ->references(['eqar_id', 'user_user_id'])->on('eqar_files')
                   ->onDelete('NO ACTION')->onUpdate('NO ACTION');
         });
     }
 
-    public function down()
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
     {
-        Schema::dropIfExists('pasuc_files');
+        Schema::dropIfExists('pasuc');
     }
-}
+};
