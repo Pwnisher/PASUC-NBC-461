@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('eqar_files', function (Blueprint $table) {
             $table->id('eqar_id');
             $table->string('user_user_id');
-            $table->tinyInteger('is_approved');
+            $table->tinyInteger('is_applied');
             $table->string('file_path')->nullable();
             $table->string('title');
             $table->date('inclusive_date');
