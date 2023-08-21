@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AddController;
 use App\Http\Controllers\TabController;
+use Illuminate\Http\Request;
 use App\Http\Controllers\DBController;
 
 /*
@@ -20,10 +21,15 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('DBController', [DBController::class, 'index']);
+Route::get('DBController', [DBController::class, 'store']);
+
+Route::get('/home', [TabController::class, 'home']);
 
 Route::get('/home', [TabController::class, 'home']);
 Route::get('/eqar', [TabController::class, 'eqar']);
+Route::get('/eqar', [DBController::class, 'getEqar'])->name('eqar');
+Route::put('/update-applied/{eqarId}', [DBController::class, 'eqarUpdateApplied']);
+
 Route::get('/application', [TabController::class, 'application'])->name('application');
 Route::get('/application/{any}', [TabController::class, 'show'])->where('any', '.*');
 
