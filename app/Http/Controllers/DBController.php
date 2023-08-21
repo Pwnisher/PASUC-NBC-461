@@ -72,55 +72,69 @@ class DBController extends Controller
     
     public function getPasuc(Request $request, $any = null)
     {
-        $pasucFiles = DB::select("SELECT p.pasuc_id, e.title, p.cycle, p.kra, p.criteria, e.inclusive_date, e.accomplishment_name, e.date_submitted, p.eval_status, p.is_submitted FROM pasucs p INNER JOIN eqars e ON p.eqar_eqar_id = e.eqar_id;");
+        $pasucFilesString = "SELECT p.pasuc_id, e.title, p.cycle, p.kra, p.criteria, e.inclusive_date, e.accomplishment_name, e.date_submitted, p.eval_status, p.is_submitted FROM pasucs p INNER JOIN eqars e ON p.eqar_eqar_id = e.eqar_id ";
         
         $dynamicContent = 'Application of Accomplishments'; 
 
         switch ($any) {
             case 'kra1/criteriaA':
                 $dynamicContent = 'Criterion A - Teaching Effectiveness';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 1 AND p.criteria = 'A';";
                 break;
             case 'kra1/criteriaB':
                 $dynamicContent = 'Criterion B - Curriculum and Instructional Materials Developed';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 1 AND p.criteria = 'B';";
                 break;
             case 'kra1/criteriaC':
                 $dynamicContent = 'Criterion C - Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 1 AND p.criteria = 'C';";
                 break;
                 
             case 'kra2/criteriaA':
                 $dynamicContent = 'Criterion A - Research Output Published';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 2 AND p.criteria = 'A';";
                 break;
             case 'kra2/criteriaB':
                 $dynamicContent = 'Criterion B - Inventions';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 2 AND p.criteria = 'B';";
                 break;
             case 'kra2/criteriaC':
                 $dynamicContent = 'Criterion C - Creative Works';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 2 AND p.criteria = 'C';";
                 break;
 
             case 'kra3/criteriaA':
                 $dynamicContent = 'Criterion A - Service to the Institution';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 3 AND p.criteria = 'A';";
                 break;
             case 'kra3/criteriaB':
                 $dynamicContent = 'Criterion B - Service to the Community';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 3 AND p.criteria = 'B';";
                 break;
             case 'kra3/criteriaC':
                 $dynamicContent = 'Criterion C - Quality of Extension Services';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 3 AND p.criteria = 'C';";
                 break;
             case 'kra3/criteriaD':
                 $dynamicContent = 'Criterion D - Bonus Criterion';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 3 AND p.criteria = 'D';";
                 break;
 
             case 'kra4/criteriaA':
                 $dynamicContent = 'Criterion A - Involvement in Professional Organizations';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 4 AND p.criteria = 'A';";
                 break;
             case 'kra4/criteriaB':
                 $dynamicContent = 'Criterion B - Continuing Development';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 4 AND p.criteria = 'B';";
                 break;
             case 'kra4/criteriaC':
                 $dynamicContent = 'Criterion  - Awards and Recognition';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 4 AND p.criteria = 'C';";
                 break;
             case 'kra4/criteriaD':
                 $dynamicContent = 'Criterion D - Bonus Indicators for Newly Hired Faculty';
+                $pasucFilesString = $pasucFilesString."WHERE p.kra = 4 AND p.criteria = 'D';";
                 break;
 
             case null:
@@ -131,9 +145,15 @@ class DBController extends Controller
                 return view('error');
         }
 
+        $pasucFiles = DB::select($pasucFilesString);
+        
+
         if ($request->ajax()) {
             // Return the dynamic content as JSON for the AJAX request
-            return response()->json(['title_bar' => $dynamicContent]);
+            return response()->json([
+                'pasucFiles' => $pasucFiles,
+                'title_bar' => $dynamicContent
+            ]);
         } else {
             // Render the view with the dynamic content
             return view('application', [
