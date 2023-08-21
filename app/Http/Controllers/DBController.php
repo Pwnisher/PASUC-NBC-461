@@ -129,7 +129,7 @@ class DBController extends Controller
                 $pasucFilesString = $pasucFilesString."WHERE p.kra = 4 AND p.criteria = 'B';";
                 break;
             case 'kra4/criteriaC':
-                $dynamicContent = 'Criterion  - Awards and Recognition';
+                $dynamicContent = 'Criterion C - Awards and Recognition';
                 $pasucFilesString = $pasucFilesString."WHERE p.kra = 4 AND p.criteria = 'C';";
                 break;
             case 'kra4/criteriaD':
