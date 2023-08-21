@@ -74,6 +74,8 @@ class DBController extends Controller
     {
         $pasucFiles = DB::select("SELECT p.pasuc_id, e.title, p.cycle, p.kra, p.criteria, e.inclusive_date, e.accomplishment_name, e.date_submitted, p.eval_status, p.is_submitted FROM pasucs p INNER JOIN eqars e ON p.eqar_eqar_id = e.eqar_id;");
         
+        $dynamicContent = 'Application of Accomplishments'; 
+
         switch ($any) {
             case 'kra1/criteriaA':
                 $dynamicContent = 'Criterion A - Teaching Effectiveness';
@@ -119,6 +121,10 @@ class DBController extends Controller
                 break;
             case 'kra4/criteriaD':
                 $dynamicContent = 'Criterion D - Bonus Indicators for Newly Hired Faculty';
+                break;
+
+            case null:
+                ;
                 break;
 
             default:
