@@ -19,7 +19,7 @@ class PasucFactory extends Factory
     {
         return [
             'kra'=>fake()->randomElement(['1','2','3','4']),
-            'criteria'=>fake()->word(),
+            'criteria'=>fake()->randomElement(['A','B','C']),
             'eval_status'=>fake()->randomElement(['Ongoing','Finished','Returned']),
             'is_submitted'=>fake()->boolean(),
             'cycle'=>'9th',
