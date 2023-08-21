@@ -25,15 +25,14 @@ Route::get('DBController', [DBController::class, 'store']);
 
 Route::get('/home', [TabController::class, 'home']);
 
-Route::get('/home', [TabController::class, 'home']);
-Route::get('/eqar', [TabController::class, 'eqar']);
+Route::get('/home', [DBController::class, 'home']);
+Route::get('/eqar', [DBController::class, 'eqar']);
 Route::get('/eqar', [DBController::class, 'getEqar'])->name('eqar');
 Route::put('/eqar-update-applied/{eqarId}', [DBController::class, 'eqarUpdateApplied']);
 
 Route::get('/application', [DBController::class, 'getPasuc'])->name('application');
-Route::get('/application/{any}', [TabController::class, 'show'])->where('any', '.*');
+Route::get('/application/{any}', [DBController::class, 'getPasuc'])->where('any', '.*');
 Route::put('/pasuc-update-applied/{pasucId}', [DBController::class, 'pasucUpdateApplied']);
-
 
 Route::get('/add-documents', [AddController::class, 'addDocuments']);
 Route::get('/add-documents-KRA1', [AddController::class, 'showPAGEaddKRA1']);
