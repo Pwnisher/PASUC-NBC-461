@@ -94,14 +94,17 @@
               <div class="flex flex-row items-stretch justify-between">
                 <!--Show entries-->
                 <div class="text-sm text-gray-700 flex items-center space-x-2 w-1/3 justify-start">
-                  <span>Show</span>
                   <div class="relative">
-                    <select class="appearance-none w-20 bg-white border border-gray-300 text-gray-700 py-1 px-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                      <option>10</option>
-                      <option>25</option>
-                      <option>50</option>
-                      <option>100</option>
-                    </select>
+                    <!-- Dropdown Selector -->
+                    <form action="{{ route('eqar') }}" method="GET" class="flex items-center space-x-2">
+                        <span>Show:</span>
+                        <select name="perPage" onchange="this.form.submit()" class="appearance-none w-20 bg-white border border-gray-300 text-gray-700 py-1 px-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                            <option value="10" {{ Request::input('perPage', 10) == 10 ? 'selected' : '' }}>10</option>
+                            <option value="25" {{ Request::input('perPage') == 25 ? 'selected' : '' }}>25</option>
+                            <option value="50" {{ Request::input('perPage') == 50 ? 'selected' : '' }}>50</option>
+                            <option value="100" {{ Request::input('perPage') == 100 ? 'selected' : '' }}>100</option>
+                        </select>
+                    </form>
                     <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                       <i class="fas fa-chevron-down text-gray-600"></i>
                     </div>
@@ -143,7 +146,7 @@
                         <tbody class="divide-y divide-gray-300">
                           @foreach ($eqarFiles as $index => $file)
                               <tr class="hover:bg-gray-100">
-                                  <td class="py-4 px-6">{{ $index + 1 }}</td>
+                                  <td class="py-4 px-6">{{ $loop->iteration + ($eqarFiles->perPage() * ($eqarFiles->currentPage() - 1)) }}</td>
                                   <td class="py-4 px-6">{{ $file->title }}</td>
                                   <td class="py-4 px-6">{{ $file->inclusive_date }}</td>
                                   <td class="py-4 px-6">{{ $file->accomplishment_name }}</td>
@@ -154,7 +157,7 @@
                                   <td class="py-4 px-6">
                                       <div class="flex justify-between w-full space-x-4">
                                           @if ($file->status === 'Pending')
-                                              <button class="flex-1 px-4 py-2 bg-gray-500 text-white hover:bg-gray-700 rounded-md disabled">Pending</button>
+                                              <button class="cursor-not-allowed flex-1 px-4 py-2 bg-gray-500 text-white hover:bg-gray-700 rounded-md" disabled>Pending</button>
                                           @elseif ($file->status === 'Qualified')
                                               @if ($file->is_applied)
                                                 <button class="cursor-not-allowed flex-1 px-4 py-2 bg-purple-500 text-white hover:bg-purple-700 rounded-md" disabled>Applied</button>
@@ -175,35 +178,50 @@
               <div class="flex flex-row items-stretch justify-between">
                 <!--Showing x to x of x entries-->
                 <div class="text-sm text-gray-700 flex items-center space-x-2">
-                  <span>Showing 1 to 2 of 2 entries</span>
+                  <span>Showing {{ $eqarFiles->firstItem() }} to {{ $eqarFiles->lastItem() }} of {{ $totalRecords }} entries</span>
                 </div>
-                <!--Pagination Controls-->
-                <div class="flex items-center justify-center space-x-1 border border-gray-300 rounded-lg text-xs">
-                  <a href="#" class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-l-lg hover:bg-gray-200">
-                    <i class="fas fa-angle-double-left"></i>
-                  </a>
-                  <a href="#" class="flex items-center justify-center w-8 h-8 text-gray-600 hover:bg-gray-200">
-                    <i class="fas fa-angle-left"></i>
-                  </a>
-                  
-                  <!-- Generate the pagination links using a loop -->
-                  <a href="#" class="flex items-center justify-center w-8 h-8 bg-blue-500 text-white hover:bg-blue-600">
-                    1
-                  </a>
-                  <a href="#" class="flex items-center justify-center w-8 h-8 text-gray-600 hover:bg-gray-200">
-                    2
-                  </a>
-                  <a href="#" class="flex items-center justify-center w-8 h-8 text-gray-600 hover:bg-gray-200">
-                    3
-                  </a>
-                  
-                  <a href="#" class="flex items-center justify-center w-8 h-8 text-gray-600 hover:bg-gray-200">
-                    <i class="fas fa-angle-right"></i>
-                  </a>
-                  <a href="#" class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-r-lg hover:bg-gray-200">
-                    <i class="fas fa-angle-double-right"></i>
-                  </a>
-                </div>
+                <!-- Pagination Controls -->
+<div class="flex items-center justify-center space-x-1 border border-gray-300 rounded-lg text-xs">
+    @if ($eqarFiles->onFirstPage())
+        <a class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-l-lg cursor-not-allowed" disabled>
+            <i class="fas fa-angle-double-left"></i>
+        </a>
+        <a class="flex items-center justify-center w-8 h-8 text-gray-600 cursor-not-allowed" disabled>
+            <i class="fas fa-angle-left"></i>
+        </a>
+    @else
+        <a href="{{ $eqarFiles->appends(['perPage' => $eqarFiles->perPage()])->url(1) }}" class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-r-lg hover:bg-gray-200">
+            <i class="fas fa-angle-double-left"></i>
+        </a>
+
+        <a href="{{ $eqarFiles->appends(['perPage' => $eqarFiles->perPage()])->previousPageUrl() }}" class="flex items-center justify-center w-8 h-8 text-gray-600 hover:bg-gray-200">
+            <i class="fas fa-angle-left"></i>
+        </a>
+    @endif
+
+    @foreach ($eqarFiles->getUrlRange(1, $eqarFiles->lastPage()) as $page => $url)
+        <a href="{{ $url }}" class="flex items-center justify-center w-8 h-8 {{ $page == $eqarFiles->currentPage() ? 'bg-blue-500 text-white' : 'text-gray-600 hover:bg-gray-200' }}">
+            {{ $page }}
+        </a>
+    @endforeach
+
+    @if ($eqarFiles->hasMorePages())
+        <a href="{{ $eqarFiles->appends(['perPage' => $eqarFiles->perPage()])->nextPageUrl() }}" class="flex items-center justify-center w-8 h-8 text-gray-600 hover:bg-gray-200">
+            <i class="fas fa-angle-right"></i>
+        </a>
+        <a href="{{ $eqarFiles->appends(['perPage' => $eqarFiles->perPage()])->url($eqarFiles->lastPage()) }}" class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-r-lg hover:bg-gray-200">
+            <i class="fas fa-angle-double-right"></i>
+        </a>
+    @else
+        <a class="flex items-center justify-center w-8 h-8 text-gray-600 cursor-not-allowed" disabled>
+            <i class="fas fa-angle-right"></i>
+        </a>
+        <a class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-r-lg cursor-not-allowed" disabled>
+            <i class="fas fa-angle-double-right"></i>
+        </a>
+    @endif
+</div>
+
               </div>
             </div>
           </div>

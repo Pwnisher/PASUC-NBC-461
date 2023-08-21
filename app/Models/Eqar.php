@@ -11,7 +11,7 @@ class Eqar extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'user_user_id',
+        //'user_user_id',
         'is_applied',
         'file_path',
         'title',
@@ -23,7 +23,7 @@ class Eqar extends Model
         'status',
     ];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_user_id', 'user_id');
     }

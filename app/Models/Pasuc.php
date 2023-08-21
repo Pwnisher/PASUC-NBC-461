@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pasuc extends Model
 {
-    protected $primaryKey = ['pasuc_id', 'eqar_files_eqar_id', 'eqar_files_user_user_id'];
+    protected $primaryKey = ['pasuc_id', 'eqar_eqar_id', 'eqar_user_user_id'];
     public $incrementing = false;
 
     protected $fillable = [
@@ -22,6 +22,6 @@ class Pasuc extends Model
 
     public function eqars()
     {
-        return $this->belongsTo(Eqar::class, 'eqar_eqar_id', 'eqar_id')->where('eqar_user_user_id', $this->eqar_files_user_user_id);
+        return $this->belongsTo(Eqar::class, 'eqar_eqar_id', 'eqar_id')->where('eqar_user_user_id', $this->eqar_user_user_id);
     }
 }
