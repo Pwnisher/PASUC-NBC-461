@@ -34,18 +34,18 @@
             <div class="flex flex-col items-stretch space-y-2">
               <div id="reminder" class="bg-card-color rounded-sm p-4 text-card-font-color">
                 <span class="ml-3">
-                  <i class="fas fa-lightbulb text-xs"></i>
-                  <strong class="text-xs">Reminders:</strong>
-                  <p class="ml-8 text-xs">
+                  <i class="fas fa-lightbulb text-sm"></i>
+                  <strong class="text-lg">Reminders:</strong>
+                  <p class="ml-8 text-sm">
                     • The system is connected to the PUP eQAR system, so no need to re-upload the same accomplishment. <br>
                   </p>
                 </span>
               </div>
               <div id="instructions" class="bg-card-color rounded-sm p-4 text-card-font-color">
                 <span class="ml-3">
-                  <i class="fas fa-lightbulb text-xs"></i>
-                  <strong class="text-xs">Instructions</strong>
-                  <p class="ml-8 text-xs">
+                  <i class="fas fa-lightbulb text-lg"></i>
+                  <strong class="text-lg">Instructions</strong>
+                  <p class="ml-8 text-sm">
                     • Verify the accomplishment before clicking the "Apply" button.<br>
                     • Once settled, please click the "Apply" button to the accomplishment you want to submit for the PASUC NBC 461 evaluation.<br>
                     • The system will turn the button to violet if the accomplishment is successfully in the PASUC NBC 461 evaluation system. <br>
@@ -57,14 +57,14 @@
               <div class="flex flex-row justify-center space-x-4">
                 <!-- From -->
                 <div class="bg-gray-200 p-4 rounded-lg">
-                  <label class="block mb-2 font-semibold text-xs">From:</label>
-                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-xs" max="9999-12-31">
+                  <label class="block mb-2 font-semibold text-sm">From:</label>
+                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-sm" max="9999-12-31">
                 </div>
 
                 <!-- To -->
                 <div class="bg-gray-200 p-4 rounded-lg">
-                  <label class="block mb-2 font-semibold text-xs">To:</label>
-                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-xs" max="9999-12-31">
+                  <label class="block mb-2 font-semibold text-sm">To:</label>
+                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-sm" max="9999-12-31">
                 </div>
 
                 <!-- Buttons -->
@@ -120,36 +120,36 @@
                 </div>
               </div>
               <!--Table-->
-              <div class="container text-xs mx-auto py-2">
+              <div class="container text-sm mx-auto py-2">
                 <div class="w-full bg-white shadow-md overflow-x-auto">
                     <table class="table-auto w-full">
                         <thead class="bg-red-800 text-white">
                             <tr>
-                                <th id="num_id" class="py-4 px-6 text-left">  </th>
-                                <th id="title" class="py-4 px-6 cursor-pointer text-left">Title</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Cycle</th>
-                                <th id="kra" class="py-4 px-6 text-left">KRA</th>
-                                <th id="criteria" class="py-4 px-6 text-left">Criteria</th>
-                                <th id="inclusive_date" class="py-4 px-6 cursor-pointer text-left">Inclusive Date</th>
-                                <th id="accomplishment_name" class="py-4 px-6 cursor-pointer text-left">Accomplishment</th>
-                                <th id="date_submitted" class="py-4 px-6 cursor-pointer text-left">Date Submitted</th>
-                                <th id="eval_status" class="py-4 px-6 cursor-pointer text-left">Status</th>
-                                <th class="py-4 px-6 cursor-pointer text-left">Actions</th>
+                                <th id="num_id" class="py-4 px-4 text-center">  </th>
+                                <th id="title" class="py-4 px-4 cursor-pointer text-center">Title</th>
+                                <th class="py-4 px-6 cursor-pointer text-center">Cycle</th>
+                                <th id="kra" class="py-4 px-4 text-center">KRA</th>
+                                <th id="criteria" class="py-4 px-4 text-center">Criteria</th>
+                                <th id="inclusive_date" class="py-4 px-4 cursor-pointer text-center">Inclusive Date</th>
+                                <th id="accomplishment_name" class="py-4 px-4 cursor-pointer text-center">Accomplishment</th>
+                                <th id="date_submitted" class="py-4 px-4 cursor-pointer text-center">Date Submitted</th>
+                                <th id="eval_status" class="py-4 px-4 cursor-pointer text-center">Status</th>
+                                <th class="py-4 px-6 cursor-pointer text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-300">
                         @foreach ($pasucFiles as $index => $file)
                               <tr class="hover:bg-gray-100">
-                                  <td class="py-4 px-6">{{ $index + 1 }}</td>
-                                  <td class="py-4 px-6">{{ $file->title }}</td>
-                                  <td class="py-4 px-6">{{ $file->cycle }}</td>
-                                  <td class="py-4 px-6">{{ $file->kra }}</td>
-                                  <td class="py-4 px-6">{{ $file->criteria }}</td>
-                                  <td class="py-4 px-6">{{ $file->inclusive_date }}</td>
-                                  <td class="py-4 px-6">{{ $file->accomplishment_name }}</td>
-                                  <td class="py-4 px-6">{{ $file->date_submitted }}</td>
-                                  <td class="py-4 px-6">{{ $file->eval_status }}</td>
-                                  <td class="py-4 px-6">
+                                  <td class="py-4 px-4">{{ $index + 1 }}</td>
+                                  <td class="py-4 px-4">{{ $file->title }}</td>
+                                  <td class="py-4 px-4">{{ $file->cycle }}</td>
+                                  <td class="py-4 px-4">{{ $file->kra }}</td>
+                                  <td class="py-4 px-4">{{ $file->criteria }}</td>
+                                  <td class="py-4 px-4">{{ $file->inclusive_date }}</td>
+                                  <td class="py-4 px-4">{{ $file->accomplishment_name }}</td>
+                                  <td class="py-4 px-4">{{ $file->date_submitted }}</td>
+                                  <td class="py-4 px-4">{{ $file->eval_status }}</td>
+                                  <td class="py-4 px-4">
                                       <div class="flex justify-between w-full space-x-4">
                                         <button class="flex-1 px-4 py-2 bg-blue-500 text-white hover:bg-blue-700 rounded-md">View</button>
                                         <button class="flex-1 px-4 py-2 bg-yellow-300 text-black hover:bg-yellow-500 rounded-md">Edit</button>
@@ -181,7 +181,7 @@
                   <span>Showing 1 to 2 of 2 entries</span>
                 </div>
                 <!--Pagination Controls-->
-                <div class="flex items-center justify-center space-x-1 border border-gray-300 rounded-lg text-xs">
+                <div class="flex items-center justify-center space-x-1 border border-gray-300 rounded-lg text-sm">
                   <a href="#" class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-l-lg hover:bg-gray-200">
                     <i class="fas fa-angle-double-left"></i>
                   </a>

@@ -34,9 +34,9 @@
             <div class="flex flex-col items-stretch space-y-2">
               <div id="reminder" class="bg-card-color rounded-sm p-4 text-card-font-color">
                 <span class="ml-3">
-                  <i class="fas fa-lightbulb text-xs"></i>
-                  <strong class="text-xs">Reminders:</strong>
-                  <p class="ml-8 text-xs">
+                  <i class="fas fa-lightbulb text-lg"></i>
+                  <strong class="text-lg">Reminders:</strong>
+                  <p class="ml-8 text-sm">
                     • The system is connected to the PUP eQAR system, so no need to re-upload the same accomplishment. <br>
                     • Upload your supporting documents on the Application tab. <br>
                     • Once you apply an accomplishment, you are not allowed to undo it. If you want to remove the accomplishment, go to <a href="{{ url('/application') }}"><b>Application</b></a> tab and click "Remove". <br>
@@ -48,9 +48,9 @@
               </div>
               <div id="instructions" class="bg-card-color rounded-sm p-4 text-card-font-color">
                 <span class="ml-3">
-                  <i class="fas fa-lightbulb text-xs"></i>
-                  <strong class="text-xs">Instructions</strong>
-                  <p class="ml-8 text-xs">
+                  <i class="fas fa-lightbulb text-lg"></i>
+                  <strong class="text-lg">Instructions</strong>
+                  <p class="ml-8 text-sm">
                     • Verify the accomplishment before clicking the "Apply" button.<br>
                     • Once settled, please click the "Apply" button to the accomplishment you want to submit for the PASUC NBC 461 evaluation.<br>
                     • The system will turn the button to violet if the accomplishment is successfully in the PASUC NBC 461 evaluation system. <br>
@@ -62,14 +62,14 @@
               <div class="flex flex-row justify-center space-x-4">
                 <!-- From -->
                 <div class="bg-gray-200 p-4 rounded-lg">
-                  <label class="block mb-2 font-semibold text-xs">From:</label>
-                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-xs" max="9999-12-31">
+                  <label class="block mb-2 font-semibold text-sm">From:</label>
+                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-sm" max="9999-12-31">
                 </div>
 
                 <!-- To -->
                 <div class="bg-gray-200 p-4 rounded-lg">
-                  <label class="block mb-2 font-semibold text-xs">To:</label>
-                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-xs" max="9999-12-31">
+                  <label class="block mb-2 font-semibold text-sm">To:</label>
+                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-sm" max="9999-12-31">
                 </div>
 
                 <!-- Buttons -->
@@ -127,7 +127,7 @@
                 </div>
               </div>
               <!--Table-->
-              <div class="container text-xs mx-auto py-2">
+              <div class="container text-sm mx-auto py-2">
                 <div class="w-full bg-white shadow-md overflow-x-auto">
                     <table class="table-auto w-full">
                         <thead class="bg-red-800 text-white">
@@ -181,7 +181,7 @@
                   <span>Showing {{ $eqarFiles->firstItem() }} to {{ $eqarFiles->lastItem() }} of {{ $totalRecords }} entries</span>
                 </div>
                 <!-- Pagination Controls -->
-<div class="flex items-center justify-center space-x-1 border border-gray-300 rounded-lg text-xs">
+<div class="flex items-center justify-center space-x-1 border border-gray-300 rounded-lg text-sm">
     @if ($eqarFiles->onFirstPage())
         <a class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-l-lg cursor-not-allowed" disabled>
             <i class="fas fa-angle-double-left"></i>
