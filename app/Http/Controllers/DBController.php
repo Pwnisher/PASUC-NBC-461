@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Log;
 
 class DBController extends Controller
 {
+    public function home() {
+        return view('home');
+    }
+
+    public function eqar() {
+        return view('eqar');
+    }
+
     public function getEqar(Request $request)
     {
         $perPage = $request->input('perPage', 10); // Default to 10 if not provided
@@ -62,17 +70,73 @@ class DBController extends Controller
         }
     }    
     
-    public function getPasuc()
+    public function getPasuc(Request $request, $any = null)
     {
         $pasucFiles = DB::select("SELECT p.pasuc_id, e.title, p.cycle, p.kra, p.criteria, e.inclusive_date, e.accomplishment_name, e.date_submitted, p.eval_status, p.is_submitted FROM pasucs p INNER JOIN eqars e ON p.eqar_eqar_id = e.eqar_id;");
         
-        $dynamicContent = 'Application of Accomplishments'; // Set your dynamic content here
-    
-        return view('application', [
-            'pasucFiles' => $pasucFiles,
-            'title_bar' => $dynamicContent
-        ]);
+        switch ($any) {
+            case 'kra1/criteriaA':
+                $dynamicContent = 'Criterion A - Teaching Effectiveness';
+                break;
+            case 'kra1/criteriaB':
+                $dynamicContent = 'Criterion B - Curriculum and Instructional Materials Developed';
+                break;
+            case 'kra1/criteriaC':
+                $dynamicContent = 'Criterion C - Special Projects, Capstone Projects, Thesis, Dissertation and Mentorship Services';
+                break;
+                
+            case 'kra2/criteriaA':
+                $dynamicContent = 'Criterion A - Research Output Published';
+                break;
+            case 'kra2/criteriaB':
+                $dynamicContent = 'Criterion B - Inventions';
+                break;
+            case 'kra2/criteriaC':
+                $dynamicContent = 'Criterion C - Creative Works';
+                break;
+
+            case 'kra3/criteriaA':
+                $dynamicContent = 'Criterion A - Service to the Institution';
+                break;
+            case 'kra3/criteriaB':
+                $dynamicContent = 'Criterion B - Service to the Community';
+                break;
+            case 'kra3/criteriaC':
+                $dynamicContent = 'Criterion C - Quality of Extension Services';
+                break;
+            case 'kra3/criteriaD':
+                $dynamicContent = 'Criterion D - Bonus Criterion';
+                break;
+
+            case 'kra4/criteriaA':
+                $dynamicContent = 'Criterion A - Involvement in Professional Organizations';
+                break;
+            case 'kra4/criteriaB':
+                $dynamicContent = 'Criterion B - Continuing Development';
+                break;
+            case 'kra4/criteriaC':
+                $dynamicContent = 'Criterion  - Awards and Recognition';
+                break;
+            case 'kra4/criteriaD':
+                $dynamicContent = 'Criterion D - Bonus Indicators for Newly Hired Faculty';
+                break;
+
+            default:
+                return view('error');
+        }
+
+        if ($request->ajax()) {
+            // Return the dynamic content as JSON for the AJAX request
+            return response()->json(['title_bar' => $dynamicContent]);
+        } else {
+            // Render the view with the dynamic content
+            return view('application', [
+                'pasucFiles' => $pasucFiles,
+                'title_bar' => $dynamicContent
+            ]);
+        }
     }
+
 
     public function pasucUpdateApplied($pasucId)
     {
