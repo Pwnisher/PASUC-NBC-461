@@ -181,20 +181,6 @@
                   <span>Showing {{ $eqarFiles->firstItem() }} to {{ $eqarFiles->lastItem() }} of {{ $totalRecords }} entries</span>
                 </div>
                 <!-- Pagination Controls -->
-<<<<<<< HEAD
-<div class="flex items-center justify-center space-x-1 border border-gray-300 rounded-lg text-sm">
-    @if ($eqarFiles->onFirstPage())
-        <a class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-l-lg cursor-not-allowed" disabled>
-            <i class="fas fa-angle-double-left"></i>
-        </a>
-        <a class="flex items-center justify-center w-8 h-8 text-gray-600 cursor-not-allowed" disabled>
-            <i class="fas fa-angle-left"></i>
-        </a>
-    @else
-        <a href="{{ $eqarFiles->appends(['perPage' => $eqarFiles->perPage()])->url(1) }}" class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-r-lg hover:bg-gray-200">
-            <i class="fas fa-angle-double-left"></i>
-        </a>
-=======
                 <div class="flex items-center justify-center space-x-1 border border-gray-300 rounded-lg text-xs">
                     @if ($eqarFiles->onFirstPage())
                         <a class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-l-lg cursor-not-allowed" disabled>
@@ -207,7 +193,6 @@
                         <a href="{{ $eqarFiles->appends(['perPage' => $eqarFiles->perPage()])->url(1) }}" class="flex items-center justify-center w-8 h-8 text-gray-600 rounded-r-lg hover:bg-gray-200">
                             <i class="fas fa-angle-double-left"></i>
                         </a>
->>>>>>> 00b97e3fc3b754fe5cd324b75bb16711ceb1774f
 
                         <a href="{{ $eqarFiles->appends(['perPage' => $eqarFiles->perPage()])->previousPageUrl() }}" class="flex items-center justify-center w-8 h-8 text-gray-600 hover:bg-gray-200">
                             <i class="fas fa-angle-left"></i>
