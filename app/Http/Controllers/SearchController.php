@@ -7,7 +7,7 @@ use App\Models\Eqar;
 
 class SearchController extends Controller
 {
-    public function search(Request $request)
+    public function eqarSearch(Request $request)
     {
         $searchTerm = $request->input('searchTerm');
         $perPage = $request->input('perPage', 10); // Default to 10 if not provided
@@ -21,5 +21,4 @@ class SearchController extends Controller
 
         return view('partials.filtered_table', ['eqarFiles' => $filteredData]);
     }
-
 }
