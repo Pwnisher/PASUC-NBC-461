@@ -73,14 +73,14 @@
                     <i class="fas fa-sort mr-2" style="line-height: 0;"></i> Sort
                   </button>
                   <div class="relative inline-block">
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center" onclick="toggleCycleDropdown()">
-                      <i class="fas fa-cog mr-2"></i> Cycle
-                    </button>
-                    <ul id="cycleDropdown" class="absolute left-0 mt-2 py-1 text-sm bg-white border rounded-lg w-32 hidden z-[10000]">
-                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('8th')">8th cycle</li>
-                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('9th')">9th cycle</li>
-                      <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" onclick="selectCycle('10th')">10th cycle</li>
-                    </ul>
+                  <button class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center" onclick="toggleCycleDropdown()">
+                    <i class="fas fa-cog mr-2"></i> Cycle
+                  </button>
+                  <ul id="cycleDropdown" class="absolute left-0 mt-2 py-1 text-sm bg-white border rounded-lg w-32 hidden z-[10000]">
+                    <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" value="8th" onclick="fetchCycleData('8th')">8th cycle</li>
+                    <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" value="9th" onclick="fetchCycleData('9th')">9th cycle</li>
+                    <li class="hover:bg-gray-200 px-4 py-2 cursor-pointer" value="10th" onclick="fetchCycleData('10th')">10th cycle</li>
+                  </ul>
                   </div>
                 </div>
               </div>
