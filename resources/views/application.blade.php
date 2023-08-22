@@ -137,7 +137,7 @@
                                 <th class="py-4 px-6 cursor-pointer text-center">Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-300">
+                        <tbody class="divide-y divide-gray-300" id="table-body">
                         @foreach ($pasucFiles as $index => $file)
                               <tr class="hover:bg-gray-100">
                                   <td class="py-4 px-4">{{ $index + 1 }}</td>

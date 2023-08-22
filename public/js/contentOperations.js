@@ -69,6 +69,7 @@ function handleAnchorClick(event) {
         if (window.location.pathname.indexOf('/application') === 0) {
             event.target.href = urlstring;
             window.history.pushState(null, null, urlstring);
+            
             // Update only the content using AJAX
             $.ajax({
                 url: urlstring,
@@ -76,12 +77,44 @@ function handleAnchorClick(event) {
                 success: function(response) {
                     var dynamicContent = response.title_bar;
                     $('#title_bar').text(dynamicContent); // Update content in the page
-                    document.title = dynamicContent; // Update the title of the page
+            
+                    // Update the table content
+                    var tableBody = $('#table-body');
+                    tableBody.empty(); // Clear previous content
+            
+                    // Populate the table rows from the response
+                    response.pasucFiles.forEach(function(file, index) {
+                        // Create a new table row
+                        var newRow = $('<tr>', { class: 'hover:bg-gray-100' });
+            
+                        // Add table data cells (td) to the row
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(index + 1));
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(file.title));
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(file.cycle));
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(file.kra));
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(file.criteria));
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(file.inclusive_date));
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(file.accomplishment_name));
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(file.date_submitted));
+                        newRow.append($('<td>', { class: 'py-4 px-4' }).text(file.eval_status));
+            
+                        var actionCell = $('<td>', { class: 'py-4 px-4' });
+                        var actionDiv = $('<div>', { class: 'flex justify-between w-full space-x-4' });
+                        actionCell.append(actionDiv);
+                        newRow.append(actionCell);
+            
+                        // Append the new row to the table body
+                        tableBody.append(newRow);
+                    });
+            
+                    // Update the title of the page
+                    document.title = dynamicContent;
                 },
                 error: function() {
                     $('#title_bar').text('Error fetching dynamic content.');
                 }
             });
+            
         } else {
             // Navigate to the requested URL
             window.location.href = urlstring;
