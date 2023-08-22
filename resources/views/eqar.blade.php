@@ -169,7 +169,6 @@
                                   </td>
                               </tr>
                           @endforeach
-                          <!-- Add more rows as needed -->
                         </tbody>
                     </table>
                 </div>
@@ -200,7 +199,13 @@
                     @endif
 
                     @foreach ($eqarFiles->getUrlRange(1, $eqarFiles->lastPage()) as $page => $url)
-                        <a href="{{ $url }}" class="flex items-center justify-center w-8 h-8 {{ $page == $eqarFiles->currentPage() ? 'bg-blue-500 text-white' : 'text-gray-600 hover:bg-gray-200' }}">
+                        @php
+                            $queryParams = request()->query();
+                            $queryParams['perPage'] = $eqarFiles->perPage();
+                            $queryParams['page'] = $page;
+                            $newUrl = url()->current() . '?' . http_build_query($queryParams);
+                        @endphp
+                        <a href="{{ $newUrl }}" class="flex items-center justify-center w-8 h-8 {{ $page == $eqarFiles->currentPage() ? 'bg-blue-500 text-white' : 'text-gray-600 hover:bg-gray-200' }}">
                             {{ $page }}
                         </a>
                     @endforeach
@@ -221,7 +226,6 @@
                         </a>
                     @endif
                 </div>
-
               </div>
             </div>
           </div>
