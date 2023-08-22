@@ -33,8 +33,10 @@ Route::get('/home', [DBController::class, 'home']);
 Route::get('/eqar', [DBController::class, 'eqar']);
 Route::get('/eqar', [DBController::class, 'getEqar'])->name('eqar');
 Route::put('/eqar-update-applied/{eqarId}', [DBController::class, 'eqarUpdateApplied']);
-Route::get('/search', [SearchController::class, 'eqarSearch']);
-Route::get('/sort', [SortController::class, 'eqarSort']);
+Route::get('/eqarSearch', [SearchController::class, 'eqarSearch']);
+Route::get('/eqarSort', [SortController::class, 'eqarSort']);
+Route::get('/pasucSearch', [SearchController::class, 'pasucSearch']);
+Route::get('/pasucSort', [SortController::class, 'pasucSort']);
 Route::get('/cycle', [CycleController::class, 'cycle']);
 
 

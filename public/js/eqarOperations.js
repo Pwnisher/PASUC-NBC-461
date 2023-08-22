@@ -33,7 +33,7 @@ $(document).ready(function () {
         
         // Make an AJAX request to the server to fetch filtered data
         $.ajax({
-            url: '/search', // Replace with your backend endpoint
+            url: '/eqarSearch', // Replace with your backend endpoint
             type: 'GET',
             data: { searchTerm: searchTerm },
             success: function (data) {
@@ -52,7 +52,7 @@ $(document).ready(function () {
 
         // Make an AJAX request to the server to fetch sorted data
         $.ajax({
-            url: '/sort', // Replace with your backend endpoint for sorting
+            url: '/eqarSort', // Replace with your backend endpoint for sorting
             type: 'GET',
             data: {
                 fromDate: fromDate,

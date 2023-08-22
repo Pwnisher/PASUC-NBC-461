@@ -135,7 +135,7 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-300">
-                          @include('partials.filtered_table')
+                          @include('partials.eqarfiltered_table')
                         </tbody>
                     </table>
                 </div>
