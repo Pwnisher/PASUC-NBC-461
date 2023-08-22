@@ -26,3 +26,26 @@ function applyFile(pasucId) {
         });
     }
 }
+
+
+$(document).ready(function () {
+$('#cycleDropdown li').on('click', function () {
+    var selectedCycle = $(this).data('cycle');
+
+    // Make an AJAX request to the server with the selected cycle
+    $.ajax({
+    url: 'eqarCycle', // Replace with your backend endpoint
+    type: 'POST', // or 'GET', 'PUT', etc.
+    data: {
+        cycle: selectedCycle
+    },
+    success: function (response) {
+        // Handle the response data here
+        console.log(response);
+    },
+    error: function (xhr, status, error) {
+        console.error('Error:', error);
+    }
+    });
+});
+});

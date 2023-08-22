@@ -7,7 +7,7 @@ use App\Models\Eqar;
 
 class SortController extends Controller
 {
-    public function sort(Request $request)
+    public function eqarSort(Request $request)
     {
         $fromDate = $request->input('fromDate');
         $toDate = $request->input('toDate');
