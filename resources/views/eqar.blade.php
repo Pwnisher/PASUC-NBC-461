@@ -63,22 +63,22 @@
                 <!-- From -->
                 <div class="bg-gray-200 p-4 rounded-lg">
                   <label class="block mb-2 font-semibold text-sm">From:</label>
-                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-sm" max="9999-12-31">
+                  <input type="date" id="from-date" class="w-full px-4 py-2 border rounded-lg text-sm" max="9999-12-31">
                 </div>
 
                 <!-- To -->
                 <div class="bg-gray-200 p-4 rounded-lg">
                   <label class="block mb-2 font-semibold text-sm">To:</label>
-                  <input type="date" class="w-full px-4 py-2 border rounded-lg text-sm" max="9999-12-31">
+                  <input type="date" id="to-date" class="w-full px-4 py-2 border rounded-lg text-sm" max="9999-12-31">
                 </div>
 
                 <!-- Buttons -->
                 <div class="flex flex-col">
-                  <button class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center justify-center mb-2">
+                  <button id="sort-button" class="bg-green-500 text-white px-4 py-2 rounded-lg flex items-center justify-center mb-2">
                     <i class="fas fa-sort mr-2" style="line-height: 0;"></i> Sort
                   </button>
                   <div class="relative inline-block">
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center" onclick="toggleCycleDropdown()">
+                    <button id="sort-button" class="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center" onclick="toggleCycleDropdown()">
                       <i class="fas fa-cog mr-2"></i> Cycle
                     </button>
                     <ul id="cycleDropdown" class="absolute left-0 mt-2 py-1 text-sm bg-white border rounded-lg w-32 hidden z-[10000]">

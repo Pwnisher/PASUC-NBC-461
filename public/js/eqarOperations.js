@@ -43,3 +43,25 @@ $(document).ready(function () {
         });
     });
 });
+
+
+$(document).ready(function () {
+    $('#sort-button').on('click', function () {
+        var fromDate = $('#from-date').val();
+        var toDate = $('#to-date').val();
+
+        // Make an AJAX request to the server to fetch sorted data
+        $.ajax({
+            url: '/sort', // Replace with your backend endpoint for sorting
+            type: 'GET',
+            data: {
+                fromDate: fromDate,
+                toDate: toDate
+            },
+            success: function (data) {
+                // Update the table body with the sorted data
+                $('tbody').html(data);
+            }
+        });
+    });
+});
