@@ -11,7 +11,6 @@ class Eqar extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        //'user_user_id',
         'is_applied',
         'file_path',
         'title',

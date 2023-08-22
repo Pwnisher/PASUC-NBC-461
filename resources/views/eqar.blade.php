@@ -117,8 +117,9 @@
                   <div class="relative">
                     <input
                       type="text"
+                      id="search-bar" 
                       class="block w-48 bg-white border border-gray-300 text-gray-700 py-1 px-2 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                      placeholder="Type here..."
+                      placeholder="Search here..." data-route="{{ route('searchEqar') }}"
                     />
                     <div class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                       <i class="fas fa-search text-gray-600"></i>
