@@ -26,3 +26,20 @@ function applyFile(eqarId) {
         });
     }
 }
+
+$(document).ready(function () {
+    $('#search-bar').on('input', function () {
+        var searchTerm = $(this).val().toLowerCase();
+        
+        // Make an AJAX request to the server to fetch filtered data
+        $.ajax({
+            url: '/search', // Replace with your backend endpoint
+            type: 'GET',
+            data: { searchTerm: searchTerm },
+            success: function (data) {
+                // Update the table body with the filtered data
+                $('tbody').html(data);
+            }
+        });
+    });
+});

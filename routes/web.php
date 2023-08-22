@@ -5,6 +5,7 @@ use App\Http\Controllers\AddController;
 use App\Http\Controllers\TabController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\DBController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,7 @@ Route::get('/home', [DBController::class, 'home']);
 Route::get('/eqar', [DBController::class, 'eqar']);
 Route::get('/eqar', [DBController::class, 'getEqar'])->name('eqar');
 Route::put('/eqar-update-applied/{eqarId}', [DBController::class, 'eqarUpdateApplied']);
+Route::get('/search', [SearchController::class, 'search']);
 
 Route::get('/application', [DBController::class, 'getPasuc'])->name('application');
 Route::get('/application/{any}', [DBController::class, 'getPasuc'])->where('any', '.*');
