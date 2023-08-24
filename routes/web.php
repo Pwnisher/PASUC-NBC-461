@@ -27,6 +27,7 @@ Route::get('/', function () {
 
 Route::get('/dummy_gdrive', [GoogleDriveController::class, 'dummy_gdrive']);
 Route::get('/oauth2callback', [GoogleDriveController::class, 'oauth2callback']);
+Route::get('/authenticate', [GoogleDriveController::class, 'authenticate'])->name('authenticate');
 Route::post('/uploadToDrive', [GoogleDriveController::class, 'uploadToDrive'])->name('uploadToDrive');
 
 

@@ -43,6 +43,7 @@
                 console.log(data);
             } catch (error) {
                 console.error('Error uploading file:', error);
+                console.log('Response:', response); // Add this line
             }
         });
     </script>
