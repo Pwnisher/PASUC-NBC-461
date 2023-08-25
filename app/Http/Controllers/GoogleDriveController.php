@@ -17,9 +17,9 @@ class GoogleDriveController extends Controller
     public function authenticate()
     {
         $client = new Client();
-        $client->setAuthConfig(storage_path('app/client_secret_1070308789255-12ppjatpkfdjf4gi7eau4b0tffre8aor.apps.googleusercontent.com.json'));
+        $client->setAuthConfig(storage_path('app/client_secret_578102974959-2bkqgu29d22aqt1mi69e1jsml8mrqfc2.apps.googleusercontent.com.json'));
         $client->addScope('https://www.googleapis.com/auth/drive.file');
-        $client->setRedirectUri('http://localhost:8000/oauth2callback'); // Update the URL
+        $client->setRedirectUri('http://localhost:8000/dummy_gdrive'); // Update the URL
 
         $authUrl = $client->createAuthUrl();
         return redirect()->away($authUrl);
@@ -28,9 +28,9 @@ class GoogleDriveController extends Controller
     public function oauth2callback(Request $request)
     {
         $client = new Client();
-        $client->setAuthConfig(storage_path('app/client_secret_1070308789255-12ppjatpkfdjf4gi7eau4b0tffre8aor.apps.googleusercontent.com.json'));
+        $client->setAuthConfig(storage_path('app/client_secret_578102974959-2bkqgu29d22aqt1mi69e1jsml8mrqfc2.apps.googleusercontent.com.json'));
         $client->addScope('https://www.googleapis.com/auth/drive.file');
-        $client->setRedirectUri('http://localhost:8000/oauth2callback');
+        $client->setRedirectUri('http://localhost:8000/dummy_gdrive');
 
         // Exchange authorization code for access token
         $accessToken = $client->fetchAccessTokenWithAuthCode($request->code);

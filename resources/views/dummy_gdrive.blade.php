@@ -16,6 +16,8 @@
     <!-- Upload Documents Form -->
     <div class="bg-white p-8 rounded shadow-md w-80">
         <h1 class="text-2xl font-semibold mb-4">Upload Documents</h1>
+        <!-- Add this button before your form -->
+        <a href="{{ route('authenticate') }}" class="w-full bg-red-500 text-white py-2 rounded hover:bg-red-600 transition duration-300">Authorize with Google</a>
         <form id="uploadForm" class="space-y-4" action="{{ route('uploadToDrive') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="flex flex-col">
