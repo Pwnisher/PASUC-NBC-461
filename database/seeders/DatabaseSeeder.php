@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         UserFactory::new()->count(100)->create();
         EqarFactory::new()->count(100)->create();  
-        PasucFactory::new()->count(100)->create();  
+        //PasucFactory::new()->count(100)->create();  
         //\App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

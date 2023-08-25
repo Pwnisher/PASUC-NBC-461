@@ -424,7 +424,7 @@ function showAddForm(option) {
                     <a href="{{ url('/eqar') }}">
                     <button id="SaveButton" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button> </a>
                     <button id="openSaveButton" onclick="openModal('modelConfirm')" class="bg-green-500 hover:bg-green-600 text-white font-bold ml-3 py-2 px-4 rounded">Submit</button>
-                    </div>
+                  </div>
                 </div>
                 <!-- END DYNAMIC FORM -->
               </form>
