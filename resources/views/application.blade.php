@@ -137,7 +137,7 @@
                                 <th class="py-4 px-6 cursor-pointer text-center">Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-300">
+                        <tbody class="divide-y divide-gray-300" id="table-body">
                           @include('partials.pasucfiltered_table')
                         </tbody>
                     </table>
