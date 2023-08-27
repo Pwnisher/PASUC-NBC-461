@@ -3,7 +3,7 @@
 // (EXAMPLE USE: CHANGE '2' in 1/2 BASED ON NEEDED ROWS) (CAN ALSO USE MULTIPLE SAME/DIFF TYPE)
 // wrapElements([], 'w-full md:w-1/1 px-3 mb-6 md:mb-0');
 // import { myFunction } from './file1'; // Path to the file1.js
-function wrapElements(params, colClass, containerID, onchangeCallback) {
+function wrapElements(params, colClass, containerID) {
     const formContainer = document.getElementById(containerID);
 
     const rowDiv = document.createElement('div');
@@ -17,12 +17,12 @@ function wrapElements(params, colClass, containerID, onchangeCallback) {
         columnDiv.className = colClass;
 
         if (type === 'input') {
-            const [id, labelText, inputType] = rest;
-            const inputContainerDiv = createDynamicInput(id, labelText, inputType);
+            const [id, name, labelText, inputType] = rest;
+            const inputContainerDiv = createDynamicInput(id, name, labelText, inputType);
             columnDiv.appendChild(inputContainerDiv);
         } else if (type === 'select') {
-            const [id, labelText, options, selectClass] = rest;
-            const selectContainerDiv = createDynamicSelect(id, labelText, options, onchangeCallback, selectClass);
+            const [id, name, labelText, options, selectClass] = rest;
+            const selectContainerDiv = createDynamicSelect(id, name, labelText, options, selectClass);
             columnDiv.appendChild(selectContainerDiv);
         }
         rowDiv.appendChild(columnDiv);
@@ -32,7 +32,7 @@ function wrapElements(params, colClass, containerID, onchangeCallback) {
 
 //-----------------------------------------------------------------------------------------------
 // DYNAMIC SELECT ELEMENT
-function createDynamicSelect(id, labelText, options, onchangeCallback) {
+function createDynamicSelect(id, name, labelText, options) {
     // Create the label
     const label = document.createElement('label');
     label.className = 'block uppercase tracking-wide text-gray-700 text-base font-bold mb-2';
@@ -42,6 +42,7 @@ function createDynamicSelect(id, labelText, options, onchangeCallback) {
     // Create the select element
     const select = document.createElement('select');
     select.id = id;
+    select.name = name;
     select.className = 'block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500';
 
     // Create the default option
@@ -59,14 +60,6 @@ function createDynamicSelect(id, labelText, options, onchangeCallback) {
         optionElement.value = option.value;
         optionElement.textContent = option.label;
         select.appendChild(optionElement);
-    }
-
-    // Add onchange event listener if provided
-    if (onchangeCallback) {
-        select.addEventListener('change', function(event) {
-            const selectedValue = event.target.value;
-            onchangeCallback(selectedValue); // Call the callback with the selected value
-        });
     }
 
     // Create the container for the dropdown arrow
@@ -88,7 +81,7 @@ function createDynamicSelect(id, labelText, options, onchangeCallback) {
 
 //-----------------------------------------------------------------------------------------------
 // DYNAMIC INPUT ELEMENT
-function createDynamicInput(id, labelText, inputType) {
+function createDynamicInput(id, name, labelText, inputType) {
     // Create a container div for the input element and label
     const containerDiv = document.createElement('div');
 
@@ -101,6 +94,7 @@ function createDynamicInput(id, labelText, inputType) {
     // Create the input element
     const input = document.createElement('input');
     input.id = id;
+    input.name = name;
     input.type = inputType;
     input.className = 'block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500';
 

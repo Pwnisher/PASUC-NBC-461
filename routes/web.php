@@ -1,13 +1,14 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DBController;
 use App\Http\Controllers\AddController;
 use App\Http\Controllers\TabController;
-use Illuminate\Http\Request;
-use App\Http\Controllers\DBController;
-use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SortController;
 use App\Http\Controllers\CycleController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\ApproveController;
 
 
 /*
@@ -49,5 +50,7 @@ Route::get('/add-documents-KRA1', [AddController::class, 'showPAGEaddKRA1']);
 Route::get('/add-documents-KRA2', [AddController::class, 'showPAGEaddKRA2']);
 Route::get('/add-documents-KRA3', [AddController::class, 'showPAGEaddKRA3']);
 Route::get('/add-documents-KRA4', [AddController::class, 'showPAGEaddKRA4']);
+
+Route::post('/approve-form', [ApproveController::class, 'approveForm'])->name('approve-form');
 
 

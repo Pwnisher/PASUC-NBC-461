@@ -38,7 +38,7 @@ function showAddForm(option) {
         addPageKRA.innerHTML = "KRA I - INSTRUCTION";
         
         // KRA 1 : Criterion A Categories
-        const sel_kra1_cA = ['select','sel_kra1_cA', 'Type of Evaluation:', [
+        const sel_kra1_cA = ['select','sel_kra1_cA', 'sel_kra1_cA', 'Type of Evaluation:', [
             { value: 'part1', label: 'Student Evaluation' },
             { value: 'part2', label: 'Supervisor Evaluation' }
         ]]; 
@@ -59,7 +59,7 @@ function showAddForm(option) {
         
       // Student Evaluation -------------------------------------
         const in_stdEval_semDed = ['input','stdEval_semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
-        const sel_stdEval_reason = ['select','stdEval_reason', 'Reason for Reducing the Divisor', [
+        const sel_stdEval_reason = ['select','stdEval_reason', 'stdEval_reason', 'Reason for Reducing the Divisor', [
             { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
             { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
             { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
@@ -79,8 +79,8 @@ function showAddForm(option) {
         const in_stdEval_2sem_q4 = ['input','stdEval_2sem_q4', '2ND SEMESTER', 'number'];
 
         // Note: need id in label
-        wrapElements([in_stdEval_semDed], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
-        wrapElements([sel_stdEval_reason], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        //wrapElements([in_stdEval_semDed], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1');
+        wrapElements([sel_stdEval_reason], 'w-full md:w-1/1 px-3 mb-6 md:mb-0', 'form-container1'); /*
           createDynamicLabel('AY 2019-2020', 'form-container1');
         wrapElements([in_stdEval_1sem_q1, in_stdEval_2sem_q1], 'w-full md:w-1/2 px-3 mb-6 md:mb-0', 'form-container1');
           createDynamicLabel('AY 2020-2021', 'form-container1');
@@ -92,10 +92,10 @@ function showAddForm(option) {
 
         createDynamicLabel('Supporting Documents', 'form-container1');
         createDynamicCheckbox('stdEval_SD1', 'Student Evaluation Rating using prescribed template', 'form-container1');
-        
+        */
       // Supervisor Evaluation -----------------------------------
         const in_supEval_semDed = ['input','supEval_semDed', 'Number of Semesters Deducted from the Divisor, If Applicable', 'number'];
-        const in_supEval_reason = ['select','supEval_reason', 'Reason for Reducing the Divisor', [
+        const in_supEval_reason = ['select','supEval_reason', 'supEval_reason', 'Reason for Reducing the Divisor', [
             { value: 'NOT APPLICABLE', label: 'NOT APPLICABLE' },
             { value: 'ON APPROVED STUDY LEAVE', label: 'ON APPROVED STUDY LEAVE' },
             { value: 'ON APPROVED SABBATICAL LEAVE', label: 'ON APPROVED SABBATICAL LEAVE' },
@@ -128,7 +128,7 @@ function showAddForm(option) {
 
         createDynamicLabel('Supporting Documents', 'form-container2');
         createDynamicCheckbox('supEval_SD1', 'Supervisor Evaluation Rating using prescribed template', 'form-container2');
-    } 
+    } /*
     else if (option === "criterionB") { //------------------------------------------------------------------
         addPageTitle.innerHTML = "Criterion B: Curriculum and Instructional Materials Developed";
         addPageKRA.innerHTML = "KRA I - INSTRUCTION";
@@ -350,7 +350,7 @@ function showAddForm(option) {
         createDynamicLabel('Supporting Documents', 'form-container3');
         createDynamicCheckbox('ment_SD1', 'Copy of appointment/designation as mentor for a student or a team of students', 'form-container3');
         createDynamicCheckbox('ment_SD2', 'Copy of the award/certificate received by student/group of students mentored', 'form-container3');
-    }
+    }*/
 }
 </script>
 <!------------------------------------------------------------------------------------------------------->
@@ -388,12 +388,12 @@ function showAddForm(option) {
           
               <div class="lg:col-span-2">
               <!-- START DYNAMIC FORM -->
-              <form>
+              <form action="{{ route('approve-form') }}" method="POST">@csrf
                   <div id="form-container1" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <div id="form-container2" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <div id="form-container3" style="display: none;"> <!-- CONTENT CHANGES HERE --> </div>
                   <br>
-
+                  
                 <!-- must always be present in all pages -->
                 <!-- box design for upload document -->
                 <div class="flex flex-wrap -mx-3 mb-6"> 
@@ -423,10 +423,10 @@ function showAddForm(option) {
                   <div class="inline-flex items-end">
                     <a href="{{ url('/eqar') }}">
                     <button id="SaveButton" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">Cancel</button> </a>
-                    <button id="openSaveButton" onclick="openModal('modelConfirm')" class="bg-green-500 hover:bg-green-600 text-white font-bold ml-3 py-2 px-4 rounded">Submit</button>
+                    <button id="openSaveButton"  class="bg-green-500 hover:bg-green-600 text-white font-bold ml-3 py-2 px-4 rounded">Submit</button>
                   </div>
                 </div>
-                <!-- END DYNAMIC FORM -->
+                <!-- END DYNAMIC FORM onclick="openModal('modelConfirm')"-->
               </form>
             </div>
           </div>
