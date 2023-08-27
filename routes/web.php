@@ -8,6 +8,7 @@ use App\Http\Controllers\DBController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SortController;
 use App\Http\Controllers\CycleController;
+use App\Http\Controllers\FormController;
 
 
 /*
@@ -22,8 +23,12 @@ use App\Http\Controllers\CycleController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('dummy-excel');
 });
+
+Route::post('/submit-form', [FormController::class, 'submitForm'])->name('submit-form');
+
+
 
 Route::get('DBController', [DBController::class, 'store']);
 
