@@ -9,6 +9,17 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SortController;
 use App\Http\Controllers\CycleController;
 
+use App\Http\Controllers\GoogleDriveController;
+
+Route::post('upload', [GoogleDriveController::class, 'uploadDocument'])->name('upload');
+Route::get('/', [GoogleDriveController::class, 'index'])->name('home');
+// web.php
+
+// ... (existing code) ...
+
+Route::get('listUploadedFiles', [GoogleDriveController::class, 'listUploadedFiles'])->name('listUploadedFiles');
+
+// ... (existing code) ...
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +31,6 @@ use App\Http\Controllers\CycleController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
 
 Route::get('DBController', [DBController::class, 'store']);
 
